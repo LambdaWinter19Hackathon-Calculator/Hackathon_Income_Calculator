@@ -4,12 +4,15 @@ import styled from 'styled-components';
 const Footer = () => {
     const About = styled.div`
         text-align: center;
-        color: blue;
     `;
     const Credits = styled.div`
         text-align: center;
-        color: orange;
+        background-color: lightgray;
     `;
+    const List = styled.ul`
+        column-count: 3;
+        position: center;
+    `
     return (
         <div>
             <About>
@@ -18,13 +21,13 @@ const Footer = () => {
             </About>
             <Credits>
                 <h4>Created by:</h4>
-                <ul>
+                <List>
                     <li>Jeanette Fernandez</li>
                     <li>Leigh-Ann Friedel</li>
                     <li>Colin Dismuke</li>
                     <li>Tommy Huynh</li>
                     <li>Chris Honda</li>
-                </ul>
+                </List>
             </Credits>
             </div>
     );
