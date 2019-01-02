@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const Header = () => {
     const Title = styled.div`
         text-align: center;
-        color: red;
     `;
     return (
         <Title>
