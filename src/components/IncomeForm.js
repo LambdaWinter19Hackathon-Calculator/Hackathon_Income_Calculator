@@ -12,13 +12,27 @@ class IncomeForm extends Component {
       annualRaise: null
     };
   }
+
+  handleChange = e => {
+    e.preventDefault();
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  };
+
   render() {
     return (
       <div className="form-container">
         <Form>
           <FormGroup>
             <Label for="currentAge">Current Age:</Label>
-            <Input required type="number" name="currentAge" id="currentAge" />
+            <Input
+              required
+              type="number"
+              name="currentAge"
+              id="currentAge"
+              onClick={this.handleChange}
+            />
           </FormGroup>
 
           <FormGroup>
@@ -28,6 +42,7 @@ class IncomeForm extends Component {
               type="number"
               name="retirementAge"
               id="retirementAge"
+              onClick={this.handleChange}
             />
           </FormGroup>
 
@@ -38,6 +53,7 @@ class IncomeForm extends Component {
               type="number"
               name="beforeIncome"
               id="beforeIncome"
+              onClick={this.handleChange}
             />
           </FormGroup>
 
@@ -45,12 +61,23 @@ class IncomeForm extends Component {
             <Label for="afterIncome">
               Salary after graduating Lambda School:
             </Label>
-            <Input required type="number" name="afterIncome" id="afterIncome" />
+            <Input
+              required
+              type="number"
+              name="afterIncome"
+              id="afterIncome"
+              onClick={this.handleChange}
+            />
           </FormGroup>
 
           <FormGroup>
             <Label for="annualRaise">Expected annual raise %:</Label>
-            <Input type="number" name="annualRaise" id="annualRaise" />
+            <Input
+              type="number"
+              name="annualRaise"
+              id="annualRaise"
+              onClick={this.handleChange}
+            />
           </FormGroup>
 
           <Button>Submit</Button>
