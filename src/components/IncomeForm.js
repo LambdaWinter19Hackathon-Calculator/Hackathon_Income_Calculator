@@ -31,7 +31,7 @@ class IncomeForm extends Component {
               type="number"
               name="currentAge"
               id="currentAge"
-              onClick={this.handleChange}
+              onChange={this.handleChange}
             />
           </FormGroup>
 
@@ -42,7 +42,7 @@ class IncomeForm extends Component {
               type="number"
               name="retirementAge"
               id="retirementAge"
-              onClick={this.handleChange}
+              onChange={this.handleChange}
             />
           </FormGroup>
 
@@ -53,7 +53,7 @@ class IncomeForm extends Component {
               type="number"
               name="beforeIncome"
               id="beforeIncome"
-              onClick={this.handleChange}
+              onChange={this.handleChange}
             />
           </FormGroup>
 
@@ -66,7 +66,7 @@ class IncomeForm extends Component {
               type="number"
               name="afterIncome"
               id="afterIncome"
-              onClick={this.handleChange}
+              onChange={this.handleChange}
             />
           </FormGroup>
 
@@ -76,7 +76,7 @@ class IncomeForm extends Component {
               type="number"
               name="annualRaise"
               id="annualRaise"
-              onClick={this.handleChange}
+              onChange={this.handleChange}
             />
           </FormGroup>
 
