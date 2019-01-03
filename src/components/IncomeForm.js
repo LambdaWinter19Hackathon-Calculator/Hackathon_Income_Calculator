@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import {
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  InputGroup,
+  InputGroupAddon
+} from "reactstrap";
 
 import {
   getInputData,
@@ -84,62 +92,77 @@ class IncomeForm extends Component {
           <div className="form-input-div">
             <FormGroup>
               <Label for="currentAge">Current Age:</Label>
-              <Input
-                required
-                type="number"
-                name="currentAge"
-                id="currentAge"
-                onChange={this.handleChange}
-              />
+              <InputGroup>
+                <Input
+                  required
+                  type="number"
+                  name="currentAge"
+                  id="currentAge"
+                  onChange={this.handleChange}
+                />
+                <InputGroupAddon addonType="append">Years Old</InputGroupAddon>
+              </InputGroup>
             </FormGroup>
 
             <FormGroup>
               <Label for="retirementAge">Desired retirement age:</Label>
-              <Input
-                required
-                type="number"
-                name="retirementAge"
-                id="retirementAge"
-                onChange={this.handleChange}
-              />
+              <InputGroup>
+                <Input
+                  required
+                  type="number"
+                  name="retirementAge"
+                  id="retirementAge"
+                  onChange={this.handleChange}
+                />
+                <InputGroupAddon addonType="append">Years Old</InputGroupAddon>
+              </InputGroup>
             </FormGroup>
           </div>
 
           <div className="form-input-div">
             <FormGroup>
               <Label for="beforeSalary">Current annual salary:</Label>
-              <Input
-                required
-                type="number"
-                name="beforeSalary"
-                id="beforeSalary"
-                onChange={this.handleChange}
-              />
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">$</InputGroupAddon>
+                <Input
+                  required
+                  type="number"
+                  name="beforeSalary"
+                  id="beforeSalary"
+                  onChange={this.handleChange}
+                />
+              </InputGroup>
             </FormGroup>
 
             <FormGroup>
               <Label for="afterSalary">
                 Salary after graduating Lambda School:
               </Label>
-              <Input
-                required
-                type="number"
-                name="afterSalary"
-                id="afterSalary"
-                onChange={this.handleChange}
-              />
+              <InputGroup>
+                <InputGroupAddon addonType="prepend">$</InputGroupAddon>
+                <Input
+                  required
+                  type="number"
+                  name="afterSalary"
+                  id="afterSalary"
+                  onChange={this.handleChange}
+                />
+              </InputGroup>
             </FormGroup>
           </div>
 
           <div className="form-input-div">
             <FormGroup>
-              <Label for="annualRaise">Expected annual raise %:</Label>
-              <Input
-                type="number"
-                name="annualRaise"
-                id="annualRaise"
-                onChange={this.handleChange}
-              />
+              <Label for="annualRaise">Expected annual raise:</Label>
+              <InputGroup>
+                <Input
+                  type="number"
+                  name="annualRaise"
+                  id="annualRaise"
+                  onChange={this.handleChange}
+                />
+                <InputGroupAddon addonType="append">%</InputGroupAddon>
+              </InputGroup>
             </FormGroup>
 
             <Button>Submit</Button>
