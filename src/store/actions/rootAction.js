@@ -4,6 +4,8 @@ export const ANNUAL_EARNINGS_BEFORE = "ANNUAL_EARNINGS_BEFORE";
 export const ANNUAL_EARNINGS_AFTER = "ANNUAL_EARNINGS_AFTER";
 export const LIFETIME_EARNINGS_BEFORE = "LIFETIME_EARNINGS_BEFORE";
 export const LIFETIME_EARNINGS_AFTER = "LIFETIME_EARNINGS_AFTER";
+export const CUMULATIVE_EARNED_BEFORE = "CUMULATIVE_EARNED_BEFORE";
+export const CUMULATIVE_EARNED_AFTER = "CUMULATIVE_EARNED_AFTER";
 
 /* ------   Get input data from form and store in Redux   ------*/
 
@@ -17,15 +19,16 @@ export const getInputData = inputData => {
 /* ------   Return an array of yearly earnings based on the annual raise percentage   ------*/
 
 export const annualEarningsBefore = (salary, annualRaise, yearsOfWork) => {
-  let yearlyIncomes = [parseInt(salary.toFixed())];
+  let yearlyIncomes = [parseInt(salary)];
   let years = yearsOfWork;
 
   while (years > 1) {
     salary = parseInt(salary) + parseInt(salary) * annualRaise;
-    yearlyIncomes.push(parseInt(salary.toFixed()));
+    yearlyIncomes.push(parseInt(salary));
 
     years--;
   }
+
   return {
     type: ANNUAL_EARNINGS_BEFORE,
     payload: yearlyIncomes
@@ -33,12 +36,12 @@ export const annualEarningsBefore = (salary, annualRaise, yearsOfWork) => {
 };
 
 export const annualEarningsAfter = (salary, annualRaise, yearsOfWork) => {
-  let yearlyIncomes = [parseInt(salary.toFixed())];
+  let yearlyIncomes = [parseInt(salary)];
   let years = yearsOfWork;
 
   while (years > 1) {
-    salary = salary + salary * annualRaise;
-    yearlyIncomes.push(parseInt(salary.toFixed()));
+    salary = parseInt(salary) + parseInt(salary) * annualRaise;
+    yearlyIncomes.push(parseInt(salary));
 
     years--;
   }
@@ -72,5 +75,33 @@ export const totalEarnedAfter = earningsArray => {
   return {
     type: LIFETIME_EARNINGS_AFTER,
     payload: lifetimeEarnings
+  };
+};
+
+export const cumulativeEarnedBefore = array => {
+  let total = 0;
+
+  const cumulativeEarnings = array.map(el => {
+    total = total + el;
+    return total;
+  });
+
+  return {
+    type: CUMULATIVE_EARNED_BEFORE,
+    payload: cumulativeEarnings
+  };
+};
+
+export const cumulativeEarnedAfter = array => {
+  let total = 0;
+
+  const cumulativeEarnings = array.map(el => {
+    total = total + el;
+    return total;
+  });
+
+  return {
+    type: CUMULATIVE_EARNED_AFTER,
+    payload: cumulativeEarnings
   };
 };
