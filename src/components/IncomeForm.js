@@ -45,7 +45,7 @@ class IncomeForm extends Component {
 
       <FormContainer onSubmit={this.submitHandler}>
         <Form>
-          <div>
+          <div className="form-input-div">
             <FormGroup>
               <Label for="currentAge">Current Age:</Label>
               <Input
@@ -69,7 +69,7 @@ class IncomeForm extends Component {
             </FormGroup>
           </div>
 
-          <div>
+          <div className="form-input-div">
             <FormGroup>
               <Label for="beforeSalary">Current annual salary:</Label>
               <Input
@@ -95,7 +95,7 @@ class IncomeForm extends Component {
             </FormGroup>
           </div>
 
-          <div>
+          <div className="form-input-div">
           <FormGroup>
             <Label for="annualRaise">Expected annual raise %:</Label>
             <Input
@@ -130,17 +130,27 @@ const FormContainer = styled.div`
   form {
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin: 0 auto;
     
     @media (max-width: 1024px) {
       flex-direction: row;
-      align-items: baseline;
+      justify-content: space-around;
     }
 
-    .form-group {
-      padding: 5px;
+    .form-input-div {
+      @media (max-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30%;
+        height: 100%;
+      }
     }
 
+    button {
+      margin-bottom: 1rem;
+    }
   }
 `;
 
