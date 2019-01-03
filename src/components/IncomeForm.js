@@ -45,53 +45,57 @@ class IncomeForm extends Component {
 
       <FormContainer onSubmit={this.submitHandler}>
         <Form>
+          <div>
+            <FormGroup>
+              <Label for="currentAge">Current Age:</Label>
+              <Input
+                required
+                type="number"
+                name="currentAge"
+                id="currentAge"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
 
-          <FormGroup>
-            <Label for="currentAge">Current Age:</Label>
-            <Input
-              required
-              type="number"
-              name="currentAge"
-              id="currentAge"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
+            <FormGroup>
+              <Label for="retirementAge">Desired retirement age:</Label>
+              <Input
+                required
+                type="number"
+                name="retirementAge"
+                id="retirementAge"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+          </div>
 
-          <FormGroup>
-            <Label for="retirementAge">Desired retirement age:</Label>
-            <Input
-              required
-              type="number"
-              name="retirementAge"
-              id="retirementAge"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
+          <div>
+            <FormGroup>
+              <Label for="beforeSalary">Current annual salary:</Label>
+              <Input
+                required
+                type="number"
+                name="beforeSalary"
+                id="beforeSalary"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
 
-          <FormGroup>
-            <Label for="beforeSalary">Current annual salary:</Label>
-            <Input
-              required
-              type="number"
-              name="beforeSalary"
-              id="beforeSalary"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
+            <FormGroup>
+              <Label for="afterSalary">
+                Salary after graduating Lambda School:
+              </Label>
+              <Input
+                required
+                type="number"
+                name="afterSalary"
+                id="afterSalary"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+          </div>
 
-          <FormGroup>
-            <Label for="afterSalary">
-              Salary after graduating Lambda School:
-            </Label>
-            <Input
-              required
-              type="number"
-              name="afterSalary"
-              id="afterSalary"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
-
+          <div>
           <FormGroup>
             <Label for="annualRaise">Expected annual raise %:</Label>
             <Input
@@ -103,6 +107,8 @@ class IncomeForm extends Component {
           </FormGroup>
 
           <Button>Submit</Button>
+          </div>
+
         </Form>
       </FormContainer>
     );
@@ -116,6 +122,26 @@ const FormContainer = styled.div`
   width: 20%;
   padding: 20px;
   border: 1px solid black;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    
+    @media (max-width: 1024px) {
+      flex-direction: row;
+      align-items: baseline;
+    }
+
+    .form-group {
+      padding: 5px;
+    }
+
+  }
 `;
 
 const mapStateToProps = state => {
