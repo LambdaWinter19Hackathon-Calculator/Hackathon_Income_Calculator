@@ -5,7 +5,8 @@ import {
   LIFETIME_EARNINGS_BEFORE,
   LIFETIME_EARNINGS_AFTER,
   CUMULATIVE_EARNED_BEFORE,
-  CUMULATIVE_EARNED_AFTER
+  CUMULATIVE_EARNED_AFTER,
+  RESET
 } from "../actions/rootAction";
 
 const initialState = {
@@ -70,6 +71,22 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         cumulativeAfter: action.payload
+      };
+
+    case RESET:
+      return {
+        currentAge: null,
+        retirementAge: null,
+        beforeSalary: null,
+        afterSalary: null,
+        annualRaise: null,
+        yearsOfWork: null,
+        beforeEarnings: [],
+        afterEarnings: [],
+        beforeTotal: null,
+        afterTotal: null,
+        cumulativeBefore: [],
+        cumulativeAfter: []
       };
 
     default:

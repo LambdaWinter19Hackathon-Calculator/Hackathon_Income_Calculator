@@ -9,7 +9,8 @@ import {
   totalEarnedBefore,
   totalEarnedAfter,
   cumulativeEarnedBefore,
-  cumulativeEarnedAfter
+  cumulativeEarnedAfter,
+  reset
 } from "../store/actions/rootAction";
 
 import styled from "styled-components";
@@ -142,8 +143,10 @@ class IncomeForm extends Component {
             </FormGroup>
 
             <Button>Submit</Button>
+            <Button type="reset" onClick={this.props.reset}>
+              Reset
+            </Button>
           </div>
-
         </Form>
       </FormContainer>
     );
@@ -168,7 +171,7 @@ const FormContainer = styled.div`
     justify-content: space-around;
     width: 100%;
     margin: 0 auto;
-    
+
     @media (max-width: 1024px) {
       flex-direction: row;
       justify-content: space-around;
@@ -213,6 +216,7 @@ export default connect(
     totalEarnedBefore,
     totalEarnedAfter,
     cumulativeEarnedBefore,
-    cumulativeEarnedAfter
+    cumulativeEarnedAfter,
+    reset
   }
 )(IncomeForm);
