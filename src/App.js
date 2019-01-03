@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import styled from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import IncomeForm from "./components/IncomeForm";
 import Graph from "./components/Graph";
-import styled from "styled-components";
+import DataOutput from "./components/DataOutput";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <ContentContainer>
           <IncomeForm />
           <Graph />
+          <DataOutput />
         </ContentContainer>
         <Footer />
       </div>
