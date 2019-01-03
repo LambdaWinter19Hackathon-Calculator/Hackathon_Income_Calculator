@@ -130,6 +130,7 @@ const FormContainer = styled.div`
   form {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     width: 100%;
     margin: 0 auto;
     
@@ -149,6 +150,7 @@ const FormContainer = styled.div`
     }
 
     button {
+      margin: 0 auto;
       margin-bottom: 1rem;
     }
   }
