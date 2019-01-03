@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 import {
   FlexibleXYPlot,
   XAxis,
@@ -9,16 +10,6 @@ import {
   DiscreteColorLegend
 } from "react-vis";
 
-import styled from "styled-components";
-
-const GraphContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  padding-right: 20px;
-`;
 
 class Graph extends Component {
   render() {
@@ -34,6 +25,7 @@ class Graph extends Component {
         strokeWidth: 6
       }
     ];
+    
     const annualEarnings = (initialSalary, annualRaise, yearsOfWork) => {
       let y = 0;
       let totalEarnings = [];
@@ -83,11 +75,22 @@ class Graph extends Component {
         <DiscreteColorLegend
           items={legendItems}
           orientation="horizontal"
-          style={{ fontSize: 14 }}
+          style={{ fontSize: 14, overflowY:'hidden' }}
         />
       </GraphContainer>
     );
   }
 }
+
+//CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const GraphContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-right: 20px;
+`;
 
 export default Graph;

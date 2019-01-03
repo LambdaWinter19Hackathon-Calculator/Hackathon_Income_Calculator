@@ -2,12 +2,6 @@ import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import styled from "styled-components";
 
-const FormContainer = styled.div`
-  display: flex;
-  min-width: 250px;
-  padding: 20px;
-`;
-
 class IncomeForm extends Component {
   constructor(props) {
     super(props);
@@ -91,7 +85,15 @@ class IncomeForm extends Component {
         </Form>
       </FormContainer>
     );
-  }
-}
+  };
+};
+
+//CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const FormContainer = styled.div`
+  display: flex;
+  min-width: 250px;
+  padding: 20px;
+`;
 
 export default IncomeForm;
