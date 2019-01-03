@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import styled from "styled-components";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-
 import {
   getInputData,
   annualEarningsBefore
 } from "../store/actions/rootAction";
 
-import styled from "styled-components";
 
 
 class IncomeForm extends Component {
@@ -32,12 +31,13 @@ class IncomeForm extends Component {
   submitHandler = e => {
     e.preventDefault();
 
-    this.props.getInputData(this.state);
-    this.props.annualEarningsBefore(
-      this.state.beforeSalary,
-      this.props.annualRaise,
-      this.props.yearsOfWork
-    );
+      this.props.getInputData(this.state);
+      this.props.annualEarningsBefore(
+        this.state.beforeSalary,
+        this.props.annualRaise,
+        this.props.yearsOfWork
+      );
+   
   };
 
   render() {
