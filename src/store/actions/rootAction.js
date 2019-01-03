@@ -6,6 +6,7 @@ export const LIFETIME_EARNINGS_BEFORE = "LIFETIME_EARNINGS_BEFORE";
 export const LIFETIME_EARNINGS_AFTER = "LIFETIME_EARNINGS_AFTER";
 export const CUMULATIVE_EARNED_BEFORE = "CUMULATIVE_EARNED_BEFORE";
 export const CUMULATIVE_EARNED_AFTER = "CUMULATIVE_EARNED_AFTER";
+export const RESET = "RESET";
 
 /* ------   Get input data from form and store in Redux   ------*/
 
@@ -112,4 +113,8 @@ export const cumulativeEarnedAfter = array => {
     type: CUMULATIVE_EARNED_AFTER,
     payload: cumulativeEarnings
   };
+};
+
+export const reset = () => {
+  return { type: RESET };
 };
