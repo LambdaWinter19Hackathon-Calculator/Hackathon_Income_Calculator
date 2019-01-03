@@ -1,5 +1,10 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import {
+  getInputData,
+  annualEarningsBefore
+} from "../store/actions/rootAction";
 
 class IncomeForm extends Component {
   constructor(props) {
@@ -7,8 +12,8 @@ class IncomeForm extends Component {
     this.state = {
       currentAge: null,
       retirementAge: null,
-      beforeIncome: null,
-      afterIncome: null,
+      beforeSalary: null,
+      afterSalary: null,
       annualRaise: null
     };
   }
@@ -20,10 +25,21 @@ class IncomeForm extends Component {
     });
   };
 
+  submitHandler = e => {
+    e.preventDefault();
+
+    this.props.getInputData(this.state);
+    this.props.annualEarningsBefore(
+      this.state.beforeSalary,
+      this.props.annualRaise,
+      this.props.yearsOfWork
+    );
+  };
+
   render() {
     return (
       <div className="form-container">
-        <Form>
+        <Form onSubmit={this.submitHandler}>
           <FormGroup>
             <Label for="currentAge">Current Age:</Label>
             <Input
@@ -47,25 +63,25 @@ class IncomeForm extends Component {
           </FormGroup>
 
           <FormGroup>
-            <Label for="beforeIncome">Current annual salary:</Label>
+            <Label for="beforeSalary">Current annual salary:</Label>
             <Input
               required
               type="number"
-              name="beforeIncome"
-              id="beforeIncome"
+              name="beforeSalary"
+              id="beforeSalary"
               onChange={this.handleChange}
             />
           </FormGroup>
 
           <FormGroup>
-            <Label for="afterIncome">
+            <Label for="afterSalary">
               Salary after graduating Lambda School:
             </Label>
             <Input
               required
               type="number"
-              name="afterIncome"
-              id="afterIncome"
+              name="afterSalary"
+              id="afterSalary"
               onChange={this.handleChange}
             />
           </FormGroup>
@@ -87,4 +103,15 @@ class IncomeForm extends Component {
   }
 }
 
-export default IncomeForm;
+const mapStateToProps = state => {
+  // console.log(state.yearsOfWork);
+  return {
+    yearsOfWork: state.yearsOfWork,
+    annualRaise: state.annualRaise
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getInputData, annualEarningsBefore }
+)(IncomeForm);

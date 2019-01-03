@@ -1,6 +1,5 @@
 import {
   GET_INPUT_DATA,
-  YEARS_OF_WORK,
   ANNUAL_EARNINGS_BEFORE,
   ANNUAL_EARNINGS_AFTER,
   LIFETIME_EARNINGS_BEFORE,
@@ -10,8 +9,8 @@ import {
 const initialState = {
   currentAge: null,
   retirementAge: null,
-  beforeIncome: null,
-  afterIncome: null,
+  beforeSalary: null,
+  afterSalary: null,
   annualRaise: null,
   yearsOfWork: null,
   beforeEarnings: [],
@@ -27,16 +26,10 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         currentAge: action.payload.currentAge,
         retirementAge: action.payload.retirementAge,
-        beforeIncome: action.payload.beforeIncome,
-        afterIncome: action.payload.afterIncome,
-        annualRaise: action.payload.annualRaise,
-        yearsOfWork: action.payload.yearsOfWork
-      };
-
-    case YEARS_OF_WORK:
-      return {
-        ...state,
-        yearsOfWork: action.payload
+        beforeSalary: action.payload.beforeSalary,
+        afterSalary: action.payload.afterSalary,
+        annualRaise: action.payload.annualRaise / 100,
+        yearsOfWork: action.payload.retirementAge - action.payload.currentAge
       };
 
     case ANNUAL_EARNINGS_BEFORE:

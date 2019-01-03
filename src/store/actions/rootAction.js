@@ -9,19 +9,8 @@ export const LIFETIME_EARNINGS_AFTER = "LIFETIME_EARNINGS_AFTER";
 
 export const getInputData = inputData => {
   return {
-    type: YEARS_OF_WORK,
+    type: GET_INPUT_DATA,
     payload: inputData
-  };
-};
-
-/* ------   Determine how many years the user will work   ------*/
-
-export const yearsOfWork = (currentAge, retirementAge) => {
-  const yearsOfWork = retirementAge - currentAge;
-
-  return {
-    type: YEARS_OF_WORK,
-    payload: yearsOfWork
   };
 };
 
@@ -32,12 +21,11 @@ export const annualEarningsBefore = (salary, annualRaise, yearsOfWork) => {
   let years = yearsOfWork;
 
   while (years > 1) {
-    salary = salary + salary * annualRaise;
+    salary = parseInt(salary) + parseInt(salary) * annualRaise;
     yearlyIncomes.push(parseInt(salary.toFixed()));
 
     years--;
   }
-
   return {
     type: ANNUAL_EARNINGS_BEFORE,
     payload: yearlyIncomes
