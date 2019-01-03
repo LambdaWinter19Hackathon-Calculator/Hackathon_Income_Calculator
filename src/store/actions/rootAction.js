@@ -17,12 +17,12 @@ export const getInputData = inputData => {
 /* ------   Return an array of yearly earnings based on the annual raise percentage   ------*/
 
 export const annualEarningsBefore = (salary, annualRaise, yearsOfWork) => {
-  let yearlyIncomes = [parseInt(salary.toFixed())];
+  let yearlyIncomes = [parseInt(salary)];
   let years = yearsOfWork;
 
   while (years > 1) {
     salary = parseInt(salary) + parseInt(salary) * annualRaise;
-    yearlyIncomes.push(parseInt(salary.toFixed()));
+    yearlyIncomes.push(parseInt(salary));
 
     years--;
   }
