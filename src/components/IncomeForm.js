@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import styled from "styled-components";
+
+const FormContainer = styled.div`
+  display: flex;
+  min-width: 250px;
+  padding: 20px;
+`;
 
 class IncomeForm extends Component {
   constructor(props) {
@@ -22,7 +29,7 @@ class IncomeForm extends Component {
 
   render() {
     return (
-      <div className="form-container">
+      <FormContainer>
         <Form>
           <FormGroup>
             <Label for="currentAge">Current Age:</Label>
@@ -82,7 +89,7 @@ class IncomeForm extends Component {
 
           <Button>Submit</Button>
         </Form>
-      </div>
+      </FormContainer>
     );
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {
   XYPlot,
+  FlexibleXYPlot,
   XAxis,
   YAxis,
   HorizontalGridLines,
@@ -8,43 +9,55 @@ import {
   LineSeries
 } from "react-vis";
 
+import styled from "styled-components";
+
+const GraphContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0px 20px;
+`;
+
 class Graph extends Component {
   render() {
-    const data = [
-      { x: 0, y: 8 },
-      { x: 1, y: 5 },
-      { x: 2, y: 4 },
-      { x: 3, y: 9 },
-      { x: 4, y: 1 },
-      { x: 5, y: 7 },
-      { x: 6, y: 6 },
-      { x: 7, y: 3 },
-      { x: 8, y: 2 },
-      { x: 9, y: 0 }
-    ];
+    const annualEarnings = (initialSalary, annualRaise, yearsOfWork) => {
+      let y = 0;
+      let totalEarnings = [];
+
+      for (let x = 0; x < yearsOfWork + 1; x++) {
+        if (x === 0) {
+          y = initialSalary;
+          totalEarnings.push({ x, y });
+        } else {
+          y =
+            totalEarnings[x - 1].y +
+            initialSalary * Math.pow(1 + annualRaise, x);
+          totalEarnings.push({ x, y });
+        }
+      }
+      return totalEarnings;
+    };
 
     return (
-      <div>
-        <XYPlot height={600} width={800}>
-          <XAxis />
-          <YAxis />
+      <GraphContainer>
+        <FlexibleXYPlot>
+          <XAxis title="Year" />
+          <YAxis title="" />
           <HorizontalGridLines />
           <VerticalGridLines />
 
-          <LineSeries className="preLambda" data={data} />
           <LineSeries
             className="preLambda"
+            data={annualEarnings(50000, 0.03, 40)}
+          />
+          <LineSeries
+            className="postLambda"
             curve={"curveMonotoneX"}
-            data={[
-              { x: 1, y: 10 },
-              { x: 2, y: 4 },
-              { x: 3, y: 2 },
-              { x: 4, y: 15 }
-            ]}
+            data={annualEarnings(100000, 0.03, 40)}
             strokeDasharray={"7, 3"}
           />
-        </XYPlot>
-      </div>
+        </FlexibleXYPlot>
+      </GraphContainer>
     );
   }
 }
