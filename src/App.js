@@ -27,7 +27,12 @@ class App extends Component {
 
 const ContentContainer = styled.div`
   display: flex;
-  padding-top: 20px;
+  max-width: 2000px;
+  padding: 40px 20px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export default connect(null)(App);

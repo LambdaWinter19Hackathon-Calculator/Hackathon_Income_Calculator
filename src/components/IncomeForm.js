@@ -80,63 +80,70 @@ class IncomeForm extends Component {
     return (
       <FormContainer onSubmit={this.submitHandler}>
         <Form>
-          <FormGroup>
-            <Label for="currentAge">Current Age:</Label>
-            <Input
-              required
-              type="number"
-              name="currentAge"
-              id="currentAge"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
+          <div className="form-input-div">
+            <FormGroup>
+              <Label for="currentAge">Current Age:</Label>
+              <Input
+                required
+                type="number"
+                name="currentAge"
+                id="currentAge"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
 
-          <FormGroup>
-            <Label for="retirementAge">Desired retirement age:</Label>
-            <Input
-              required
-              type="number"
-              name="retirementAge"
-              id="retirementAge"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
+            <FormGroup>
+              <Label for="retirementAge">Desired retirement age:</Label>
+              <Input
+                required
+                type="number"
+                name="retirementAge"
+                id="retirementAge"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+          </div>
 
-          <FormGroup>
-            <Label for="beforeSalary">Current annual salary:</Label>
-            <Input
-              required
-              type="number"
-              name="beforeSalary"
-              id="beforeSalary"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
+          <div className="form-input-div">
+            <FormGroup>
+              <Label for="beforeSalary">Current annual salary:</Label>
+              <Input
+                required
+                type="number"
+                name="beforeSalary"
+                id="beforeSalary"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
 
-          <FormGroup>
-            <Label for="afterSalary">
-              Salary after graduating Lambda School:
-            </Label>
-            <Input
-              required
-              type="number"
-              name="afterSalary"
-              id="afterSalary"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
+            <FormGroup>
+              <Label for="afterSalary">
+                Salary after graduating Lambda School:
+              </Label>
+              <Input
+                required
+                type="number"
+                name="afterSalary"
+                id="afterSalary"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+          </div>
 
-          <FormGroup>
-            <Label for="annualRaise">Expected annual raise %:</Label>
-            <Input
-              type="number"
-              name="annualRaise"
-              id="annualRaise"
-              onChange={this.handleChange}
-            />
-          </FormGroup>
+          <div className="form-input-div">
+            <FormGroup>
+              <Label for="annualRaise">Expected annual raise %:</Label>
+              <Input
+                type="number"
+                name="annualRaise"
+                id="annualRaise"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
 
-          <Button>Submit</Button>
+            <Button>Submit</Button>
+          </div>
+
         </Form>
       </FormContainer>
     );
@@ -147,10 +154,41 @@ class IncomeForm extends Component {
 
 const FormContainer = styled.div`
   display: flex;
-  min-width: 250px;
+  width: 20%;
   padding: 20px;
   border: 1px solid black;
-  margin: 0 20px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
+    
+    @media (max-width: 1024px) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .form-input-div {
+      @media (max-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30%;
+        height: 100%;
+      }
+    }
+
+    button {
+      margin: 0 auto;
+      margin-bottom: 1rem;
+    }
+  }
 `;
 
 const mapStateToProps = state => {
