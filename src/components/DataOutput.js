@@ -36,6 +36,7 @@ const OutputContainer = styled.div`
     display: flex;
     flex-direction: column;
     min-width: 250px;
+    width: 20%;
     padding: 20px;
     border: 1px solid black;
     margin: 0 20px;

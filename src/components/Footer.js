@@ -18,6 +18,7 @@ const Footer = () => {
                         <Items>Tommy Huynh</Items>
                         <Items>Chris Honda</Items>
                     </List>
+                    <p>Part of Lambda School Hackathon 2019</p>
                 </Credits>
             </Wrapper>
             </div>
@@ -28,14 +29,15 @@ const Footer = () => {
 
 
 const Wrapper = styled.div`
-position: fixed;
-right: 0;
-bottom: 0;
-left: 0;
+display: flex;
+flex-direction: column;
+padding-top: 60px;
 `
 const About = styled.div`
 text-align: center;
+padding-bottom: 30px;
 `;
+
 const Credits = styled.div`
 text-align: center;
 background-color: lightgray;

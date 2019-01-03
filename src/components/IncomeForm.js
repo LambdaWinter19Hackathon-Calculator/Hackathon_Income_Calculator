@@ -114,6 +114,7 @@ class IncomeForm extends Component {
 const FormContainer = styled.div`
   display: flex;
   min-width: 250px;
+  width: 20%;
   padding: 20px;
   border: 1px solid black;
   margin: 0 20px;

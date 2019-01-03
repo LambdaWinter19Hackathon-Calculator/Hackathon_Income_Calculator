@@ -89,7 +89,7 @@ const GraphContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: 60%;
   padding-right: 20px;
 `;
 
