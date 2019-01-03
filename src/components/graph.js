@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { XYPlot, XAxis, YAxis, ChartLabel, HorizontalGridLines, VerticalGridLines, LineSeries, LineSeriesCanvas } from 'react-vis';
+import { XYPlot, XAxis, YAxis, HorizontalGridLines, VerticalGridLines, LineSeries } from 'react-vis';
 
 class Graph extends Component {
 
