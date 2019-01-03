@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+
 import {
   getInputData,
-  annualEarningsBefore
+  annualEarningsBefore,
+  annualEarningsAfter,
+  totalEarnedBefore,
+  totalEarnedAfter,
+  cumulativeEarnedBefore,
+  cumulativeEarnedAfter
 } from "../store/actions/rootAction";
+
+import styled from "styled-components";
 
 class IncomeForm extends Component {
   constructor(props) {
@@ -25,21 +33,53 @@ class IncomeForm extends Component {
     });
   };
 
+  componentWillReceiveProps(props) {
+    if (props.beforeSalary && props.beforeEarnings.length === 0) {
+      props.annualEarningsBefore(
+        props.beforeSalary,
+        props.annualRaise,
+        props.yearsOfWork
+      );
+    }
+
+    if (props.beforeEarnings) {
+      props.totalEarnedBefore(props.beforeEarnings);
+    }
+
+    if (props.afterSalary && props.afterEarnings.length === 0) {
+      props.annualEarningsAfter(
+        props.afterSalary,
+        props.annualRaise,
+        props.yearsOfWork
+      );
+    }
+
+    if (props.afterEarnings) {
+      props.totalEarnedAfter(props.afterEarnings);
+    }
+
+    if (
+      props.beforeEarnings.length > 0 &&
+      props.cummulativeBefore.length === 0
+    ) {
+      props.cumulativeEarnedBefore(props.beforeEarnings);
+    }
+
+    if (props.afterEarnings.length > 0 && props.cummulativeAfter.length === 0) {
+      props.cumulativeEarnedAfter(props.afterEarnings);
+    }
+  }
+
   submitHandler = e => {
     e.preventDefault();
 
     this.props.getInputData(this.state);
-    this.props.annualEarningsBefore(
-      this.state.beforeSalary,
-      this.props.annualRaise,
-      this.props.yearsOfWork
-    );
   };
 
   render() {
     return (
-      <div className="form-container">
-        <Form onSubmit={this.submitHandler}>
+      <FormContainer onSubmit={this.submitHandler}>
+        <Form>
           <FormGroup>
             <Label for="currentAge">Current Age:</Label>
             <Input
@@ -98,20 +138,43 @@ class IncomeForm extends Component {
 
           <Button>Submit</Button>
         </Form>
-      </div>
+      </FormContainer>
     );
   }
 }
 
+//CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const FormContainer = styled.div`
+  display: flex;
+  min-width: 250px;
+  padding: 20px;
+  border: 1px solid black;
+  margin: 0 20px;
+`;
+
 const mapStateToProps = state => {
-  // console.log(state.yearsOfWork);
   return {
     yearsOfWork: state.yearsOfWork,
-    annualRaise: state.annualRaise
+    annualRaise: state.annualRaise,
+    beforeSalary: state.beforeSalary,
+    afterSalary: state.afterSalary,
+    beforeEarnings: state.beforeEarnings,
+    afterEarnings: state.afterEarnings,
+    cummulativeBefore: state.cummulativeBefore,
+    cummulativeAfter: state.cummulativeAfter
   };
 };
 
 export default connect(
   mapStateToProps,
-  { getInputData, annualEarningsBefore }
+  {
+    getInputData,
+    annualEarningsBefore,
+    annualEarningsAfter,
+    totalEarnedBefore,
+    totalEarnedAfter,
+    cumulativeEarnedBefore,
+    cumulativeEarnedAfter
+  }
 )(IncomeForm);
