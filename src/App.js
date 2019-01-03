@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import IncomeForm from "./components/IncomeForm";
 import Graph from "./components/Graph";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 class App extends Component {
   render() {
@@ -18,12 +18,12 @@ class App extends Component {
         <Footer />
       </div>
     );
-  };
-};
+  }
+}
 
 //CSS
 const ContentContainer = styled.div`
-    display: flex;
+  display: flex;
 `;
 
 export default connect(null)(App);
