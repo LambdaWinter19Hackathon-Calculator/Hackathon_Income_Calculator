@@ -38,7 +38,6 @@ const OutputContainer = styled.div`
     width: 20%;
     padding: 20px;
     border: 1px solid black;
-    margin: 0 20px;
 `;
 
 const Wrap = styled.div`

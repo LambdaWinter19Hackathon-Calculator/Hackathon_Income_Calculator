@@ -90,7 +90,7 @@ const GraphContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 60%;
-  padding-right: 20px;
+  padding: 0 40px 0 20px;
 `;
 
 export default Graph;
