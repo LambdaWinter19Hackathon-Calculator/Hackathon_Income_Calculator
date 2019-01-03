@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import {
-  FlexibleXYPlot,
+  FlexibleWidthXYPlot,
   XAxis,
   YAxis,
   HorizontalGridLines,
@@ -46,7 +46,7 @@ class Graph extends Component {
 
     return (
       <GraphContainer>
-        <FlexibleXYPlot margin={{ left: 100 }}>
+        <FlexibleWidthXYPlot height={ 600 } margin={{ left: 100 }}>
           <XAxis title="Year" style={{ fontSize: 14 }} />
           <YAxis title="Total Earnings ($)" style={{ fontSize: 14 }} />
           <HorizontalGridLines style={{ stroke: "hsl(42, 15%, 90%)" }} />
@@ -71,7 +71,7 @@ class Graph extends Component {
               stroke: "hsl(0, 92%, 20%)"
             }}
           />
-        </FlexibleXYPlot>
+        </FlexibleWidthXYPlot>
         <DiscreteColorLegend
           items={legendItems}
           orientation="horizontal"
@@ -88,9 +88,16 @@ const GraphContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
+  min-height: 600px;
   width: 60%;
   padding: 0 40px 0 20px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  }
 `;
 
 export default Graph;
