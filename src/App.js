@@ -17,9 +17,10 @@ class App extends Component {
         <Footer />
       </div>
     );
-  }
-}
+  };
+};
 
+//CSS
 const ContentContainer = styled.div`
     display: flex;
 `;
