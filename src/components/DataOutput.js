@@ -38,7 +38,7 @@ const OutputContainer = styled.div`
     min-width: 250px;
     padding: 20px;
     border: 1px solid black;
-    margin-right: 20px
+    margin: 0 20px;
 `;
 
 const Wrap = styled.div`

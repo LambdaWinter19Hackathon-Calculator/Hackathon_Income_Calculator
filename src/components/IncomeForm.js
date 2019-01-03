@@ -95,7 +95,7 @@ const FormContainer = styled.div`
   min-width: 250px;
   padding: 20px;
   border: 1px solid black;
-  margin-left: 20px
+  margin: 0 20px;
 `;
 
 export default IncomeForm;
