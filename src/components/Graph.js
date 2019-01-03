@@ -12,7 +12,6 @@ import {
 
 
 class Graph extends Component {
- 
   render() {
     const legendItems = [
       {
@@ -45,7 +44,6 @@ class Graph extends Component {
       return totalEarnings;
     };
 
-
     return (
       <GraphContainer>
         <FlexibleXYPlot margin={{ left: 100 }}>
@@ -73,14 +71,12 @@ class Graph extends Component {
               stroke: "hsl(0, 92%, 20%)"
             }}
           />
-
         </FlexibleXYPlot>
         <DiscreteColorLegend
           items={legendItems}
           orientation="horizontal"
           style={{ fontSize: 14, overflowY:'hidden' }}
         />
-
       </GraphContainer>
     );
   };

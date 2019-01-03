@@ -51,7 +51,7 @@ const Wrap = styled.div`
 
 const Data = styled.p`
     padding: 10px 0 50px 0;
-    font-weight: bold;
+    font-w
 `;
 
 export default DataOutput;
