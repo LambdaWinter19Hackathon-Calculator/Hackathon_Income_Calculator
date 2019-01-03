@@ -7,30 +7,12 @@ import {
   HorizontalGridLines,
   VerticalGridLines,
   LineSeries,
-  DiscreteColorLegend,
-  MarkSeries,
-  Hint
+  DiscreteColorLegend
 } from "react-vis";
 
 
 class Graph extends Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-          value:null
-      };
-  };
-
-  forgetValue = () => {
-    this.setState({
-      value: null
-    });
-  };
-
-  rememberValue = value => {
-    this.setState({value});
-  };
-
+ 
   render() {
     const legendItems = [
       {
@@ -63,7 +45,6 @@ class Graph extends Component {
       return totalEarnings;
     };
 
-    const {value} = this.state;
 
     return (
       <GraphContainer>
@@ -92,20 +73,6 @@ class Graph extends Component {
               stroke: "hsl(0, 92%, 20%)"
             }}
           />
-
-        <MarkSeries
-          onValueMouseOver={this.rememberValue}
-          onValueMouseOut={this.forgetValue}
-          data= {annualEarnings(50000, 0.03, 40)}
-        />
-        {value ? <Hint value={value} /> : null}
-
-                <MarkSeries
-          onValueMouseOver={this._rememberValue}
-          onValueMouseOut={this._forgetValue}
-          data= {annualEarnings(100000, 0.03, 40)}
-        />
-        {value ? <Hint value={value} /> : null}
 
         </FlexibleXYPlot>
         <DiscreteColorLegend
