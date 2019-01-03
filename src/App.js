@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import IncomeForm from "./components/IncomeForm";
 
 class App extends Component {
@@ -8,11 +9,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-          <IncomeForm />
+        <IncomeForm />
         <Footer />
       </div>
     );
   }
 }
 
-export default App;
+export default connect(null)(App);
