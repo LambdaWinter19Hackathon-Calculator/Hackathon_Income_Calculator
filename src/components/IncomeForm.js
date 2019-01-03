@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+
 import {
   getInputData,
   annualEarningsBefore
 } from "../store/actions/rootAction";
+
+import styled from "styled-components";
+
 
 class IncomeForm extends Component {
   constructor(props) {
@@ -38,8 +42,10 @@ class IncomeForm extends Component {
 
   render() {
     return (
-      <div className="form-container">
-        <Form onSubmit={this.submitHandler}>
+
+      <FormContainer onSubmit={this.submitHandler}>
+        <Form>
+
           <FormGroup>
             <Label for="currentAge">Current Age:</Label>
             <Input
@@ -98,10 +104,20 @@ class IncomeForm extends Component {
 
           <Button>Submit</Button>
         </Form>
-      </div>
+      </FormContainer>
     );
-  }
-}
+  };
+};
+
+//CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const FormContainer = styled.div`
+  display: flex;
+  min-width: 250px;
+  padding: 20px;
+  border: 1px solid black;
+  margin: 0 20px;
+`;
 
 const mapStateToProps = state => {
   // console.log(state.yearsOfWork);

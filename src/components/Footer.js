@@ -40,7 +40,7 @@ const Footer = () => {
                     <List>
                         <Items>Jeanette Fernandez</Items>
                         <Items>Leigh-Ann Friedel</Items>
-                        <Items>CoItemsn Dismuke</Items>
+                        <Items>Colin Dismuke</Items>
                         <Items>Tommy Huynh</Items>
                         <Items>Chris Honda</Items>
                     </List>
