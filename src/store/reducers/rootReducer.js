@@ -3,7 +3,9 @@ import {
   ANNUAL_EARNINGS_BEFORE,
   ANNUAL_EARNINGS_AFTER,
   LIFETIME_EARNINGS_BEFORE,
-  LIFETIME_EARNINGS_AFTER
+  LIFETIME_EARNINGS_AFTER,
+  CUMULATIVE_EARNED_BEFORE,
+  CUMULATIVE_EARNED_AFTER
 } from "../actions/rootAction";
 
 const initialState = {
@@ -16,7 +18,9 @@ const initialState = {
   beforeEarnings: [],
   afterEarnings: [],
   beforeTotal: null,
-  afterTotal: null
+  afterTotal: null,
+  cummulativeBefore: [],
+  cummulativeAfter: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -53,7 +57,19 @@ const rootReducer = (state = initialState, action) => {
     case LIFETIME_EARNINGS_AFTER:
       return {
         ...state,
-        beforeTotal: action.payload
+        afterTotal: action.payload
+      };
+
+    case CUMULATIVE_EARNED_BEFORE:
+      return {
+        ...state,
+        cummulativeBefore: action.payload
+      };
+
+    case CUMULATIVE_EARNED_AFTER:
+      return {
+        ...state,
+        cummulativeAfter: action.payload
       };
 
     default:
