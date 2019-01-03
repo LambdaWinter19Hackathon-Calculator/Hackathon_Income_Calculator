@@ -5,20 +5,35 @@ import {
   YAxis,
   HorizontalGridLines,
   VerticalGridLines,
-  LineSeries
+  LineSeries,
+  DiscreteColorLegend
 } from "react-vis";
 
 import styled from "styled-components";
 
 const GraphContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   width: 100%;
   padding-right: 20px;
 `;
 
 class Graph extends Component {
   render() {
+    const legendItems = [
+      {
+        title: "Pre-Lambda",
+        color: "hsl(36, 77%, 75%)",
+        strokeWidth: 6
+      },
+      {
+        title: "Post-Lambda",
+        color: "hsl(0, 92%, 20%)",
+        strokeWidth: 6
+      }
+    ];
     const annualEarnings = (initialSalary, annualRaise, yearsOfWork) => {
       let y = 0;
       let totalEarnings = [];
@@ -41,7 +56,7 @@ class Graph extends Component {
       <GraphContainer>
         <FlexibleXYPlot margin={{ left: 100 }}>
           <XAxis title="Year" style={{ fontSize: 14 }} />
-          <YAxis title="Total Earnings" style={{ fontSize: 14 }} />
+          <YAxis title="Total Earnings ($)" style={{ fontSize: 14 }} />
           <HorizontalGridLines style={{ stroke: "hsl(42, 15%, 90%)" }} />
           <VerticalGridLines style={{ stroke: "hsl(42, 15%, 90%)" }} />
 
@@ -65,6 +80,11 @@ class Graph extends Component {
             }}
           />
         </FlexibleXYPlot>
+        <DiscreteColorLegend
+          items={legendItems}
+          orientation="horizontal"
+          style={{ fontSize: 14 }}
+        />
       </GraphContainer>
     );
   }
