@@ -60,12 +60,12 @@ class IncomeForm extends Component {
 
     if (
       props.beforeEarnings.length > 0 &&
-      props.cummulativeBefore.length === 0
+      props.cumulativeBefore.length === 0
     ) {
       props.cumulativeEarnedBefore(props.beforeEarnings);
     }
 
-    if (props.afterEarnings.length > 0 && props.cummulativeAfter.length === 0) {
+    if (props.afterEarnings.length > 0 && props.cumulativeAfter.length === 0) {
       props.cumulativeEarnedAfter(props.afterEarnings);
     }
   }
@@ -161,8 +161,8 @@ const mapStateToProps = state => {
     afterSalary: state.afterSalary,
     beforeEarnings: state.beforeEarnings,
     afterEarnings: state.afterEarnings,
-    cummulativeBefore: state.cummulativeBefore,
-    cummulativeAfter: state.cummulativeAfter
+    cumulativeBefore: state.cumulativeBefore,
+    cumulativeAfter: state.cumulativeAfter
   };
 };
 

@@ -9,7 +9,7 @@ import {
   LineSeries,
   DiscreteColorLegend
 } from "react-vis";
-
+import { connect } from "react-redux";
 
 class Graph extends Component {
   render() {
@@ -25,24 +25,6 @@ class Graph extends Component {
         strokeWidth: 6
       }
     ];
-    
-    const annualEarnings = (initialSalary, annualRaise, yearsOfWork) => {
-      let y = 0;
-      let totalEarnings = [];
-
-      for (let x = 0; x < yearsOfWork + 1; x++) {
-        if (x === 0) {
-          y = initialSalary;
-          totalEarnings.push({ x, y });
-        } else {
-          y =
-            totalEarnings[x - 1].y +
-            initialSalary * Math.pow(1 + annualRaise, x);
-          totalEarnings.push({ x, y });
-        }
-      }
-      return totalEarnings;
-    };
 
     return (
       <GraphContainer>
@@ -54,7 +36,8 @@ class Graph extends Component {
 
           <LineSeries
             className="preLambda"
-            data={annualEarnings(50000, 0.03, 40)}
+            animation="gentle"
+            data={this.props.cumulativeBefore}
             style={{
               strokeLineJoin: "round",
               strokeWidth: 4,
@@ -63,8 +46,8 @@ class Graph extends Component {
           />
           <LineSeries
             className="postLambda"
-            curve={"curveMonotoneX"}
-            data={annualEarnings(100000, 0.03, 40)}
+            animation="gentle"
+            data={this.props.cumulativeAfter}
             style={{
               strokeLineJoin: "round",
               strokeWidth: 4,
@@ -75,10 +58,17 @@ class Graph extends Component {
         <DiscreteColorLegend
           items={legendItems}
           orientation="horizontal"
-          style={{ fontSize: 14, overflowY:'hidden' }}
+          style={{ fontSize: 14, overflowY: "hidden" }}
         />
       </GraphContainer>
     );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    cumulativeBefore: state.cumulativeBefore,
+    cumulativeAfter: state.cumulativeAfter
   };
 };
 
@@ -93,4 +83,4 @@ const GraphContainer = styled.div`
   padding-right: 20px;
 `;
 
-export default Graph;
+export default connect(mapStateToProps)(Graph);

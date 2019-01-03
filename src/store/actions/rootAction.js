@@ -80,10 +80,14 @@ export const totalEarnedAfter = earningsArray => {
 
 export const cumulativeEarnedBefore = array => {
   let total = 0;
+  let x;
+  let y;
 
-  const cumulativeEarnings = array.map(el => {
+  const cumulativeEarnings = array.map((el, index) => {
+    x = index;
     total = total + el;
-    return total;
+    y = total;
+    return { x, y };
   });
 
   return {
@@ -94,10 +98,14 @@ export const cumulativeEarnedBefore = array => {
 
 export const cumulativeEarnedAfter = array => {
   let total = 0;
+  let x;
+  let y;
 
-  const cumulativeEarnings = array.map(el => {
+  const cumulativeEarnings = array.map((el, index) => {
+    x = index;
     total = total + el;
-    return total;
+    y = total;
+    return { x, y };
   });
 
   return {

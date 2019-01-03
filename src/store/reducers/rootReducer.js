@@ -19,8 +19,8 @@ const initialState = {
   afterEarnings: [],
   beforeTotal: null,
   afterTotal: null,
-  cummulativeBefore: [],
-  cummulativeAfter: []
+  cumulativeBefore: [],
+  cumulativeAfter: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -63,13 +63,13 @@ const rootReducer = (state = initialState, action) => {
     case CUMULATIVE_EARNED_BEFORE:
       return {
         ...state,
-        cummulativeBefore: action.payload
+        cumulativeBefore: action.payload
       };
 
     case CUMULATIVE_EARNED_AFTER:
       return {
         ...state,
-        cummulativeAfter: action.payload
+        cumulativeAfter: action.payload
       };
 
     default:
