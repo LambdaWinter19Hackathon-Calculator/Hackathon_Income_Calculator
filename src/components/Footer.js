@@ -42,7 +42,7 @@ const Credits = styled.div`
 text-align: center;
 background-color: lightgray;
 h4 {
-    padding-top: 10px;
+    padding: 20px;
 }
 `;
 const List = styled.ul`
@@ -53,7 +53,7 @@ justify-content: center;
 list-style-type: none;
 `;
 const Items = styled.li`
-padding: 0 20px 20px 20px;
+padding: 0 20px;
 `;
 
 
