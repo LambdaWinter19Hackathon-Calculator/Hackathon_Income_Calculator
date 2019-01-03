@@ -7,7 +7,8 @@ const Footer = () => {
             <Wrapper>
                 <About>
                     <h2>About this Calculator</h2>
-                    <p>Text here</p>
+                    <p>This calculator is intended to provide a visual representation of the financial benefits Lambda School can deliver.</p>
+                    <p>It does not consider fluxuations salary, nor does it factor variable income from outside investments.</p>
                 </About>
                 <Credits>
                     <h4>Created by:</h4>
@@ -35,7 +36,10 @@ padding-top: 60px;
 `
 const About = styled.div`
 text-align: center;
-padding-bottom: 30px;
+padding-bottom: 20px;
+h2 {
+    padding-bottom: 10px;
+}
 `;
 
 const Credits = styled.div`
