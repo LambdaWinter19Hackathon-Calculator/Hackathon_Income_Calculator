@@ -18,7 +18,8 @@ import {
   totalEarnedAfter,
   cumulativeEarnedBefore,
   cumulativeEarnedAfter,
-  reset
+  reset,
+  tweetMsg
 } from "../store/actions/rootAction";
 
 import styled from "styled-components";
@@ -76,6 +77,10 @@ class IncomeForm extends Component {
 
     if (props.afterEarnings.length > 0 && props.cumulativeAfter.length === 0) {
       props.cumulativeEarnedAfter(props.afterEarnings);
+    }
+
+    if (props.beforeTotal) {
+      props.tweetMsg(props.yearsOfWork, props.beforeTotal, props.afterTotal);
     }
   }
 
@@ -135,9 +140,7 @@ class IncomeForm extends Component {
             </FormGroup>
 
             <FormGroup>
-              <Label for="afterSalary">
-                Salary Post-Lambda
-              </Label>
+              <Label for="afterSalary">Salary Post-Lambda</Label>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">$</InputGroupAddon>
                 <Input
@@ -170,8 +173,6 @@ class IncomeForm extends Component {
                 Reset
               </Button>
             </div>
-
-
           </div>
         </Form>
       </FormContainer>
@@ -182,11 +183,11 @@ class IncomeForm extends Component {
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const FormContainer = styled.div`
-background: #FFFFFF;
+  background: #ffffff;
   display: flex;
   width: 20%;
   padding: 20px;
-  border: 1px solid #B8B2A7;
+  border: 1px solid #b8b2a7;
   border-radius: 5px;
 
   @media (max-width: 1024px) {
@@ -239,13 +240,13 @@ background: #FFFFFF;
     }
 
     .input-group-text {
-      background: #FAF9F7;
+      background: #faf9f7;
     }
 
     .button-div {
       display: flex;
       flex-direction: column;
-      
+
       @media (max-width: 650px) {
         width: 48%;
       }
@@ -258,12 +259,11 @@ background: #FFFFFF;
     }
 
     .submit {
-      background: #CB6E17;
+      background: #cb6e17;
     }
 
     .reset {
-      background: #A0021E;
-
+      background: #a0021e;
 
       @media (max-width: 1024px) {
         margin-bottom: 17px;
@@ -281,7 +281,9 @@ const mapStateToProps = state => {
     beforeEarnings: state.beforeEarnings,
     afterEarnings: state.afterEarnings,
     cumulativeBefore: state.cumulativeBefore,
-    cumulativeAfter: state.cumulativeAfter
+    cumulativeAfter: state.cumulativeAfter,
+    beforeTotal: state.beforeTotal,
+    afterTotal: state.afterTotal
   };
 };
 
@@ -295,6 +297,7 @@ export default connect(
     totalEarnedAfter,
     cumulativeEarnedBefore,
     cumulativeEarnedAfter,
-    reset
+    reset,
+    tweetMsg
   }
 )(IncomeForm);
