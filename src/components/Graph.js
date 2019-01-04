@@ -21,23 +21,31 @@ class Graph extends Component {
       },
       {
         title: "Post-Lambda",
-        color: "hsl(349, 98%, 32%)",
+        color: "#A0021E",
         strokeWidth: 6
       }
     ];
 
     return (
       <GraphContainer>
-        <FlexibleWidthXYPlot height={ 600 } margin={{ left: 100 }}>
+        <FlexibleWidthXYPlot height={600} margin={{ left: 100 }}>
           <XAxis title="Year" style={{ fontSize: 14 }} />
-          <YAxis title="Total Earnings ($)" style={{ fontSize: 14 }} />
+          <YAxis
+            title="Total Earnings ($)"
+            style={{ fontSize: 14 }}
+            on0="true"
+          />
           <HorizontalGridLines style={{ stroke: "hsl(42, 15%, 90%)" }} />
           <VerticalGridLines style={{ stroke: "hsl(42, 15%, 90%)" }} />
 
           <LineSeries
             className="preLambda"
             animation="gentle"
-            data={this.props.cumulativeBefore}
+            data={
+              this.props.cumulativeBefore.length > 0
+                ? this.props.cumulativeBefore
+                : [{ x: 0, y: 5000 }, { x: 40, y: 5000 }]
+            }
             style={{
               strokeLineJoin: "round",
               strokeWidth: 4,
@@ -47,11 +55,15 @@ class Graph extends Component {
           <LineSeries
             className="postLambda"
             animation="gentle"
-            data={this.props.cumulativeAfter}
+            data={
+              this.props.cumulativeAfter.length > 0
+                ? this.props.cumulativeAfter
+                : [{ x: 0, y: 10000 }, { x: 40, y: 10000 }]
+            }
             style={{
               strokeLineJoin: "round",
               strokeWidth: 4,
-              stroke: "hsl(349, 98%, 32%)"
+              stroke: "#A0021E"
             }}
           />
         </FlexibleWidthXYPlot>
@@ -68,7 +80,8 @@ class Graph extends Component {
 const mapStateToProps = state => {
   return {
     cumulativeBefore: state.cumulativeBefore,
-    cumulativeAfter: state.cumulativeAfter
+    cumulativeAfter: state.cumulativeAfter,
+    yearsOfWork: state.yearsOfWork
   };
 };
 

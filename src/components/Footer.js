@@ -52,7 +52,6 @@ const Wrapper = styled.div`
   font-family: "Montserrat", "Helvetica", sans-serif;
 `;
 const About = styled.div`
-  text-align: center;
   padding-bottom: 30px;
   width: 50%;
   margin: 0 auto;
@@ -68,6 +67,11 @@ const About = styled.div`
   h2 {
     font-size: 1.4rem;
     font-family: "Open Sans", "Helvetica", sans-serif;
+    text-align: center;
+  }
+
+  p {
+    text-align: left;
   }
 `;
 
