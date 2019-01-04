@@ -243,7 +243,7 @@ const FormContainer = styled.div`
     }
 
     .reset {
-      background: #A61B1B;
+      background: #A0021E;
 
 
       @media (max-width: 1024px) {

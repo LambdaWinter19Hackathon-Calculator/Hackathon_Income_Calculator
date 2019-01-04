@@ -21,7 +21,7 @@ class Graph extends Component {
       },
       {
         title: "Post-Lambda",
-        color: "hsl(0, 92%, 20%)",
+        color: "hsl(349, 98%, 32%)",
         strokeWidth: 6
       }
     ];
@@ -51,7 +51,7 @@ class Graph extends Component {
             style={{
               strokeLineJoin: "round",
               strokeWidth: 4,
-              stroke: "hsl(0, 92%, 20%)"
+              stroke: "hsl(349, 98%, 32%)"
             }}
           />
         </FlexibleWidthXYPlot>
