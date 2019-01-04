@@ -49,7 +49,7 @@ class DataOutput extends Component {
           </Data>
         </Wrap>
 
-        <Button>Export</Button>
+        <Button className="export">Export</Button>
       </OutputContainer>
     );
   }
@@ -78,7 +78,24 @@ const OutputContainer = styled.div`
     width: 100%;
     min-height: 150px;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
+  }
+
+  @media (max-width: 650px) {
+    flex-wrap: wrap;
+  }
+
+  .export {
+    align-self: center;
+    width: 100%;
+
+    @media (max-width: 1024px) {
+      width: 22%;
+    }
+
+    @media (max-width: 650px) {
+      margin-top: 20px;
+    }
   }
 `;
 
@@ -91,6 +108,11 @@ const Wrap = styled.div`
 
   @media (max-width: 1024px) {
     width: 25%;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 650px) {
+    width: 33%;
   }
 `;
 
