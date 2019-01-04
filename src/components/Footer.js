@@ -10,7 +10,7 @@ const Footer = () => {
                     <p>Text here</p>
                 </About>
                 <Credits>
-                    <h4>Created by:</h4>
+                    <h4>Created by</h4>
                     <List>
                         <Items>Jeanette Fernandez</Items>
                         <Items>Leigh-Ann Friedel</Items>
@@ -51,9 +51,15 @@ column-width: 300px; */
 display: flex;
 justify-content: center;
 list-style-type: none;
+padding: 0;
+
+@media (max-width: 650px) {
+    flex-direction: column;
+}
+
 `;
 const Items = styled.li`
-padding: 0 20px;
+padding: 0 10px;
 `;
 
 
