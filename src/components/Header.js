@@ -1,24 +1,26 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import logo from "../assets/logo_color.png";
 
 const Header = () => {
-    return (
-        <Title>
-            <h1>Income Calculator</h1>
-        </Title>
-    );
+  return (
+    <Title>
+      <img src={logo} alt="Compound logo in Lambda School red" />
+    </Title>
+  );
 };
 
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const Title = styled.div`
-text-align: center;
-background-color: #E8E6E1;
-padding: 25px;
+  display: flex;
+  justify-content: center;
+  background-color: #e8e6e1;
+  padding: 25px;
+  max-height: 125px;
 
-h1 {
-    margin-bottom: 0;
-}
+  img {
+    width: 300px;
+  }
 `;
-
 
 export default Header;

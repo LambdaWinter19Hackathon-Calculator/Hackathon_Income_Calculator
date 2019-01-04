@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "reactstrap";
+// import { Button } from "reactstrap";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import NumberFormat from "react-number-format";
@@ -7,6 +7,9 @@ import NumberFormat from "react-number-format";
 class DataOutput extends Component {
   render() {
     const { yearsOfWork, beforeTotal, afterTotal } = this.props;
+    console.log(yearsOfWork);
+    const tweetText = `📉 Income before Lambda over ${yearsOfWork} years: ${beforeTotal}\n📈 Income after Lambda over ${yearsOfWork} years: ${afterTotal}\n🤑 Overall increase over ${yearsOfWork} years: ${afterTotal -
+      beforeTotal}\n\nCheck it out 👉🏼`;
 
     return (
       <OutputContainer>
@@ -49,7 +52,19 @@ class DataOutput extends Component {
           </Data>
         </Wrap>
 
-        <Button className="export">Export</Button>
+        {/* <Button className="export">Export</Button> */}
+        <Tweet>
+          <a
+            className="twitter-share-button"
+            href="https://twitter.com/intent/tweet"
+            data-size="large"
+            data-text={tweetText}
+            data-url="https://compound.careers"
+            data-related="twitterapi,twitter"
+          >
+            Tweet
+          </a>
+        </Tweet>
       </OutputContainer>
     );
   }
@@ -66,12 +81,12 @@ const mapStateToProps = state => {
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const OutputContainer = styled.div`
-background: #FFFFFF;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   width: 20%;
   padding: 20px;
-  border: 1px solid #B8B2A7;
+  border: 1px solid #b8b2a7;
   border-radius: 5px;
   justify-content: space-around;
 
@@ -87,10 +102,10 @@ background: #FFFFFF;
     flex-wrap: wrap;
   }
 
-  .export {
+  /* .export {
     align-self: center;
     width: 100%;
-    background: #CB6E17;
+    background: #cb6e17;
     border: 0;
 
     @media (max-width: 1024px) {
@@ -100,7 +115,7 @@ background: #FFFFFF;
     @media (max-width: 650px) {
       margin-top: 20px;
     }
-  }
+  } */
 `;
 
 const Wrap = styled.div`
@@ -117,6 +132,15 @@ const Wrap = styled.div`
 
   @media (max-width: 650px) {
     width: 33%;
+  }
+`;
+
+const Tweet = styled.div`
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    align-items: center;
   }
 `;
 
