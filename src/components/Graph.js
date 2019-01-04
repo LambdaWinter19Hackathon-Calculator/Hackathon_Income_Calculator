@@ -58,7 +58,7 @@ class Graph extends Component {
         <DiscreteColorLegend
           items={legendItems}
           orientation="horizontal"
-          style={{ fontSize: 14, overflowY: "hidden" }}
+          style={{ fontSize: 14, overflowY: "hidden", paddingLeft: 20 }}
         />
       </GraphContainer>
     );
@@ -85,6 +85,7 @@ const GraphContainer = styled.div`
 
   @media (max-width: 1024px) {
     width: 100%;
+    padding: 40px 40px 40px 20px;
   }
 
   }
