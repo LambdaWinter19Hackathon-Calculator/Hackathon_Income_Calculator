@@ -232,9 +232,15 @@ const FormContainer = styled.div`
       }
     }
 
+    .input-group-text {
+      background: #FFEEEE;
+    }
+
     button {
       width: 100%;
       margin-bottom: 10px;
+      background: #CB6E17;
+      border: 0;
 
       @media (max-width: 650px) {
         width: 22%;

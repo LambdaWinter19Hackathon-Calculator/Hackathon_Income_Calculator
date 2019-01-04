@@ -88,6 +88,8 @@ const OutputContainer = styled.div`
   .export {
     align-self: center;
     width: 100%;
+    background: #CB6E17;
+    border: 0;
 
     @media (max-width: 1024px) {
       width: 22%;
