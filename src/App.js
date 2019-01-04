@@ -33,6 +33,7 @@ background: #FAF9F7;
   padding: 40px 20px;
   font-family: 'Montserrat', 'Helvetica', sans-serif;
   font-size: 0.9rem;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
     flex-direction: column;
