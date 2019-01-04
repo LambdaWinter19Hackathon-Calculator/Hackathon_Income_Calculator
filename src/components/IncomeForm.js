@@ -25,7 +25,7 @@ class IncomeForm extends Component {
       afterSalary: null,
       annualRaise: null
     };
-  }
+  };
 
   handleChange = e => {
     e.preventDefault();
@@ -76,6 +76,7 @@ class IncomeForm extends Component {
 
     this.props.getInputData(this.state);
   };
+
 
   render() {
     return (
