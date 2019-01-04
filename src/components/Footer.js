@@ -6,14 +6,17 @@ const Footer = () => {
     <div>
       <Wrapper>
         <About>
-          <h2>About this Calculator</h2>
+          <h2>About Compound</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            <a href="https://lambdaschool.com/">Lambda School</a> is a 30 week,
+            immersive program that provides the tools and training needed to
+            launch a new career—from the comfort of home. As students graduate
+            and accept job offers, many are seeing huge salary increases. Over
+            time, salary increases of this magnitude create a significant amount
+            of wealth that can be further compounded through smart financial
+            planning and investing. With a few simple inputs, Compound shows
+            future earnings for your current job as well as potential future
+            earnings after Lambda School.
           </p>
         </About>
         <Credits>
@@ -50,7 +53,13 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding-top: 20px;
   font-family: "Montserrat", "Helvetica", sans-serif;
+
+  a {
+    color: #a0021e;
+    text-decoration: none;
+  }
 `;
+
 const About = styled.div`
   padding-bottom: 30px;
   width: 50%;
@@ -100,11 +109,6 @@ column-width: 300px; */
 `;
 const Items = styled.li`
   padding: 0 10px;
-
-  a {
-    color: #a0021e;
-    text-decoration: none;
-  }
 `;
 
 export default Footer;
