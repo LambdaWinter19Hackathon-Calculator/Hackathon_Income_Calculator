@@ -179,10 +179,12 @@ class IncomeForm extends Component {
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const FormContainer = styled.div`
+background: #FFFFFF;
   display: flex;
   width: 20%;
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid #B8B2A7;
+  border-radius: 5px;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -233,7 +235,7 @@ const FormContainer = styled.div`
     }
 
     .input-group-text {
-      background: #FFEEEE;
+      background: #FAF9F7;
     }
 
     button {

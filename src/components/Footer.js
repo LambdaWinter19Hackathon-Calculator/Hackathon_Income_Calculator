@@ -29,12 +29,14 @@ const Footer = () => {
 
 
 const Wrapper = styled.div`
+background: #FAF9F7;
 display: flex;
 flex-direction: column;
 padding-top: 20px;
 font-family: 'Montserrat', 'Helvetica', sans-serif;
 `
 const About = styled.div`
+
 text-align: center;
 padding-bottom: 30px;
 width: 50%;
@@ -56,7 +58,7 @@ h2 {
 
 const Credits = styled.div`
 text-align: center;
-background-color: lightgray;
+background-color: #E8E6E1;
 font-size: 0.8rem;
 
 h4 {

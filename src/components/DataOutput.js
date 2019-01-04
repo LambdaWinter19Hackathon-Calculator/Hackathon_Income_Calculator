@@ -66,11 +66,13 @@ const mapStateToProps = state => {
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const OutputContainer = styled.div`
+background: #FFFFFF;
   display: flex;
   flex-direction: column;
   width: 20%;
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid #B8B2A7;
+  border-radius: 5px;
   justify-content: space-around;
 
   @media (max-width: 1024px) {

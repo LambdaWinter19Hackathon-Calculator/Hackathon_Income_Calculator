@@ -26,6 +26,7 @@ class App extends Component {
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const ContentContainer = styled.div`
+background: #FAF9F7;
   display: flex;
   max-width: 2000px;
   padding: 40px 20px;
