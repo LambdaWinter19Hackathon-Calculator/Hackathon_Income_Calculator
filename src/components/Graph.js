@@ -88,8 +88,8 @@ const GraphContainer = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 600px;
-  width: 60%;
-  padding: 0 40px 0 20px;
+  width: 64%;
+  padding: 0 20px 0 15px;
 
   @media (max-width: 1024px) {
     width: 100%;
