@@ -32,6 +32,7 @@ const Wrapper = styled.div`
 display: flex;
 flex-direction: column;
 padding-top: 20px;
+font-family: 'Montserrat', 'Helvetica', sans-serif;
 `
 const About = styled.div`
 text-align: center;
@@ -49,15 +50,19 @@ margin: 0 auto;
 
 h2 {
     font-size: 1.4rem;
+    font-family: 'Open Sans', 'Helvetica', sans-serif;
 }
 `;
 
 const Credits = styled.div`
 text-align: center;
 background-color: lightgray;
+font-size: 0.8rem;
+
 h4 {
     padding: 20px;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-family: 'Open Sans', 'Helvetica', sans-serif;
 }
 `;
 const List = styled.ul`

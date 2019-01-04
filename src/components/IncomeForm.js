@@ -91,7 +91,7 @@ class IncomeForm extends Component {
         <Form>
           <div className="form-input-div">
             <FormGroup>
-              <Label for="currentAge">Current Age:</Label>
+              <Label for="currentAge">Current Age</Label>
               <InputGroup>
                 <Input
                   required
@@ -105,7 +105,7 @@ class IncomeForm extends Component {
             </FormGroup>
 
             <FormGroup>
-              <Label for="retirementAge">Retirement age:</Label>
+              <Label for="retirementAge">Retirement Age</Label>
               <InputGroup>
                 <Input
                   required
@@ -121,7 +121,7 @@ class IncomeForm extends Component {
 
           <div className="form-input-div">
             <FormGroup>
-              <Label for="beforeSalary">Salary pre-Lambda:</Label>
+              <Label for="beforeSalary">Salary Pre-Lambda</Label>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">$</InputGroupAddon>
                 <Input
@@ -136,7 +136,7 @@ class IncomeForm extends Component {
 
             <FormGroup>
               <Label for="afterSalary">
-                Salary post-Lambda:
+                Salary Post-Lambda
               </Label>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">$</InputGroupAddon>
@@ -153,7 +153,7 @@ class IncomeForm extends Component {
 
           <div className="form-input-div">
             <FormGroup>
-              <Label for="annualRaise">Expected annual raise:</Label>
+              <Label for="annualRaise">Expected Annual Raise</Label>
               <InputGroup>
                 <Input
                   type="number"
