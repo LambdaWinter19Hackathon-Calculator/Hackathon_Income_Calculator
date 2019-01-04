@@ -7,6 +7,7 @@ import NumberFormat from "react-number-format";
 class DataOutput extends Component {
   render() {
     const { yearsOfWork, beforeTotal, afterTotal, tweetMsg } = this.props;
+    const tweetPlaceholder = `📉 Income before Lambda over 47 years: $7,123,827\n📈 Income after Lambda over 47 years: $21,373,309\n🤑 Overall increase over 47 years: $14,249,482\n\nCheck it out 👉🏼`;
     console.log("tweet", tweetMsg);
 
     return (
@@ -57,7 +58,7 @@ class DataOutput extends Component {
             className="twitter-share-button"
             href="https://twitter.com/intent/tweet"
             data-size="large"
-            data-text={tweetMsg}
+            data-text={tweetPlaceholder}
             data-url="https://compound.careers"
             data-related="twitterapi,twitter"
           >
