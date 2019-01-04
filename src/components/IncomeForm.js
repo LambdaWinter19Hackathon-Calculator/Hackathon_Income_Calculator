@@ -105,7 +105,7 @@ class IncomeForm extends Component {
             </FormGroup>
 
             <FormGroup>
-              <Label for="retirementAge">Desired retirement age:</Label>
+              <Label for="retirementAge">Retirement age:</Label>
               <InputGroup>
                 <Input
                   required
@@ -121,7 +121,7 @@ class IncomeForm extends Component {
 
           <div className="form-input-div">
             <FormGroup>
-              <Label for="beforeSalary">Current annual salary:</Label>
+              <Label for="beforeSalary">Salary pre-Lambda:</Label>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">$</InputGroupAddon>
                 <Input
@@ -136,7 +136,7 @@ class IncomeForm extends Component {
 
             <FormGroup>
               <Label for="afterSalary">
-                Salary after graduating Lambda School:
+                Salary post-Lambda:
               </Label>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">$</InputGroupAddon>
@@ -200,6 +200,10 @@ const FormContainer = styled.div`
       justify-content: space-around;
     }
 
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
+
     .form-input-div {
       height: 33%;
       display: flex;
@@ -213,11 +217,28 @@ const FormContainer = styled.div`
         width: 30%;
         height: 100%;
       }
+
+      @media (max-width: 650px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        width: 100%;
+      }
+    }
+
+    .form-group {
+      @media (max-width: 650px) {
+        width: 48%;
+      }
     }
 
     button {
       width: 100%;
+      margin-bottom: 10px;
 
+      @media (max-width: 650px) {
+        width: 22%;
+        margin-bottom: 17px;
       }
     }
 
