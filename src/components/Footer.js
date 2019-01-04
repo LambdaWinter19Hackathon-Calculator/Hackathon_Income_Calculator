@@ -57,6 +57,11 @@ const Wrapper = styled.div`
   a {
     color: #a0021e;
     text-decoration: none;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: #cb6e17;
   }
 `;
 

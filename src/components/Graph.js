@@ -28,7 +28,7 @@ class Graph extends Component {
 
     return (
       <GraphContainer>
-        <FlexibleWidthXYPlot height={600} margin={{ left: 100 }}>
+        <FlexibleWidthXYPlot height={600} margin={{ left: 75 }}>
           <XAxis title="Year" style={{ fontSize: 14 }} />
           <YAxis
             title="Total Earnings ($)"
@@ -90,8 +90,7 @@ const mapStateToProps = state => {
 const GraphContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   min-height: 600px;
   width: 60%;
   padding: 0 40px 0 20px;
