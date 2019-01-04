@@ -21,7 +21,7 @@ class Graph extends Component {
       },
       {
         title: "Post-Lambda",
-        color: "hsl(0, 92%, 20%)",
+        color: "hsl(349, 98%, 32%)",
         strokeWidth: 6
       }
     ];
@@ -51,14 +51,14 @@ class Graph extends Component {
             style={{
               strokeLineJoin: "round",
               strokeWidth: 4,
-              stroke: "hsl(0, 92%, 20%)"
+              stroke: "hsl(349, 98%, 32%)"
             }}
           />
         </FlexibleWidthXYPlot>
         <DiscreteColorLegend
           items={legendItems}
           orientation="horizontal"
-          style={{ fontSize: 14, overflowY: "hidden" }}
+          style={{ fontSize: 14, overflowY: "hidden", paddingLeft: 20 }}
         />
       </GraphContainer>
     );
@@ -85,6 +85,11 @@ const GraphContainer = styled.div`
 
   @media (max-width: 1024px) {
     width: 100%;
+    padding: 40px 40px 40px 20px;
+  }
+
+  @media (max-width: 650px) {
+    padding: 40px 0;
   }
 
   }

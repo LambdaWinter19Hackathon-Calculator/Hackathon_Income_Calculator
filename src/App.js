@@ -26,9 +26,12 @@ class App extends Component {
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const ContentContainer = styled.div`
+background: #FAF9F7;
   display: flex;
   max-width: 2000px;
   padding: 40px 20px;
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-size: 0.9rem;
 
   @media (max-width: 1024px) {
     flex-direction: column;

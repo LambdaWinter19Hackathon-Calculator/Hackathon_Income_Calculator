@@ -12,7 +12,12 @@ const Header = () => {
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const Title = styled.div`
 text-align: center;
-background: #A61B1B;
+background-color: #E8E6E1;
+padding: 25px;
+
+h1 {
+    margin-bottom: 0;
+}
 `;
 
 

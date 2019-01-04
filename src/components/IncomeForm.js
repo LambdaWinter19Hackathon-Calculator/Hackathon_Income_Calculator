@@ -91,7 +91,7 @@ class IncomeForm extends Component {
         <Form>
           <div className="form-input-div">
             <FormGroup>
-              <Label for="currentAge">Current Age:</Label>
+              <Label for="currentAge">Current Age</Label>
               <InputGroup>
                 <Input
                   required
@@ -100,12 +100,12 @@ class IncomeForm extends Component {
                   id="currentAge"
                   onChange={this.handleChange}
                 />
-                <InputGroupAddon addonType="append">Years Old</InputGroupAddon>
+                <InputGroupAddon addonType="append">Years</InputGroupAddon>
               </InputGroup>
             </FormGroup>
 
             <FormGroup>
-              <Label for="retirementAge">Desired retirement age:</Label>
+              <Label for="retirementAge">Retirement Age</Label>
               <InputGroup>
                 <Input
                   required
@@ -114,14 +114,14 @@ class IncomeForm extends Component {
                   id="retirementAge"
                   onChange={this.handleChange}
                 />
-                <InputGroupAddon addonType="append">Years Old</InputGroupAddon>
+                <InputGroupAddon addonType="append">Years</InputGroupAddon>
               </InputGroup>
             </FormGroup>
           </div>
 
           <div className="form-input-div">
             <FormGroup>
-              <Label for="beforeSalary">Current annual salary:</Label>
+              <Label for="beforeSalary">Salary Pre-Lambda</Label>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">$</InputGroupAddon>
                 <Input
@@ -136,7 +136,7 @@ class IncomeForm extends Component {
 
             <FormGroup>
               <Label for="afterSalary">
-                Salary after graduating Lambda School:
+                Salary Post-Lambda
               </Label>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">$</InputGroupAddon>
@@ -153,7 +153,7 @@ class IncomeForm extends Component {
 
           <div className="form-input-div">
             <FormGroup>
-              <Label for="annualRaise">Expected annual raise:</Label>
+              <Label for="annualRaise">Expected Annual Raise</Label>
               <InputGroup>
                 <Input
                   type="number"
@@ -166,7 +166,7 @@ class IncomeForm extends Component {
             </FormGroup>
 
             <Button>Submit</Button>
-            <Button type="reset" onClick={this.props.reset}>
+            <Button type="reset" className="reset" onClick={this.props.reset}>
               Reset
             </Button>
           </div>
@@ -179,10 +179,12 @@ class IncomeForm extends Component {
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const FormContainer = styled.div`
+background: #FFFFFF;
   display: flex;
   width: 20%;
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid #B8B2A7;
+  border-radius: 5px;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -191,7 +193,7 @@ const FormContainer = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
     margin: 0 auto;
 
@@ -200,7 +202,16 @@ const FormContainer = styled.div`
       justify-content: space-around;
     }
 
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
+
     .form-input-div {
+      height: 33%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
       @media (max-width: 1024px) {
         display: flex;
         flex-direction: column;
@@ -208,11 +219,43 @@ const FormContainer = styled.div`
         width: 30%;
         height: 100%;
       }
+
+      @media (max-width: 650px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        width: 100%;
+      }
+    }
+
+    .form-group {
+      @media (max-width: 650px) {
+        width: 48%;
+      }
+    }
+
+    .input-group-text {
+      background: #FAF9F7;
     }
 
     button {
-      margin: 0 auto;
-      margin-bottom: 1rem;
+      width: 100%;
+      margin-bottom: 10px;
+      background: #CB6E17;
+      border: 0;
+
+      @media (max-width: 650px) {
+        width: 22%;
+        margin-bottom: 17px;
+      }
+    }
+
+    .reset {
+      background: #A0021E;
+
+
+      @media (max-width: 1024px) {
+        margin-bottom: 17px;
     }
   }
 `;

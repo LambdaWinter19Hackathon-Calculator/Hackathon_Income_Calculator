@@ -49,7 +49,7 @@ class DataOutput extends Component {
           </Data>
         </Wrap>
 
-        <Button>Export</Button>
+        <Button className="export">Export</Button>
       </OutputContainer>
     );
   }
@@ -66,11 +66,13 @@ const mapStateToProps = state => {
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const OutputContainer = styled.div`
+background: #FFFFFF;
   display: flex;
   flex-direction: column;
   width: 20%;
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid #B8B2A7;
+  border-radius: 5px;
   justify-content: space-around;
 
   @media (max-width: 1024px) {
@@ -78,7 +80,26 @@ const OutputContainer = styled.div`
     width: 100%;
     min-height: 150px;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
+  }
+
+  @media (max-width: 650px) {
+    flex-wrap: wrap;
+  }
+
+  .export {
+    align-self: center;
+    width: 100%;
+    background: #CB6E17;
+    border: 0;
+
+    @media (max-width: 1024px) {
+      width: 22%;
+    }
+
+    @media (max-width: 650px) {
+      margin-top: 20px;
+    }
   }
 `;
 
@@ -91,6 +112,11 @@ const Wrap = styled.div`
 
   @media (max-width: 1024px) {
     width: 25%;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 650px) {
+    width: 33%;
   }
 `;
 
