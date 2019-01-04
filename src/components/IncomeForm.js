@@ -164,11 +164,14 @@ class IncomeForm extends Component {
                 <InputGroupAddon addonType="append">%</InputGroupAddon>
               </InputGroup>
             </FormGroup>
+            <div className="button-div">
+              <Button className="submit">Submit</Button>
+              <Button type="reset" className="reset" onClick={this.props.reset}>
+                Reset
+              </Button>
+            </div>
 
-            <Button>Submit</Button>
-            <Button type="reset" className="reset" onClick={this.props.reset}>
-              Reset
-            </Button>
+
           </div>
         </Form>
       </FormContainer>
@@ -224,6 +227,7 @@ background: #FFFFFF;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-end;
+        padding-bottom: 10px;
         width: 100%;
       }
     }
@@ -238,16 +242,23 @@ background: #FFFFFF;
       background: #FAF9F7;
     }
 
+    .button-div {
+      display: flex;
+      flex-direction: column;
+      
+      @media (max-width: 650px) {
+        width: 48%;
+      }
+    }
+
     button {
       width: 100%;
       margin-bottom: 10px;
-      background: #CB6E17;
       border: 0;
+    }
 
-      @media (max-width: 650px) {
-        width: 22%;
-        margin-bottom: 17px;
-      }
+    .submit {
+      background: #CB6E17;
     }
 
     .reset {
