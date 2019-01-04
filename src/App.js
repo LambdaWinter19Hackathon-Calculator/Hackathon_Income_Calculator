@@ -28,10 +28,12 @@ class App extends Component {
 const ContentContainer = styled.div`
 background: #FAF9F7;
   display: flex;
+  justify-content: space-between;
   max-width: 2000px;
   padding: 40px 20px;
   font-family: 'Montserrat', 'Helvetica', sans-serif;
   font-size: 0.9rem;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
     flex-direction: column;

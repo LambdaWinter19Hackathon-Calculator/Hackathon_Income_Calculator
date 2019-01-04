@@ -185,7 +185,7 @@ class IncomeForm extends Component {
 const FormContainer = styled.div`
   background: #ffffff;
   display: flex;
-  width: 20%;
+  width: 18%;
   padding: 20px;
   border: 1px solid #b8b2a7;
   border-radius: 5px;
@@ -260,10 +260,18 @@ const FormContainer = styled.div`
 
     .submit {
       background: #cb6e17;
+      
+      &:active{
+        background: #B8B2A7 !important;
+      }
     }
 
     .reset {
       background: #a0021e;
+
+      &:active{
+        background: #B8B2A7 !important;
+      }
 
       @media (max-width: 1024px) {
         margin-bottom: 17px;
