@@ -88,6 +88,10 @@ const GraphContainer = styled.div`
     padding: 40px 40px 40px 20px;
   }
 
+  @media (max-width: 650px) {
+    padding: 40px 0;
+  }
+
   }
 `;
 
