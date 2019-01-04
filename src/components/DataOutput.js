@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-// import { Button } from "reactstrap";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import NumberFormat from "react-number-format";
+import EmailModal from "./EmailModal"
 
 class DataOutput extends Component {
   render() {
@@ -52,7 +52,7 @@ class DataOutput extends Component {
           </Data>
         </Wrap>
 
-        {/* <Button className="export">Export</Button> */}
+        <EmailModal />
         <Tweet>
           <a
             className="twitter-share-button"
