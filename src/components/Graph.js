@@ -28,7 +28,7 @@ class Graph extends Component {
 
     return (
       <GraphContainer>
-        <FlexibleWidthXYPlot height={600} margin={{ left: 75 }}>
+        <FlexibleWidthXYPlot height={600} margin={{ left: 95 }}>
           <XAxis title="Year" style={{ fontSize: 14 }} />
           <YAxis title="Total Earnings ($)" style={{ fontSize: 14 }} />
           <HorizontalGridLines style={{ stroke: "hsl(42, 15%, 90%)" }} />
