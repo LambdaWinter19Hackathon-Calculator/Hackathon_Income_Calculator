@@ -36,6 +36,10 @@ background: #FAF9F7;
   @media (max-width: 1024px) {
     flex-direction: column;
   }
+
+  @media (max-width: 650px) {
+    padding: 20px 10px;
+  }
 `;
 
 export default connect(null)(App);
