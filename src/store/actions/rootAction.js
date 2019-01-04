@@ -122,8 +122,8 @@ export const reset = () => {
 
 export const tweetMsg = (yearsOfWork, beforeTotal, afterTotal) => {
   const tweetText = `📉 Income before Lambda over ${yearsOfWork} years: ${beforeTotal}
-  📈 Income after Lambda over ${yearsOfWork} years: ${afterTotal}\n🤑 Overall increase over ${yearsOfWork} years: ${afterTotal -
-    beforeTotal}
+  📈 Income after Lambda over ${yearsOfWork} years: ${afterTotal}
+  🤑 Overall increase over ${yearsOfWork} years: ${afterTotal - beforeTotal}
     
     Check it out 👉🏼`;
 
