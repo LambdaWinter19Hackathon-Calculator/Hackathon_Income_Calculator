@@ -21,14 +21,14 @@ class Graph extends Component {
       },
       {
         title: "Post-Lambda",
-        color: "hsl(0, 92%, 20%)",
+        color: "#A0021E",
         strokeWidth: 6
       }
     ];
 
     return (
       <GraphContainer>
-        <FlexibleWidthXYPlot height={ 600 } margin={{ left: 100 }}>
+        <FlexibleWidthXYPlot height={600} margin={{ left: 95 }}>
           <XAxis title="Year" style={{ fontSize: 14 }} />
           <YAxis title="Total Earnings ($)" style={{ fontSize: 14 }} />
           <HorizontalGridLines style={{ stroke: "hsl(42, 15%, 90%)" }} />
@@ -37,7 +37,11 @@ class Graph extends Component {
           <LineSeries
             className="preLambda"
             animation="gentle"
-            data={this.props.cumulativeBefore}
+            data={
+              this.props.cumulativeBefore.length > 0
+                ? this.props.cumulativeBefore
+                : [{ x: 0, y: 5000 }, { x: 40, y: 5000 }]
+            }
             style={{
               strokeLineJoin: "round",
               strokeWidth: 4,
@@ -47,18 +51,22 @@ class Graph extends Component {
           <LineSeries
             className="postLambda"
             animation="gentle"
-            data={this.props.cumulativeAfter}
+            data={
+              this.props.cumulativeAfter.length > 0
+                ? this.props.cumulativeAfter
+                : [{ x: 0, y: 10000 }, { x: 40, y: 10000 }]
+            }
             style={{
               strokeLineJoin: "round",
               strokeWidth: 4,
-              stroke: "hsl(0, 92%, 20%)"
+              stroke: "#A0021E"
             }}
           />
         </FlexibleWidthXYPlot>
         <DiscreteColorLegend
           items={legendItems}
           orientation="horizontal"
-          style={{ fontSize: 14, overflowY: "hidden" }}
+          style={{ fontSize: 14, overflowY: "hidden", paddingLeft: 20 }}
         />
       </GraphContainer>
     );
@@ -68,7 +76,8 @@ class Graph extends Component {
 const mapStateToProps = state => {
   return {
     cumulativeBefore: state.cumulativeBefore,
-    cumulativeAfter: state.cumulativeAfter
+    cumulativeAfter: state.cumulativeAfter,
+    yearsOfWork: state.yearsOfWork
   };
 };
 
@@ -77,14 +86,18 @@ const mapStateToProps = state => {
 const GraphContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   min-height: 600px;
   width: 60%;
   padding: 0 40px 0 20px;
 
   @media (max-width: 1024px) {
     width: 100%;
+    padding: 40px 40px 40px 20px;
+  }
+
+  @media (max-width: 650px) {
+    padding: 40px 0;
   }
 
   }
