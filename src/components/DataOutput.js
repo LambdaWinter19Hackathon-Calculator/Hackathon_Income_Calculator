@@ -12,8 +12,8 @@ class DataOutput extends Component {
     return (
       <OutputContainer>
         <Wrap>
-          <p>Pre-Lambda Income</p>
-          <p>Over {yearsOfWork ? yearsOfWork : 0} Years</p>
+          <h5>Pre-Lambda Income</h5>
+          <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
           <Data>
             <NumberFormat
               value={beforeTotal ? beforeTotal : 0}
@@ -25,8 +25,8 @@ class DataOutput extends Component {
         </Wrap>
 
         <Wrap>
-          <p>Post-Lambda Income</p>
-          <p>Over {yearsOfWork ? yearsOfWork : 0} Years</p>
+          <h5>Post-Lambda Income</h5>
+          <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
           <Data>
             <NumberFormat
               value={afterTotal ? afterTotal : 0}
@@ -38,8 +38,8 @@ class DataOutput extends Component {
         </Wrap>
 
         <Wrap>
-          <p>Overall Increase</p>
-          <p>Over {yearsOfWork ? yearsOfWork : 0} Years</p>
+          <h5>Overall Increase</h5>
+          <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
           <Data>
             <NumberFormat
               value={afterTotal - beforeTotal}
@@ -98,8 +98,11 @@ const OutputContainer = styled.div`
     align-items: stretch;
   }
 
-  @media (max-width: 650px) {
-    flex-wrap: wrap;
+  @media (max-width: 600px) {
+    width: 98%;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 40px 20px;
   }
 
   /* .export {
@@ -130,8 +133,17 @@ const Wrap = styled.div`
     justify-content: space-between;
   }
 
-  @media (max-width: 650px) {
-    width: 33%;
+  @media (max-width: 600px) {
+    width: 100%;
+    padding-bottom: 25px;
+  }
+
+  h5 {
+    font-size: 1rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.25rem;
+    }
   }
 `;
 
@@ -142,11 +154,21 @@ const Tweet = styled.div`
   @media (max-width: 1024px) {
     align-items: center;
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+
+  }
 `;
 
 const Data = styled.p`
   padding-top: 10px;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.4rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export default connect(mapStateToProps)(DataOutput);
