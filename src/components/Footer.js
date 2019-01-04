@@ -7,18 +7,19 @@ const Footer = () => {
             <Wrapper>
                 <About>
                     <h2>About this Calculator</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p>This calculator is intended to give a visual representation of the impact higher income can have on a person's life.</p>
+                    <p>It does not take into consideration income from other investments, nor does it constitute any guarantees.</p>
                 </About>
                 <Credits>
                     <h4>Created by</h4>
                     <List>
-                        <Items>Jeanette Fernandez</Items>
-                        <Items>Leigh-Ann Friedel</Items>
-                        <Items>Colin Dismuke</Items>
-                        <Items>Tommy Huynh</Items>
-                        <Items>Chris Honda</Items>
+                        <Items><a href="https://github.com/jeanfern5">Jeanette Fernandez</a></Items>
+                        <Items><a href="https://github.com/lafriedel">Leigh-Ann Friedel</a></Items>
+                        <Items><a href="https://github.com/cpdis">Colin Dismuke</a></Items>
+                        <Items><a href="https://github.com/tommaay">Tommy Huynh</a></Items>
+                        <Items><a href="https://github.com/honda0306">Chris Honda</a></Items>
                     </List>
-                    <p>Part of Lambda School Hackathon 2019</p>
+                    <p>Part of Lambda School Hackathon 2019©</p>
                 </Credits>
             </Wrapper>
             </div>
@@ -53,6 +54,7 @@ margin: 0 auto;
 h2 {
     font-size: 1.4rem;
     font-family: 'Open Sans', 'Helvetica', sans-serif;
+    padding-bottom: 12px;
 }
 `;
 
