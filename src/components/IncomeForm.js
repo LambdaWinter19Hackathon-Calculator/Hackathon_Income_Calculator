@@ -100,7 +100,7 @@ class IncomeForm extends Component {
                   id="currentAge"
                   onChange={this.handleChange}
                 />
-                <InputGroupAddon addonType="append">Years Old</InputGroupAddon>
+                <InputGroupAddon addonType="append">Years</InputGroupAddon>
               </InputGroup>
             </FormGroup>
 
@@ -114,7 +114,7 @@ class IncomeForm extends Component {
                   id="retirementAge"
                   onChange={this.handleChange}
                 />
-                <InputGroupAddon addonType="append">Years Old</InputGroupAddon>
+                <InputGroupAddon addonType="append">Years</InputGroupAddon>
               </InputGroup>
             </FormGroup>
           </div>
@@ -216,12 +216,17 @@ const FormContainer = styled.div`
     }
 
     button {
-      margin: 0 auto;
       width: 100%;
+
+      }
     }
 
     .reset {
       background: #A61B1B;
+
+
+      @media (max-width: 1024px) {
+        margin-bottom: 17px;
     }
   }
 `;
