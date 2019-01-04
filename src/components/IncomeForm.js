@@ -166,7 +166,7 @@ class IncomeForm extends Component {
             </FormGroup>
 
             <Button>Submit</Button>
-            <Button type="reset" onClick={this.props.reset}>
+            <Button type="reset" className="reset" onClick={this.props.reset}>
               Reset
             </Button>
           </div>
@@ -191,7 +191,7 @@ const FormContainer = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
     margin: 0 auto;
 
@@ -201,6 +201,11 @@ const FormContainer = styled.div`
     }
 
     .form-input-div {
+      height: 33%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
       @media (max-width: 1024px) {
         display: flex;
         flex-direction: column;
@@ -212,7 +217,11 @@ const FormContainer = styled.div`
 
     button {
       margin: 0 auto;
-      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    .reset {
+      background: #A61B1B;
     }
   }
 `;
