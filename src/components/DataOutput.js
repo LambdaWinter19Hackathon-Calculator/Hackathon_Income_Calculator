@@ -51,7 +51,6 @@ class DataOutput extends Component {
             />
           </Data>
         </Wrap>
-
         <EmailModal />
         <Tweet>
           <a
