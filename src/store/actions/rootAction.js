@@ -7,6 +7,7 @@ export const LIFETIME_EARNINGS_AFTER = "LIFETIME_EARNINGS_AFTER";
 export const CUMULATIVE_EARNED_BEFORE = "CUMULATIVE_EARNED_BEFORE";
 export const CUMULATIVE_EARNED_AFTER = "CUMULATIVE_EARNED_AFTER";
 export const RESET = "RESET";
+export const TWEET_MSG = "TWEET_MSG";
 
 /* ------   Get input data from form and store in Redux   ------*/
 
@@ -117,4 +118,17 @@ export const cumulativeEarnedAfter = array => {
 
 export const reset = () => {
   return { type: RESET };
+};
+
+export const tweetMsg = (yearsOfWork, beforeTotal, afterTotal) => {
+  const tweetText = `📉 Income before Lambda over ${yearsOfWork} years: ${beforeTotal}
+  📈 Income after Lambda over ${yearsOfWork} years: ${afterTotal}\n🤑 Overall increase over ${yearsOfWork} years: ${afterTotal -
+    beforeTotal}
+    
+    Check it out 👉🏼`;
+
+  return {
+    type: TWEET_MSG,
+    payload: tweetText
+  };
 };

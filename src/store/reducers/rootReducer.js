@@ -6,7 +6,8 @@ import {
   LIFETIME_EARNINGS_AFTER,
   CUMULATIVE_EARNED_BEFORE,
   CUMULATIVE_EARNED_AFTER,
-  RESET
+  RESET,
+  TWEET_MSG
 } from "../actions/rootAction";
 
 const initialState = {
@@ -21,7 +22,8 @@ const initialState = {
   beforeTotal: null,
   afterTotal: null,
   cumulativeBefore: [],
-  cumulativeAfter: []
+  cumulativeAfter: [],
+  tweetMsg: ""
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -86,7 +88,14 @@ const rootReducer = (state = initialState, action) => {
         beforeTotal: null,
         afterTotal: null,
         cumulativeBefore: [],
-        cumulativeAfter: []
+        cumulativeAfter: [],
+        tweetMsg: ""
+      };
+
+    case TWEET_MSG:
+      return {
+        ...state,
+        tweetMsg: action.payload
       };
 
     default:

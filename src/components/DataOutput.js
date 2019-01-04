@@ -6,10 +6,8 @@ import NumberFormat from "react-number-format";
 
 class DataOutput extends Component {
   render() {
-    const { yearsOfWork, beforeTotal, afterTotal } = this.props;
-    console.log(yearsOfWork);
-    const tweetText = `📉 Income before Lambda over ${yearsOfWork} years: ${beforeTotal}\n📈 Income after Lambda over ${yearsOfWork} years: ${afterTotal}\n🤑 Overall increase over ${yearsOfWork} years: ${afterTotal -
-      beforeTotal}\n\nCheck it out 👉🏼`;
+    const { yearsOfWork, beforeTotal, afterTotal, tweetMsg } = this.props;
+    console.log("tweet", tweetMsg);
 
     return (
       <OutputContainer>
@@ -58,7 +56,7 @@ class DataOutput extends Component {
             className="twitter-share-button"
             href="https://twitter.com/intent/tweet"
             data-size="large"
-            data-text={tweetText}
+            data-text={tweetMsg}
             data-url="https://compound.careers"
             data-related="twitterapi,twitter"
           >
@@ -74,7 +72,8 @@ const mapStateToProps = state => {
   return {
     beforeTotal: state.beforeTotal,
     afterTotal: state.afterTotal,
-    yearsOfWork: state.yearsOfWork
+    yearsOfWork: state.yearsOfWork,
+    tweetMsg: state.tweetMsg
   };
 };
 
