@@ -267,6 +267,7 @@ background: #FFFFFF;
 
       @media (max-width: 1024px) {
         margin-bottom: 17px;
+      }
     }
   }
 `;
