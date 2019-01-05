@@ -87,7 +87,7 @@ class IncomeForm extends Component {
   submitHandler = e => {
     e.preventDefault();
 
-    this.props.getInputData(this.state);
+    this.props.getInputData(this.state, this.props.reset);
   };
 
   render() {
@@ -260,17 +260,17 @@ const FormContainer = styled.div`
 
     .submit {
       background: #cb6e17;
-      
-      &:active{
-        background: #B8B2A7 !important;
+
+      &:active {
+        background: #b8b2a7 !important;
       }
     }
 
     .reset {
       background: #a0021e;
 
-      &:active{
-        background: #B8B2A7 !important;
+      &:active {
+        background: #b8b2a7 !important;
       }
 
       @media (max-width: 1024px) {

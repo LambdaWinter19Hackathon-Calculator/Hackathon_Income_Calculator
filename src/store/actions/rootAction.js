@@ -11,7 +11,9 @@ export const TWEET_MSG = "TWEET_MSG";
 
 /* ------   Get input data from form and store in Redux   ------*/
 
-export const getInputData = inputData => {
+export const getInputData = (inputData, cb) => {
+  cb();
+
   return {
     type: GET_INPUT_DATA,
     payload: inputData
