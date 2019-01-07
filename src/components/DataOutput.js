@@ -1,19 +1,18 @@
 import React, { Component } from "react";
-// import { Button } from "reactstrap";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import NumberFormat from "react-number-format";
+import TweetButton from "./TweetButton";
 
 class DataOutput extends Component {
   render() {
     const { yearsOfWork, beforeTotal, afterTotal, tweetMsg } = this.props;
-    console.log("tweet", tweetMsg);
 
     return (
       <OutputContainer>
         <Wrap>
-          <p>Pre-Lambda Income</p>
-          <p>Over {yearsOfWork ? yearsOfWork : 0} Years</p>
+          <h5>Pre-Lambda Income</h5>
+          <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
           <Data>
             <NumberFormat
               value={beforeTotal ? beforeTotal : 0}
@@ -25,8 +24,8 @@ class DataOutput extends Component {
         </Wrap>
 
         <Wrap>
-          <p>Post-Lambda Income</p>
-          <p>Over {yearsOfWork ? yearsOfWork : 0} Years</p>
+          <h5>Post-Lambda Income</h5>
+          <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
           <Data>
             <NumberFormat
               value={afterTotal ? afterTotal : 0}
@@ -38,8 +37,8 @@ class DataOutput extends Component {
         </Wrap>
 
         <Wrap>
-          <p>Overall Increase</p>
-          <p>Over {yearsOfWork ? yearsOfWork : 0} Years</p>
+          <h5>Overall Increase</h5>
+          <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
           <Data>
             <NumberFormat
               value={afterTotal - beforeTotal}
@@ -48,22 +47,9 @@ class DataOutput extends Component {
               prefix={"$"}
             />
           </Data>
+
+          <TweetButton tweetMsg={tweetMsg} />
         </Wrap>
-
-        {/* <Button className="export">Export</Button> */}
-
-        <Tweet>
-          <a
-            className="twitter-share-button"
-            href="https://twitter.com/intent/tweet"
-            data-size="large"
-            data-text={tweetMsg}
-            data-url="https://compound.careers"
-            data-related="twitterapi,twitter"
-          >
-            Tweet
-          </a>
-        </Tweet>
       </OutputContainer>
     );
   }
@@ -89,7 +75,6 @@ const OutputContainer = styled.div`
   border: 1px solid #b8b2a7;
   border-radius: 5px;
   justify-content: space-around;
-
   @media (max-width: 1024px) {
     flex-direction: row;
     width: 100%;
@@ -97,21 +82,20 @@ const OutputContainer = styled.div`
     justify-content: space-around;
     align-items: stretch;
   }
-
-  @media (max-width: 650px) {
-    flex-wrap: wrap;
+  @media (max-width: 600px) {
+    width: 98%;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 40px 20px;
   }
-
   /* .export {
     align-self: center;
     width: 100%;
     background: #cb6e17;
     border: 0;
-
     @media (max-width: 1024px) {
       width: 22%;
     }
-
     @media (max-width: 650px) {
       margin-top: 20px;
     }
@@ -124,29 +108,29 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   @media (max-width: 1024px) {
     width: 25%;
     justify-content: space-between;
   }
-
-  @media (max-width: 650px) {
-    width: 33%;
+  @media (max-width: 600px) {
+    width: 100%;
+    padding-bottom: 25px;
   }
-`;
-
-const Tweet = styled.div`
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: 1024px) {
-    align-items: center;
+  h5 {
+    font-size: 1rem;
+    @media (max-width: 600px) {
+      font-size: 1.25rem;
+    }
   }
 `;
 
 const Data = styled.p`
   padding-top: 10px;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.4rem;
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export default connect(mapStateToProps)(DataOutput);
