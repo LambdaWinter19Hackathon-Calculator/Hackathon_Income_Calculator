@@ -8,10 +8,13 @@ export const CUMULATIVE_EARNED_BEFORE = "CUMULATIVE_EARNED_BEFORE";
 export const CUMULATIVE_EARNED_AFTER = "CUMULATIVE_EARNED_AFTER";
 export const RESET = "RESET";
 export const TWEET_MSG = "TWEET_MSG";
+export const ISA_CALCULATOR = "ISA_CALCULATOR";
 
 /* ------   Get input data from form and store in Redux   ------*/
 
-export const getInputData = inputData => {
+export const getInputData = (inputData, cb) => {
+  cb();
+
   return {
     type: GET_INPUT_DATA,
     payload: inputData
@@ -121,14 +124,37 @@ export const reset = () => {
 };
 
 export const tweetMsg = (yearsOfWork, beforeTotal, afterTotal) => {
-  const tweetText = `📉 Income before Lambda over ${yearsOfWork} years: ${beforeTotal}
-  📈 Income after Lambda over ${yearsOfWork} years: ${afterTotal}
-  🤑 Overall increase over ${yearsOfWork} years: ${afterTotal - beforeTotal}
+  const tweetText = `📉 Income before Lambda over ${yearsOfWork} years: $${beforeTotal}
+  📈 Income after Lambda over ${yearsOfWork} years: $${afterTotal}
+  🤑 Overall increase over ${yearsOfWork} years: $${afterTotal - beforeTotal}
     
     Check it out 👉🏼`;
 
   return {
     type: TWEET_MSG,
     payload: tweetText
+  };
+};
+
+export const isaCalc = salary => {
+  const monthlyPayment = parseFloat(((salary * 0.17) / 12).toFixed(2));
+  let isaPayments = [];
+  let tutionTotal = null;
+
+  while (tutionTotal < 30000 && isaPayments.length < 24) {
+    isaPayments.push(monthlyPayment);
+    tutionTotal = parseFloat((tutionTotal + monthlyPayment).toFixed(2));
+
+    if (tutionTotal.toFixed(2) > 30000) {
+      tutionTotal = 30000;
+    }
+  }
+
+  return {
+    type: ISA_CALCULATOR,
+    monthlyPayment: monthlyPayment,
+    isaPayments: isaPayments,
+    tutionTotal: tutionTotal,
+    paymentMonths: isaPayments.length
   };
 };

@@ -99,8 +99,6 @@ const GraphContainer = styled.div`
   @media (max-width: 650px) {
     padding: 40px 0;
   }
-
-  }
 `;
 
 export default connect(mapStateToProps)(Graph);
