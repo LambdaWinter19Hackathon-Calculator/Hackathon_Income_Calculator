@@ -45,3 +45,5 @@ background: #FAF9F7;
 `;
 
 export default connect(null)(App);
+
+// This is a test
