@@ -19,7 +19,8 @@ import {
   cumulativeEarnedBefore,
   cumulativeEarnedAfter,
   reset,
-  tweetMsg
+  tweetMsg,
+  isaCalc
 } from "../store/actions/rootAction";
 
 import styled from "styled-components";
@@ -50,32 +51,20 @@ class IncomeForm extends Component {
         props.annualRaise,
         props.yearsOfWork
       );
-    }
 
-    if (props.beforeEarnings) {
-      props.totalEarnedBefore(props.beforeEarnings);
-    }
-
-    if (props.afterSalary && props.afterEarnings.length === 0) {
       props.annualEarningsAfter(
         props.afterSalary,
         props.annualRaise,
         props.yearsOfWork
       );
+
+      props.isaCalc(props.afterSalary);
     }
 
-    if (props.afterEarnings) {
+    if (props.beforeEarnings && props.cumulativeBefore.length === 0) {
+      props.totalEarnedBefore(props.beforeEarnings);
       props.totalEarnedAfter(props.afterEarnings);
-    }
-
-    if (
-      props.beforeEarnings.length > 0 &&
-      props.cumulativeBefore.length === 0
-    ) {
       props.cumulativeEarnedBefore(props.beforeEarnings);
-    }
-
-    if (props.afterEarnings.length > 0 && props.cumulativeAfter.length === 0) {
       props.cumulativeEarnedAfter(props.afterEarnings);
     }
 
@@ -86,7 +75,6 @@ class IncomeForm extends Component {
 
   submitHandler = e => {
     e.preventDefault();
-
     this.props.getInputData(this.state, this.props.reset);
   };
 
@@ -306,6 +294,7 @@ export default connect(
     cumulativeEarnedBefore,
     cumulativeEarnedAfter,
     reset,
-    tweetMsg
+    tweetMsg,
+    isaCalc
   }
 )(IncomeForm);

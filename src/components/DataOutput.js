@@ -3,12 +3,11 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import NumberFormat from "react-number-format";
+import TweetButton from "./TweetButton";
 
 class DataOutput extends Component {
   render() {
     const { yearsOfWork, beforeTotal, afterTotal, tweetMsg } = this.props;
-    const tweetPlaceholder = `📉 Income before Lambda over 47 years: $7,123,827\n📈 Income after Lambda over 47 years: $21,373,309\n🤑 Overall increase over 47 years: $14,249,482\n\nCheck it out 👉🏼`;
-    console.log("tweet", tweetMsg);
 
     return (
       <OutputContainer>
@@ -49,22 +48,9 @@ class DataOutput extends Component {
               prefix={"$"}
             />
           </Data>
+
+          <TweetButton tweetMsg={tweetMsg} />
         </Wrap>
-
-        {/* <Button className="export">Export</Button> */}
-
-        <Tweet>
-          <a
-            className="twitter-share-button"
-            href="https://twitter.com/intent/tweet"
-            data-size="large"
-            data-text={tweetPlaceholder}
-            data-url="https://compound.careers"
-            data-related="twitterapi,twitter"
-          >
-            Tweet
-          </a>
-        </Tweet>
       </OutputContainer>
     );
   }
@@ -145,20 +131,6 @@ const Wrap = styled.div`
     @media (max-width: 600px) {
       font-size: 1.25rem;
     }
-  }
-`;
-
-const Tweet = styled.div`
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: 1024px) {
-    align-items: center;
-  }
-
-  @media (max-width: 600px) {
-    width: 100%;
-
   }
 `;
 

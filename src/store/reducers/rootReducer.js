@@ -7,7 +7,8 @@ import {
   CUMULATIVE_EARNED_BEFORE,
   CUMULATIVE_EARNED_AFTER,
   RESET,
-  TWEET_MSG
+  TWEET_MSG,
+  ISA_CALCULATOR
 } from "../actions/rootAction";
 
 const initialState = {
@@ -23,7 +24,11 @@ const initialState = {
   afterTotal: null,
   cumulativeBefore: [],
   cumulativeAfter: [],
-  tweetMsg: ""
+  tweetMsg: "",
+  isaPayments: [],
+  tutionTotal: null,
+  paymentMonths: null,
+  monthlyPayment: null
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -90,6 +95,15 @@ const rootReducer = (state = initialState, action) => {
         cumulativeBefore: [],
         cumulativeAfter: [],
         tweetMsg: ""
+      };
+
+    case ISA_CALCULATOR:
+      return {
+        ...state,
+        monthlyPayment: action.monthlyPayment,
+        isaPayments: action.isaPayments,
+        tutionTotal: action.tutionTotal,
+        paymentMonths: action.paymentMonths
       };
 
     case TWEET_MSG:
