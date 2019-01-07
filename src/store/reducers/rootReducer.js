@@ -8,6 +8,7 @@ import {
   CUMULATIVE_EARNED_AFTER,
   RESET,
   TWEET_MSG,
+  ISA_SALARIES,
   ISA_CALCULATOR
 } from "../actions/rootAction";
 
@@ -110,6 +111,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         tweetMsg: action.payload
+      };
+
+    case ISA_SALARIES:
+      return {
+        ...state,
+        afterEarnings: action.payload
       };
 
     default:
