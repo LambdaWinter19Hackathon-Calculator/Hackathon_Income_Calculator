@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import IncomeForm from "./components/IncomeForm";
 import Graph from "./components/Graph";
 import DataOutput from "./components/DataOutput";
+import ISAOutput from "./components/isaOutput";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <IncomeForm />
           <Graph />
           <DataOutput />
+          <ISAOutput />
         </ContentContainer>
         <Footer />
       </div>
