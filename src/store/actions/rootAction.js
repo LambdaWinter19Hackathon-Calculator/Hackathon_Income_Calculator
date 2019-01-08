@@ -150,16 +150,24 @@ export const tweetMsg = (yearsOfWork, beforeTotal, afterTotal) => {
 /* ------  ISA Calculation   ------*/
 
 export const isaCalc = salary => {
-  const monthlyPayment = parseFloat(((salary * 0.17) / 12).toFixed(2));
+  let monthlyPayment = parseFloat(((salary * 0.17) / 12).toFixed(2));
   let isaPayments = [];
-  let tutionTotal = null;
+  let tuitionTotal = null;
+  let tuitionBalance = 30000;
+  let lastPayment = null;
 
-  while (tutionTotal < 30000 && isaPayments.length < 24) {
-    isaPayments.push(monthlyPayment);
-    tutionTotal = parseFloat((tutionTotal + monthlyPayment).toFixed(2));
+  while (tuitionTotal < 30000 && isaPayments.length < 24) {
+    if (monthlyPayment > tuitionBalance) {
+      lastPayment = parseFloat((tuitionBalance).toFixed(2));
+      isaPayments.push(lastPayment);
+    } else {
+      isaPayments.push(monthlyPayment);
+    };
+    tuitionTotal = parseFloat((tuitionTotal + monthlyPayment).toFixed(2));
+    tuitionBalance = tuitionBalance - monthlyPayment;
 
-    if (tutionTotal.toFixed(2) > 30000) {
-      tutionTotal = 30000;
+    if (tuitionTotal.toFixed(2) > 30000) {
+      tuitionTotal = 30000;
     }
   }
 
@@ -167,16 +175,16 @@ export const isaCalc = salary => {
     type: ISA_CALCULATOR,
     monthlyPayment: monthlyPayment,
     isaPayments: isaPayments,
-    tutionTotal: tutionTotal,
+    tuitionTotal: tuitionTotal,
     paymentMonths: isaPayments.length
   };
 };
 
 /* ------  ISA annual payment over 2 years   ------*/
 
-export const isaSalaries = (tutionTotal, earningsArray) => {
+export const isaSalaries = (tuitionTotal, earningsArray) => {
   const firstYearAmount = parseFloat((earningsArray[0] * 0.17).toFixed(2));
-  const secondYearAmount = tutionTotal - firstYearAmount;
+  const secondYearAmount = tuitionTotal - firstYearAmount;
 
   const firstYearEarnings = earningsArray[0] - firstYearAmount;
   const secondYearEarnings = earningsArray[1] - secondYearAmount;

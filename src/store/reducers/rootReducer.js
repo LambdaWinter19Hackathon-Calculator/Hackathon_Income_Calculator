@@ -27,7 +27,7 @@ const initialState = {
   cumulativeAfter: [],
   tweetMsg: "",
   isaPayments: [],
-  tutionTotal: null,
+  tuitionTotal: null,
   paymentMonths: null,
   monthlyPayment: null
 };
@@ -103,7 +103,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         monthlyPayment: action.monthlyPayment,
         isaPayments: action.isaPayments,
-        tutionTotal: action.tutionTotal,
+        tuitionTotal: action.tuitionTotal,
         paymentMonths: action.paymentMonths
       };
 
