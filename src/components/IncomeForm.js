@@ -23,8 +23,8 @@ import {
   tweetMsg,
   isaCalc
 } from "../store/actions/rootAction";
-
 import styled from "styled-components";
+import { FaInfoCircle } from 'react-icons/fa';
 
 class IncomeForm extends Component {
   constructor(props) {
@@ -88,8 +88,6 @@ class IncomeForm extends Component {
   };
 
   render() {
-    const classes = 'tooltip-inner'
-
     return (
       <FormContainer onSubmit={this.submitHandler}>
         <Form>
@@ -139,7 +137,13 @@ class IncomeForm extends Component {
             </FormGroup>
 
             <FormGroup>
-              <Label for="afterSalary">Salary Post-Lambda</Label>
+              <TitleWrap>
+                <Label for="afterSalary">Salary Post-Lambda</Label>
+                <p href="#" id="TooltipBottom"><FaInfoCircle/> </p>
+                <Tooltip placement="bottom" isOpen={this.state.tooltipOpen} target="TooltipBottom" toggle={this.toggle}>
+                  Once you're earning at least $50k per year you'll pay back 17% of your income for the first two years, capped at a maximum of $30K.
+                </Tooltip>
+              </TitleWrap>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">$</InputGroupAddon>
                 <Input
@@ -155,12 +159,13 @@ class IncomeForm extends Component {
 
           <div className="form-input-div">
             <FormGroup>
-              <Label for="annualRaise">Expected Annual Raise</Label>
-              <p href="#" id="TooltipExample">i</p>
-              <Tooltip placement="top" isOpen={this.state.tooltipOpen} target="TooltipExample" toggle={this.toggle}>
-                Hello world!
-              </Tooltip>
-
+                <TitleWrap>
+                  <Label for="annualRaise">Expected Annual Raise</Label>
+                  <p href="#" id="TooltipExample"><FaInfoCircle/> </p>
+                  <Tooltip placement="top" isOpen={this.state.tooltipOpen} target="TooltipExample" toggle={this.toggle}>
+                    Average annual raise is between 2 - 3%.
+                  </Tooltip>
+                </TitleWrap>
               <InputGroup>
                 <Input
                   type="number"
@@ -282,6 +287,11 @@ const FormContainer = styled.div`
       }
     }
   }
+`;
+
+const TitleWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const mapStateToProps = state => {
