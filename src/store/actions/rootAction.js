@@ -9,6 +9,7 @@ export const CUMULATIVE_EARNED_AFTER = "CUMULATIVE_EARNED_AFTER";
 export const RESET = "RESET";
 export const TWEET_MSG = "TWEET_MSG";
 export const ISA_CALCULATOR = "ISA_CALCULATOR";
+export const ISA_SALARIES = "ISA_SALARIES";
 
 /* ------   Get input data from form and store in Redux   ------*/
 
@@ -24,12 +25,14 @@ export const getInputData = (inputData, cb) => {
 /* ------   Return an array of yearly earnings based on the annual raise percentage   ------*/
 
 export const annualEarningsBefore = (salary, annualRaise, yearsOfWork) => {
+  let currentSalary = salary;
   let yearlyIncomes = [parseInt(salary)];
   let years = yearsOfWork;
 
   while (years > 1) {
-    salary = parseInt(salary) + parseInt(salary) * annualRaise;
-    yearlyIncomes.push(parseInt(salary));
+    currentSalary =
+      parseInt(currentSalary) + parseInt(currentSalary) * annualRaise;
+    yearlyIncomes.push(parseInt(currentSalary));
 
     years--;
   }
@@ -41,12 +44,14 @@ export const annualEarningsBefore = (salary, annualRaise, yearsOfWork) => {
 };
 
 export const annualEarningsAfter = (salary, annualRaise, yearsOfWork) => {
+  let currentSalary = salary;
   let yearlyIncomes = [parseInt(salary)];
   let years = yearsOfWork;
 
   while (years > 1) {
-    salary = parseInt(salary) + parseInt(salary) * annualRaise;
-    yearlyIncomes.push(parseInt(salary));
+    currentSalary =
+      parseInt(currentSalary) + parseInt(currentSalary) * annualRaise;
+    yearlyIncomes.push(parseInt(currentSalary));
 
     years--;
   }
@@ -82,6 +87,8 @@ export const totalEarnedAfter = earningsArray => {
     payload: lifetimeEarnings
   };
 };
+
+/* ------   Returns an array of cumulative earnings totaled after each year   ------*/
 
 export const cumulativeEarnedBefore = array => {
   let total = 0;
@@ -119,9 +126,13 @@ export const cumulativeEarnedAfter = array => {
   };
 };
 
+/* ------   Reset the storeState   ------*/
+
 export const reset = () => {
   return { type: RESET };
 };
+
+/* ------   Tweet button functionality   ------*/
 
 export const tweetMsg = (yearsOfWork, beforeTotal, afterTotal) => {
   const tweetText = `📉 Income before Lambda over ${yearsOfWork} years: $${beforeTotal}
@@ -135,6 +146,8 @@ export const tweetMsg = (yearsOfWork, beforeTotal, afterTotal) => {
     payload: tweetText
   };
 };
+
+/* ------  ISA Calculation   ------*/
 
 export const isaCalc = salary => {
   const monthlyPayment = parseFloat(((salary * 0.17) / 12).toFixed(2));
@@ -156,5 +169,23 @@ export const isaCalc = salary => {
     isaPayments: isaPayments,
     tutionTotal: tutionTotal,
     paymentMonths: isaPayments.length
+  };
+};
+
+/* ------  ISA annual payment over 2 years   ------*/
+
+export const isaSalaries = (tutionTotal, earningsArray) => {
+  const firstYearAmount = parseFloat((earningsArray[0] * 0.17).toFixed(2));
+  const secondYearAmount = tutionTotal - firstYearAmount;
+
+  const firstYearEarnings = earningsArray[0] - firstYearAmount;
+  const secondYearEarnings = earningsArray[1] - secondYearAmount;
+
+  earningsArray.splice(0, 1, firstYearEarnings);
+  earningsArray.splice(1, 1, secondYearEarnings);
+
+  return {
+    type: ISA_SALARIES,
+    payload: earningsArray
   };
 };

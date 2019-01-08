@@ -20,7 +20,8 @@ import {
   cumulativeEarnedAfter,
   reset,
   tweetMsg,
-  isaCalc
+  isaCalc,
+  isaSalaries
 } from "../store/actions/rootAction";
 
 import styled from "styled-components";
@@ -70,6 +71,7 @@ class IncomeForm extends Component {
 
     if (props.beforeTotal) {
       props.tweetMsg(props.yearsOfWork, props.beforeTotal, props.afterTotal);
+      props.isaSalaries(props.tutionTotal, props.afterEarnings);
     }
   }
 
@@ -279,7 +281,8 @@ const mapStateToProps = state => {
     cumulativeBefore: state.cumulativeBefore,
     cumulativeAfter: state.cumulativeAfter,
     beforeTotal: state.beforeTotal,
-    afterTotal: state.afterTotal
+    afterTotal: state.afterTotal,
+    tutionTotal: state.tutionTotal
   };
 };
 
@@ -295,6 +298,7 @@ export default connect(
     cumulativeEarnedAfter,
     reset,
     tweetMsg,
-    isaCalc
+    isaCalc,
+    isaSalaries
   }
 )(IncomeForm);
