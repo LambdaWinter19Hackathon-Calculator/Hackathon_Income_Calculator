@@ -7,11 +7,17 @@ import {
   HorizontalGridLines,
   VerticalGridLines,
   LineSeries,
-  DiscreteColorLegend
+  DiscreteColorLegend,
+  Highlight,
+  Borders
 } from "react-vis";
 import { connect } from "react-redux";
 
 class Graph extends Component {
+  state = {
+    lastDrawLocation: null
+  };
+
   render() {
     const legendItems = [
       {
@@ -26,11 +32,20 @@ class Graph extends Component {
       }
     ];
 
+    const { lastDrawLocation } = this.state;
+
     return (
       <GraphContainer>
-        <FlexibleWidthXYPlot height={600} margin={{ left: 95 }}>
-          <XAxis title="Year" style={{ fontSize: 14 }} />
-          <YAxis title="Total Earnings ($)" style={{ fontSize: 14 }} />
+        <FlexibleWidthXYPlot
+          height={600}
+          margin={{ left: 95 }}
+          xDomain={
+            lastDrawLocation && [lastDrawLocation.left, lastDrawLocation.right]
+          }
+          yDomain={
+            lastDrawLocation && [lastDrawLocation.bottom, lastDrawLocation.top]
+          }
+        >
           <HorizontalGridLines style={{ stroke: "hsl(42, 15%, 90%)" }} />
           <VerticalGridLines style={{ stroke: "hsl(42, 15%, 90%)" }} />
 
@@ -60,6 +75,24 @@ class Graph extends Component {
               strokeLineJoin: "round",
               strokeWidth: 4,
               stroke: "#A0021E"
+            }}
+          />
+
+          <Borders style={{ all: { fill: "#FAF9F7" } }} />
+          <XAxis title="Year" style={{ fontSize: 14 }} />
+          <YAxis title="Total Earnings ($)" style={{ fontSize: 14 }} />
+
+          <Highlight
+            onBrushEnd={area => this.setState({ lastDrawLocation: area })}
+            onDrag={area => {
+              this.setState({
+                lastDrawLocation: {
+                  bottom: lastDrawLocation.bottom + (area.top - area.bottom),
+                  left: lastDrawLocation.left - (area.right - area.left),
+                  right: lastDrawLocation.right - (area.right - area.left),
+                  top: lastDrawLocation.top + (area.top - area.bottom)
+                }
+              });
             }}
           />
         </FlexibleWidthXYPlot>
