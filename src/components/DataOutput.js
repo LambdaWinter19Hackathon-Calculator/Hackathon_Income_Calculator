@@ -11,6 +11,9 @@ class DataOutput extends Component {
     return (
       <OutputContainer>
         <Wrap>
+          <h4>Lifetime Earnings</h4>
+        </Wrap>
+        <Wrap>
           <h5>Pre-Lambda Income</h5>
           <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
           <Data>
