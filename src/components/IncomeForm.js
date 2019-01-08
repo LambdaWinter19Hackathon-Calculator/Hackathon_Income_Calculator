@@ -156,10 +156,10 @@ class IncomeForm extends Component {
           <div className="form-input-div">
             <FormGroup>
               <Label for="annualRaise">Expected Annual Raise</Label>
-              <p href="#" id="TooltipExample">tooltip</p>
-        <Tooltip placement="right" isOpen={this.state.tooltipOpen} target="TooltipExample" toggle={this.toggle}>
-          Hello world!
-        </Tooltip>
+              <p href="#" id="TooltipExample">i</p>
+              <Tooltip placement="top" isOpen={this.state.tooltipOpen} target="TooltipExample" toggle={this.toggle}>
+                Hello world!
+              </Tooltip>
 
               <InputGroup>
                 <Input
