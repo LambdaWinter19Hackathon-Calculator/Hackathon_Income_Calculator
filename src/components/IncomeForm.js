@@ -7,7 +7,8 @@ import {
   Label,
   Input,
   InputGroup,
-  InputGroupAddon
+  InputGroupAddon,
+  Tooltip
 } from "reactstrap";
 
 import {
@@ -33,14 +34,22 @@ class IncomeForm extends Component {
       retirementAge: null,
       beforeSalary: null,
       afterSalary: null,
-      annualRaise: null
+      annualRaise: null,
+      tooltipOpen: false
     };
+    this.toggle = this.toggle.bind(this);
   }
 
   handleChange = e => {
     e.preventDefault();
     this.setState({
       [e.target.id]: e.target.value
+    });
+  };
+
+  toggle() {
+    this.setState({
+      tooltipOpen: !this.state.tooltipOpen
     });
   };
 
@@ -79,6 +88,8 @@ class IncomeForm extends Component {
   };
 
   render() {
+    const classes = 'tooltip-inner'
+
     return (
       <FormContainer onSubmit={this.submitHandler}>
         <Form>
@@ -145,6 +156,11 @@ class IncomeForm extends Component {
           <div className="form-input-div">
             <FormGroup>
               <Label for="annualRaise">Expected Annual Raise</Label>
+              <p href="#" id="TooltipExample">tooltip</p>
+        <Tooltip placement="right" isOpen={this.state.tooltipOpen} target="TooltipExample" toggle={this.toggle}>
+          Hello world!
+        </Tooltip>
+
               <InputGroup>
                 <Input
                   type="number"
