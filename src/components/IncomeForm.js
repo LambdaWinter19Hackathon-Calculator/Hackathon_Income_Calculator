@@ -25,7 +25,7 @@ import {
   isaSalaries
 } from "../store/actions/rootAction";
 import styled from "styled-components";
-import { FaInfoCircle } from 'react-icons/fa';
+import { FaInfoCircle } from "react-icons/fa";
 
 class IncomeForm extends Component {
   constructor(props) {
@@ -36,9 +36,11 @@ class IncomeForm extends Component {
       beforeSalary: null,
       afterSalary: null,
       annualRaise: null,
-      tooltipOpen: false
+      salaryToolTip: false,
+      raiseToolTip: false
     };
-    this.toggle = this.toggle.bind(this);
+    this.toggleSalaryToolTip = this.toggleSalaryToolTip.bind(this);
+    this.toggleRaiseToolTip = this.toggleRaiseToolTip.bind(this);
   }
 
   handleChange = e => {
@@ -48,11 +50,17 @@ class IncomeForm extends Component {
     });
   };
 
-  toggle() {
+  toggleSalaryToolTip() {
     this.setState({
-      tooltipOpen: !this.state.tooltipOpen
+      salaryToolTip: !this.state.salaryToolTip
     });
-  };
+  }
+
+  toggleRaiseToolTip() {
+    this.setState({
+      raiseToolTip: !this.state.raiseToolTip
+    });
+  }
 
   componentWillReceiveProps(props) {
     if (props.beforeSalary && props.beforeEarnings.length === 0) {
@@ -141,9 +149,18 @@ class IncomeForm extends Component {
             <FormGroup>
               <TitleWrap>
                 <Label for="afterSalary">Salary Post-Lambda</Label>
-                <p href="#" id="TooltipBottom"><FaInfoCircle/> </p>
-                <Tooltip placement="bottom" isOpen={this.state.tooltipOpen} target="TooltipBottom" toggle={this.toggle}>
-                  Once you're earning at least $50k per year you'll pay back 17% of your income for the first two years, capped at a maximum of $30K.
+                <p href="#" id="TooltipBottom" style={tooltip}>
+                  <FaInfoCircle />{" "}
+                </p>
+                <Tooltip
+                  placement="bottom"
+                  isOpen={this.state.salaryToolTip}
+                  target="TooltipBottom"
+                  toggle={this.toggleSalaryToolTip}
+                >
+                  When you start earning a salary of at least $50k per year,
+                  you'll pay back 17% of your income for the first two years,
+                  capped at a maximum of $30K.
                 </Tooltip>
               </TitleWrap>
               <InputGroup>
@@ -161,13 +178,20 @@ class IncomeForm extends Component {
 
           <div className="form-input-div">
             <FormGroup>
-                <TitleWrap>
-                  <Label for="annualRaise">Expected Annual Raise</Label>
-                  <p href="#" id="TooltipExample"><FaInfoCircle/> </p>
-                  <Tooltip placement="top" isOpen={this.state.tooltipOpen} target="TooltipExample" toggle={this.toggle}>
-                    Average annual raise is between 2 - 3%.
-                  </Tooltip>
-                </TitleWrap>
+              <TitleWrap>
+                <Label for="annualRaise">Expected Annual Raise</Label>
+                <p href="#" id="TooltipExample" style={tooltip}>
+                  <FaInfoCircle />{" "}
+                </p>
+                <Tooltip
+                  placement="top"
+                  isOpen={this.state.raiseToolTip}
+                  target="TooltipExample"
+                  toggle={this.toggleRaiseToolTip}
+                >
+                  Average annual raise is between 2 - 3%.
+                </Tooltip>
+              </TitleWrap>
               <InputGroup>
                 <Input
                   type="number"
@@ -188,8 +212,8 @@ class IncomeForm extends Component {
         </Form>
       </FormContainer>
     );
-  };
-};
+  }
+}
 
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -295,6 +319,10 @@ const TitleWrap = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+const tooltip = {
+  cursor: "pointer"
+};
 
 const mapStateToProps = state => {
   return {
