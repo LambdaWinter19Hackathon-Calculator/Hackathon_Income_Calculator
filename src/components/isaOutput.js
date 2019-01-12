@@ -30,7 +30,6 @@ class ISAOutput extends Component {
 
         <Wrap>
           <h5>Months of Payment</h5>
-          <h5>Over No More than 2 Years</h5>
           <Data>
             <NumberFormat
               value={paymentMonths ? paymentMonths : 0}
