@@ -27,46 +27,56 @@ class DataOutput extends Component {
 
         <Title>Earnings</Title>
 
-        <Wrap>
-          <h5>Pre-Lambda Income</h5>
-          <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
-          <Data>
-            <NumberFormat
-              value={beforeTotal ? beforeTotal : 0}
-              thousandSeparator={true}
-              displayType={"text"}
-              prefix={"$"}
-            />
-          </Data>
-        </Wrap>
+        <DataContainer>
+          <Wrap>
+            <h5>
+              Pre-Lambda Income <br />
+              Over {yearsOfWork ? yearsOfWork : 0} Years
+            </h5>
+            <Data>
+              <NumberFormat
+                value={beforeTotal ? beforeTotal : 0}
+                thousandSeparator={true}
+                displayType={"text"}
+                prefix={"$"}
+              />
+            </Data>
+          </Wrap>
 
-        <Wrap>
-          <h5>Post-Lambda Income</h5>
-          <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
-          <Data>
-            <NumberFormat
-              value={afterTotal ? afterTotal : 0}
-              thousandSeparator={true}
-              displayType={"text"}
-              prefix={"$"}
-            />
-          </Data>
-        </Wrap>
+          <Wrap>
+            <h5>
+              Post-Lambda Income
+              <br />
+              Over {yearsOfWork ? yearsOfWork : 0} Years
+            </h5>
+            <Data>
+              <NumberFormat
+                value={afterTotal ? afterTotal : 0}
+                thousandSeparator={true}
+                displayType={"text"}
+                prefix={"$"}
+              />
+            </Data>
+          </Wrap>
 
-        <Wrap>
-          <h5>Overall Increase</h5>
-          <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
-          <Data>
-            <NumberFormat
-              value={afterTotal - beforeTotal}
-              thousandSeparator={true}
-              displayType={"text"}
-              prefix={"$"}
-            />
-          </Data>
+          <Wrap>
+            <h5>
+              Overall Increase
+              <br />
+              Over {yearsOfWork ? yearsOfWork : 0} Years
+            </h5>
+            <Data>
+              <NumberFormat
+                value={afterTotal - beforeTotal}
+                thousandSeparator={true}
+                displayType={"text"}
+                prefix={"$"}
+              />
+            </Data>
 
-          {/* <TweetButton tweetMsg={tweetMsg} /> */}
-        </Wrap>
+            {/* <TweetButton tweetMsg={tweetMsg} /> */}
+          </Wrap>
+        </DataContainer>
       </OutputContainer>
     );
   }
@@ -91,9 +101,11 @@ const OutputContainer = styled.div`
   padding: 20px;
   border: 1px solid #b8b2a7;
   border-radius: 5px;
-  justify-content: space-around;
+  justify-content: flex-start;
+  h5 {
+    line-height: 1.6;
+  }
   @media (max-width: 1024px) {
-    flex-direction: row;
     width: 100%;
     min-height: 150px;
     justify-content: space-around;
@@ -103,20 +115,30 @@ const OutputContainer = styled.div`
     width: 98%;
     flex-direction: column;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 20px;
+    padding-bottom: 0;
   }
-  /* .export {
-    align-self: center;
+`;
+
+const DataContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80%;
+
+  @media (max-width: 1024px) {
+    flex-direction: row;
     width: 100%;
-    background: #cb6e17;
-    border: 0;
-    @media (max-width: 1024px) {
-      width: 22%;
-    }
-    @media (max-width: 650px) {
-      margin-top: 20px;
-    }
-  } */
+    justify-content: space-around;
+    align-items: stretch;
+  }
+  @media (max-width: 600px) {
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 10px;
+  }
 `;
 
 const Wrap = styled.div`
@@ -151,16 +173,39 @@ const Data = styled.p`
 `;
 
 const Title = styled.h4`
-  margin-bottom: -20px;
   text-align: center;
   font-weight: bold;
+  color: #95041c;
+  text-shadow: -1px 0px 0px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 2rem;
+  }
 `;
 
 const Nav = styled.div`
   display: flex;
   justify-content: center;
   vertical-align: center;
-  margin-bottom: -30px;
+  margin-bottom: 30px;
+  padding-top: 15px;
+
+  @media (min-width: 1024px) {
+    @media (max-width: 1055px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 600px) {
+    margin-bottom: 30px;
+  }
 `;
 
 const NavItem = styled.button`
@@ -168,10 +213,23 @@ const NavItem = styled.button`
   color: #95041c;
   font-weight: bold;
   padding: 5px 0px;
-  width: 45%;
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
+
+  @media (min-width: 1155px) {
+    width: 45%;
+  }
+
+  @media (min-width: 1025px) {
+    @media (max-width: 1154px) {
+      width: 70%;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 140px;
+  }
 `;
 
 const selected = {
