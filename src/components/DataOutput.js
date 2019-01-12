@@ -65,7 +65,7 @@ class DataOutput extends Component {
             />
           </Data>
 
-          <TweetButton tweetMsg={tweetMsg} />
+          {/* <TweetButton tweetMsg={tweetMsg} /> */}
         </Wrap>
       </OutputContainer>
     );
