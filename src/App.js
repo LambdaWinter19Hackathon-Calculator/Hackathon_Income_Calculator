@@ -10,30 +10,42 @@ import ISAOutput from "./components/isaOutput";
 
 class App extends Component {
   render() {
+    const { earningsOutput } = this.props;
+    let output;
+    if (earningsOutput) {
+      output = <DataOutput />;
+    } else {
+      output = <ISAOutput />;
+    }
     return (
       <div>
         <Header />
         <ContentContainer>
           <IncomeForm />
           <Graph />
-          <DataOutput />
-          <ISAOutput />
+          {output}
         </ContentContainer>
         <Footer />
       </div>
     );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    earningsOutput: state.earningsOutput
   };
 };
 
 //CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const ContentContainer = styled.div`
-background: #FAF9F7;
+  background: #faf9f7;
   display: flex;
   justify-content: space-between;
   max-width: 2000px;
   padding: 40px 20px;
-  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-family: "Montserrat", "Helvetica", sans-serif;
   font-size: 0.9rem;
   margin: 0 auto;
 
@@ -46,4 +58,4 @@ background: #FAF9F7;
   }
 `;
 
-export default connect(null)(App);
+export default connect(mapStateToProps)(App);

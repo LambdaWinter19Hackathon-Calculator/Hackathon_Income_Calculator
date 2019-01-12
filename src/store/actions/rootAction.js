@@ -10,6 +10,8 @@ export const RESET = "RESET";
 export const TWEET_MSG = "TWEET_MSG";
 export const ISA_CALCULATOR = "ISA_CALCULATOR";
 export const ISA_SALARIES = "ISA_SALARIES";
+export const TOGGLE_EARNINGS = "TOGGLE_EARNINGS";
+export const TOGGLE_ISA = "TOGGLE_ISA";
 
 /* ------   Get input data from form and store in Redux   ------*/
 
@@ -158,11 +160,11 @@ export const isaCalc = salary => {
 
   while (tuitionTotal < 30000 && isaPayments.length < 24) {
     if (monthlyPayment > tuitionBalance) {
-      lastPayment = parseFloat((tuitionBalance).toFixed(2));
+      lastPayment = parseFloat(tuitionBalance.toFixed(2));
       isaPayments.push(lastPayment);
     } else {
       isaPayments.push(monthlyPayment);
-    };
+    }
     tuitionTotal = parseFloat((tuitionTotal + monthlyPayment).toFixed(2));
     tuitionBalance = tuitionBalance - monthlyPayment;
 
@@ -195,5 +197,19 @@ export const isaSalaries = (tuitionTotal, earningsArray) => {
   return {
     type: ISA_SALARIES,
     payload: earningsArray
+  };
+};
+
+/* ------  Toggle output components   ------*/
+
+export const toggleEarnings = () => {
+  return {
+    type: TOGGLE_EARNINGS
+  };
+};
+
+export const toggleIsa = () => {
+  return {
+    type: TOGGLE_ISA
   };
 };
