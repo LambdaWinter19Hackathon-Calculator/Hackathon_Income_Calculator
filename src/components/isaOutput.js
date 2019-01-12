@@ -3,17 +3,31 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import NumberFormat from "react-number-format";
+import { toggleEarnings, toggleIsa } from "../store/actions/rootAction";
+
 // import TweetButton from "./TweetButton";
 
 class ISAOutput extends Component {
   render() {
-    const { tuitionTotal, paymentMonths, monthlyPayment } = this.props;
+    const {
+      tuitionTotal,
+      paymentMonths,
+      monthlyPayment,
+      toggleEarnings,
+      toggleIsa
+    } = this.props;
 
     return (
       <OutputContainer>
-        <Wrap>
-          <h4>ISA Repayment</h4>
-        </Wrap>
+        <Nav>
+          <NavItem onClick={toggleEarnings}>Earnings</NavItem>
+          <NavItem onClick={toggleIsa} style={selected}>
+            ISA
+          </NavItem>
+        </Nav>
+
+        <Title>ISA Repayment</Title>
+
         <Wrap>
           <h5>Months of Payment</h5>
           <h5>Over No More than 2 Years</h5>
@@ -142,4 +156,36 @@ const Data = styled.p`
   }
 `;
 
-export default connect(mapStateToProps)(ISAOutput);
+const Title = styled.h4`
+  margin-bottom: -20px;
+  text-align: center;
+  font-weight: bold;
+`;
+
+const Nav = styled.div`
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+  margin-bottom: -30px;
+`;
+
+const NavItem = styled.button`
+  border: 1px solid #95041c;
+  color: #95041c;
+  font-weight: bold;
+  padding: 5px 0px;
+  width: 45%;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
+const selected = {
+  background: "#95041c",
+  color: "white"
+};
+
+export default connect(
+  mapStateToProps,
+  { toggleEarnings, toggleIsa }
+)(ISAOutput);

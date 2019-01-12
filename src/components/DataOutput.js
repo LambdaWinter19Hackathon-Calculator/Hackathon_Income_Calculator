@@ -3,16 +3,30 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import NumberFormat from "react-number-format";
 import TweetButton from "./TweetButton";
+import { toggleEarnings, toggleIsa } from "../store/actions/rootAction";
 
 class DataOutput extends Component {
   render() {
-    const { yearsOfWork, beforeTotal, afterTotal, tweetMsg } = this.props;
+    const {
+      yearsOfWork,
+      beforeTotal,
+      afterTotal,
+      tweetMsg,
+      toggleEarnings,
+      toggleIsa
+    } = this.props;
 
     return (
       <OutputContainer>
-        <Wrap>
-          <h4>Lifetime Earnings</h4>
-        </Wrap>
+        <Nav>
+          <NavItem onClick={toggleEarnings} style={selected}>
+            Earnings
+          </NavItem>
+          <NavItem onClick={toggleIsa}>ISA</NavItem>
+        </Nav>
+
+        <Title>Earnings</Title>
+
         <Wrap>
           <h5>Pre-Lambda Income</h5>
           <h5>Over {yearsOfWork ? yearsOfWork : 0} Years</h5>
@@ -136,4 +150,36 @@ const Data = styled.p`
   }
 `;
 
-export default connect(mapStateToProps)(DataOutput);
+const Title = styled.h4`
+  margin-bottom: -20px;
+  text-align: center;
+  font-weight: bold;
+`;
+
+const Nav = styled.div`
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+  margin-bottom: -30px;
+`;
+
+const NavItem = styled.button`
+  border: 1px solid #95041c;
+  color: #95041c;
+  font-weight: bold;
+  padding: 5px 0px;
+  width: 45%;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
+const selected = {
+  background: "#95041c",
+  color: "white"
+};
+
+export default connect(
+  mapStateToProps,
+  { toggleEarnings, toggleIsa }
+)(DataOutput);

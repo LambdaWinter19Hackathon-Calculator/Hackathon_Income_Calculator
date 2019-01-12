@@ -9,7 +9,9 @@ import {
   RESET,
   TWEET_MSG,
   ISA_SALARIES,
-  ISA_CALCULATOR
+  ISA_CALCULATOR,
+  TOGGLE_EARNINGS,
+  TOGGLE_ISA
 } from "../actions/rootAction";
 
 const initialState = {
@@ -29,7 +31,9 @@ const initialState = {
   isaPayments: [],
   tuitionTotal: null,
   paymentMonths: null,
-  monthlyPayment: null
+  monthlyPayment: null,
+  earningsOutput: true,
+  isaOutput: false
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -95,7 +99,13 @@ const rootReducer = (state = initialState, action) => {
         afterTotal: null,
         cumulativeBefore: [],
         cumulativeAfter: [],
-        tweetMsg: ""
+        tweetMsg: "",
+        isaPayments: [],
+        tuitionTotal: null,
+        paymentMonths: null,
+        monthlyPayment: null,
+        earningsOutput: true,
+        isaOutput: false
       };
 
     case ISA_CALCULATOR:
@@ -117,6 +127,20 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         afterEarnings: action.payload
+      };
+
+    case TOGGLE_EARNINGS:
+      return {
+        ...state,
+        earningsOutput: true,
+        isaOutput: false
+      };
+
+    case TOGGLE_ISA:
+      return {
+        ...state,
+        isaOutput: true,
+        earningsOutput: false
       };
 
     default:
