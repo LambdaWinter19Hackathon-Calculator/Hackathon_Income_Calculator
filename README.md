@@ -1,6 +1,18 @@
-# Compound
+# Compound.Careers
 
-Compound is an income calculator that displays the life time earnings of a salary before and after a career change or promotion. Users can calculate how much more they are poised to earn over their lifetime and also see it visually with a line graph.
+https://compound.careers/
+
+Compound.Careers is an income calculator for Lambda School students that calculates their life time earnings using their salary before starting Lambda School, and an estimation of what their salary will be after graduating from Lambda. Students can see how much more they are poised to earn over their lifetime and also how long it will take them to pay back their ISA - Income Share Agreement with Lambda School.
+
+## Screenshots
+
+### Earnings View
+![alt text](https://raw.githubusercontent.com/LambdaWinter19Hackathon-Calculator/Hackathon_Income_Calculator/master/src/assets/income.png)
+<br>
+
+### ISA Repayment View
+![alt text](https://raw.githubusercontent.com/LambdaWinter19Hackathon-Calculator/Hackathon_Income_Calculator/master/src/assets/isa.png)
+
 
 ## Team
 
