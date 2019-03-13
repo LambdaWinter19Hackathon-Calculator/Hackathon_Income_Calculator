@@ -1,6 +1,6 @@
 # Compound
 
-Compound shows a simple visualization of future earnings for your current job as well as potential future earnings after attending Lambda School.
+Compound is an income calculator that displays the life time earnings of a salary before and after a career change or promotion. Users can calculate how much more they are poised to earn over their lifetime and also see it visually with a line graph.
 
 ## Team
 
@@ -14,7 +14,8 @@ Compound shows a simple visualization of future earnings for your current job as
 
 ### Frontend
 
-- React
-- Redux
-- react-vis
-- reactstrap
+- React - JavaScript library for building user interfaces
+- Redux - Predictable state container for JavaScript apps
+- react-vis - React visualization library we used for our graph
+- reactstrap - Front end UI library for React
+- styled-components - Styling library for CSS in JS
