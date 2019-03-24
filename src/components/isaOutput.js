@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import { Button } from "reactstrap";
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import NumberFormat from 'react-number-format';
-import { toggleEarnings, toggleIsa } from '../store/actions/rootAction';
+import styled from "styled-components";
+import { connect } from "react-redux";
+import NumberFormat from "react-number-format";
+import { toggleEarnings, toggleIsa } from "../store/actions/rootAction";
 
 // import TweetButton from "./TweetButton";
 
