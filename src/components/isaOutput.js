@@ -14,7 +14,8 @@ class ISAOutput extends Component {
       paymentMonths,
       monthlyPayment,
       toggleEarnings,
-      toggleIsa
+      toggleIsa,
+      afterSalary
     } = this.props;
 
     return (
@@ -33,8 +34,10 @@ class ISAOutput extends Component {
             <h5>Months of Payment</h5>
             <Data>
               <NumberFormat
-                value={paymentMonths ? paymentMonths : 0}
-                displayType={"text"}
+                value={
+                  paymentMonths && afterSalary >= 50000 ? paymentMonths : 0
+                }
+                displayType={'text'}
               />
             </Data>
           </Wrap>
@@ -43,10 +46,12 @@ class ISAOutput extends Component {
             <h5>Monthly Payment</h5>
             <Data>
               <NumberFormat
-                value={monthlyPayment ? monthlyPayment : 0}
+                value={
+                  monthlyPayment && afterSalary >= 50000 ? monthlyPayment : 0
+                }
                 thousandSeparator={true}
-                displayType={"text"}
-                prefix={"$"}
+                displayType={'text'}
+                prefix={'$'}
               />
             </Data>
           </Wrap>
@@ -59,10 +64,10 @@ class ISAOutput extends Component {
             </h5>
             <Data>
               <NumberFormat
-                value={tuitionTotal ? tuitionTotal : 0}
+                value={tuitionTotal && afterSalary >= 50000 ? tuitionTotal : 0}
                 thousandSeparator={true}
-                displayType={"text"}
-                prefix={"$"}
+                displayType={'text'}
+                prefix={'$'}
               />
             </Data>
           </Wrap>
@@ -73,11 +78,12 @@ class ISAOutput extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("tuitionTotal", state.tuitionTotal);
+  console.log('tuitionTotal', state.tuitionTotal);
   return {
     paymentMonths: state.paymentMonths,
     monthlyPayment: state.monthlyPayment,
-    tuitionTotal: state.tuitionTotal
+    tuitionTotal: state.tuitionTotal,
+    afterSalary: state.afterSalary
   };
 };
 
@@ -223,8 +229,8 @@ const NavItem = styled.button`
 `;
 
 const selected = {
-  background: "#95041c",
-  color: "white"
+  background: '#95041c',
+  color: 'white'
 };
 
 export default connect(
