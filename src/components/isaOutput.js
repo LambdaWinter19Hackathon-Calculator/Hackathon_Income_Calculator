@@ -34,7 +34,9 @@ class ISAOutput extends Component {
             <h5>Months of Payment</h5>
             <Data>
               <NumberFormat
-                value={paymentMonths ? paymentMonths : 0}
+                value={
+                  paymentMonths && afterSalary >= 50000 ? paymentMonths : 0
+                }
                 displayType={'text'}
               />
             </Data>
@@ -62,7 +64,7 @@ class ISAOutput extends Component {
             </h5>
             <Data>
               <NumberFormat
-                value={tuitionTotal ? tuitionTotal : 0}
+                value={tuitionTotal && afterSalary >= 50000 ? tuitionTotal : 0}
                 thousandSeparator={true}
                 displayType={'text'}
                 prefix={'$'}
