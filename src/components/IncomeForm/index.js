@@ -11,6 +11,8 @@ import {
     Tooltip
 } from "reactstrap"
 
+import "./index.scss"
+
 import {
     getInputData,
     annualEarningsBefore,
@@ -23,9 +25,12 @@ import {
     tweetMsg,
     isaCalc,
     isaSalaries
-} from "../store/actions/rootAction"
-import styled from "styled-components"
+} from "../../store/actions/rootAction"
 import { FaInfoCircle } from "react-icons/fa"
+
+const tooltip = {
+    cursor: "pointer"
+}
 
 class IncomeForm extends Component {
     constructor(props) {
@@ -103,7 +108,7 @@ class IncomeForm extends Component {
 
     render() {
         return (
-            <FormContainer onSubmit={this.submitHandler}>
+            <section className="form" onSubmit={this.submitHandler}>
                 <Form>
                     <div className="form-input-div">
                         <FormGroup>
@@ -157,7 +162,7 @@ class IncomeForm extends Component {
                         </FormGroup>
 
                         <FormGroup>
-                            <TitleWrap>
+                            <div className="form-label">
                                 <Label for="afterSalary">
                                     Salary Post-Lambda
                                 </Label>
@@ -175,7 +180,7 @@ class IncomeForm extends Component {
                                     income for the first two years, capped at a
                                     maximum of $30K.
                                 </Tooltip>
-                            </TitleWrap>
+                            </div>
                             <InputGroup>
                                 <InputGroupAddon addonType="prepend">
                                     $
@@ -193,7 +198,7 @@ class IncomeForm extends Component {
 
                     <div className="form-input-div">
                         <FormGroup>
-                            <TitleWrap>
+                            <div className="form-label">
                                 <Label for="annualRaise">
                                     Expected Annual Raise
                                 </Label>
@@ -208,7 +213,7 @@ class IncomeForm extends Component {
                                 >
                                     Average annual raise is between 2 - 3%.
                                 </Tooltip>
-                            </TitleWrap>
+                            </div>
                             <InputGroup>
                                 <Input
                                     type="number"
@@ -233,118 +238,9 @@ class IncomeForm extends Component {
                         </div>
                     </div>
                 </Form>
-            </FormContainer>
+            </section>
         )
     }
-}
-
-//CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-const FormContainer = styled.div`
-    background: #ffffff;
-    display: flex;
-    width: 18%;
-    padding: 20px;
-    border: 1px solid #b8b2a7;
-    border-radius: 5px;
-
-    @media (max-width: 1024px) {
-        width: 100%;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        width: 100%;
-        margin: 0 auto;
-
-        @media (max-width: 1024px) {
-            flex-direction: row;
-            justify-content: space-around;
-        }
-
-        @media (max-width: 650px) {
-            flex-direction: column;
-        }
-
-        .form-input-div {
-            height: 33%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-
-            @media (max-width: 1024px) {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                width: 30%;
-                height: 100%;
-            }
-
-            @media (max-width: 650px) {
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: flex-end;
-                padding-bottom: 10px;
-                width: 100%;
-            }
-        }
-
-        .form-group {
-            @media (max-width: 650px) {
-                width: 48%;
-            }
-        }
-
-        .input-group-text {
-            background: #faf9f7;
-        }
-
-        .button-div {
-            display: flex;
-            flex-direction: column;
-
-            @media (max-width: 650px) {
-                width: 48%;
-            }
-        }
-
-        button {
-            width: 100%;
-            margin-bottom: 10px;
-            border: 0;
-        }
-
-        .submit {
-            background: #cb6e17;
-
-            &:active {
-                background: #b8b2a7 !important;
-            }
-        }
-
-        .reset {
-            background: #a0021e;
-
-            &:active {
-                background: #b8b2a7 !important;
-            }
-
-            @media (max-width: 1024px) {
-                margin-bottom: 17px;
-            }
-        }
-    }
-`
-
-const TitleWrap = styled.div`
-    display: flex;
-    justify-content: space-between;
-`
-
-const tooltip = {
-    cursor: "pointer"
 }
 
 const mapStateToProps = state => {
