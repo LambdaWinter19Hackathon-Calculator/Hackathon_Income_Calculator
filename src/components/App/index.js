@@ -6,14 +6,18 @@ import Footer from "../Footer"
 import IncomeForm from "../IncomeForm"
 import Graph from "../Graph"
 import EarningsBreakdown from "../EarningsBreakdown"
-import ISAOutput from "../isaOutput"
+import AgreementBreakdown from "../AgreementBreakdown"
 
 import "./index.scss"
 
 class App extends Component {
     render() {
         const { earningsOutput } = this.props
-        const Output = earningsOutput ? <EarningsBreakdown /> : <ISAOutput />
+        const Output = earningsOutput ? (
+            <EarningsBreakdown />
+        ) : (
+            <AgreementBreakdown />
+        )
         return (
             <>
                 <Header />
