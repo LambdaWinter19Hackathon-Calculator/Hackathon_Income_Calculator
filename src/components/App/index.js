@@ -8,6 +8,8 @@ import Graph from "../Graph"
 import DataOutput from "../DataOutput"
 import ISAOutput from "../isaOutput"
 
+import "./index.scss"
+
 class App extends Component {
     render() {
         const { earningsOutput } = this.props
