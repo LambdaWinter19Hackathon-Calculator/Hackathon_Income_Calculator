@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import styled from "styled-components"
 import {
     FlexibleWidthXYPlot,
     XAxis,
@@ -12,6 +11,8 @@ import {
     Borders
 } from "react-vis"
 import { connect } from "react-redux"
+
+import "./index.scss"
 
 class Graph extends Component {
     state = {
@@ -35,7 +36,7 @@ class Graph extends Component {
         const { lastDrawLocation } = this.state
 
         return (
-            <GraphContainer>
+            <section className="graph">
                 <FlexibleWidthXYPlot
                     height={600}
                     margin={{ left: 95 }}
@@ -128,7 +129,7 @@ class Graph extends Component {
                         paddingLeft: 20
                     }}
                 />
-            </GraphContainer>
+            </section>
         )
     }
 }
@@ -140,25 +141,5 @@ const mapStateToProps = state => {
         yearsOfWork: state.yearsOfWork
     }
 }
-
-//CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-const GraphContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 600px;
-    width: 64%;
-    padding: 0 20px 0 15px;
-
-    @media (max-width: 1024px) {
-        width: 100%;
-        padding: 40px 40px 40px 20px;
-    }
-
-    @media (max-width: 650px) {
-        padding: 40px 0;
-    }
-`
 
 export default connect(mapStateToProps)(Graph)
