@@ -1,10 +1,12 @@
+@import "../../scss/variables";
+
 .form {
-    background: #ffffff;
+    background: $white;
     display: flex;
     width: 18%;
     padding: 20px;
-    border: 1px solid #b8b2a7;
-    border-radius: 5px;
+    border: 1px solid $grey-300;
+    border-radius: $border-radius;
 
     @media (max-width: 1024px) {
         width: 100%;
@@ -56,7 +58,7 @@
         }
 
         .input-group-text {
-            background: #faf9f7;
+            background: $grey-100;
         }
 
         .button-div {
@@ -78,15 +80,15 @@
             background: #cb6e17;
 
             &:active {
-                background: #b8b2a7 !important;
+                background: $grey-300;
             }
         }
 
         .reset {
-            background: #a0021e;
+            background: $red;
 
             &:active {
-                background: #b8b2a7 !important;
+                background: $grey-300;
             }
 
             @media (max-width: 1024px) {

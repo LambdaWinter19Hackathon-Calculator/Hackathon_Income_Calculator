@@ -1,19 +1,10 @@
+@import "../../scss/variables";
+
 .footer {
-    background: #faf9f7;
+    background: $grey-100;
     display: flex;
     flex-direction: column;
     padding-top: 20px;
-    font-family: "Montserrat", "Helvetica", sans-serif;
-
-    a {
-        color: #a0021e;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-
-    a:hover {
-        color: #cb6e17;
-    }
 }
 
 .footer__header {
@@ -31,7 +22,6 @@
 
     h2 {
         font-size: 1.4rem;
-        font-family: "Open Sans", "Helvetica", sans-serif;
         text-align: center;
     }
 
@@ -42,13 +32,12 @@
 
 .footer__content {
     text-align: center;
-    background-color: #e8e6e1;
+    background-color: $grey-200;
     font-size: 0.8rem;
 
     h3 {
         padding: 20px;
         font-size: 1rem;
-        font-family: "Open Sans", "Helvetica", sans-serif;
     }
 }
 

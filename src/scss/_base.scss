@@ -1,0 +1,24 @@
+@import "variables";
+
+body {
+    font-family: $body-font-stack;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $display-font-stack;
+}
+
+a {
+    color: $red;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: $orange;
+}

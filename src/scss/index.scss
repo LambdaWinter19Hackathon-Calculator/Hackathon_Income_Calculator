@@ -1,6 +1,4 @@
 @import "~bootstrap/scss/bootstrap";
-@import "../../node_modules/react-vis/dist/main";
+@import "~react-vis/dist/main";
 
-body {
-    background-color: #faf9f7 !important;
-}
+@import "base";

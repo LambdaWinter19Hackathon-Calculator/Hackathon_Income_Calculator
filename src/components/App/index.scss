@@ -1,10 +1,11 @@
+@import "../../scss/variables";
+
 .content {
-    background: #faf9f7;
+    background: $grey-100;
     display: flex;
     justify-content: space-between;
     max-width: 2000px;
     padding: 40px 20px;
-    font-family: "Montserrat", "Helvetica", sans-serif;
     font-size: 0.9rem;
     margin: 0 auto;
 

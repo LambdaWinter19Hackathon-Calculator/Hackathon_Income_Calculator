@@ -1,7 +1,9 @@
+@import "../../scss/variables";
+
 .header {
     display: flex;
     justify-content: center;
-    background-color: #e8e6e1;
+    background-color: $grey-200;
     padding: 25px;
     max-height: 125px;
 }
