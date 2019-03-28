@@ -5,7 +5,7 @@ import Header from "../Header"
 import Footer from "../Footer"
 import IncomeForm from "../IncomeForm"
 import Graph from "../Graph"
-import DataOutput from "../DataOutput"
+import EarningsBreakdown from "../EarningsBreakdown"
 import ISAOutput from "../isaOutput"
 
 import "./index.scss"
@@ -13,7 +13,7 @@ import "./index.scss"
 class App extends Component {
     render() {
         const { earningsOutput } = this.props
-        const Output = earningsOutput ? <DataOutput /> : <ISAOutput />
+        const Output = earningsOutput ? <EarningsBreakdown /> : <ISAOutput />
         return (
             <>
                 <Header />
