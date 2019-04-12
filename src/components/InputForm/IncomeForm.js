@@ -24,7 +24,7 @@ import {
     isaCalc,
     isaSalaries,
 } from '../../store/actions/rootAction';
-import styled from 'styled-components';
+import { FormContainer, TitleWrap, tooltip } from './style.income-form';
 import { FaInfoCircle } from 'react-icons/fa';
 
 class IncomeForm extends Component {
@@ -139,13 +139,15 @@ class IncomeForm extends Component {
                                     onChange={this.handleChange}
                                 />
                                 <InputGroupAddon addonType="append">
-                                    Years
+                                    YRS
                                 </InputGroupAddon>
                             </InputGroup>
                         </FormGroup>
 
                         <FormGroup>
-                            <Label for="retirementAge">Retirement Age</Label>
+                            <Label for="retirementAge">
+                                Target Retirement Age
+                            </Label>
                             <InputGroup>
                                 <Input
                                     required
@@ -155,7 +157,7 @@ class IncomeForm extends Component {
                                     onChange={this.handleChange}
                                 />
                                 <InputGroupAddon addonType="append">
-                                    Years
+                                    YRS
                                 </InputGroupAddon>
                             </InputGroup>
                         </FormGroup>
@@ -163,7 +165,7 @@ class IncomeForm extends Component {
 
                     <div className="form-input-div">
                         <FormGroup>
-                            <Label for="beforeSalary">Salary Pre-Lambda</Label>
+                            <Label for="beforeSalary">Current Salary</Label>
                             <InputGroup>
                                 <InputGroupAddon addonType="prepend">
                                     $
@@ -181,7 +183,7 @@ class IncomeForm extends Component {
                         <FormGroup>
                             <TitleWrap>
                                 <Label for="afterSalary">
-                                    Salary Post-Lambda
+                                    Target Salary Post-Lambda (Over $50k)
                                 </Label>
                                 <p href="#" id="TooltipBottom" style={tooltip}>
                                     <FaInfoCircle />{' '}
@@ -259,115 +261,6 @@ class IncomeForm extends Component {
         );
     }
 }
-
-//CSS ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-const FormContainer = styled.div`
-    background: #ffffff;
-    display: flex;
-    width: 18%;
-    padding: 20px;
-    border: 1px solid #b8b2a7;
-    border-radius: 5px;
-
-    @media (max-width: 1024px) {
-        width: 100%;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        width: 100%;
-        margin: 0 auto;
-
-        @media (max-width: 1024px) {
-            flex-direction: row;
-            justify-content: space-around;
-        }
-
-        @media (max-width: 650px) {
-            flex-direction: column;
-        }
-
-        .form-input-div {
-            height: 33%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-
-            @media (max-width: 1024px) {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                width: 30%;
-                height: 100%;
-            }
-
-            @media (max-width: 650px) {
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: flex-end;
-                padding-bottom: 10px;
-                width: 100%;
-            }
-        }
-
-        .form-group {
-            @media (max-width: 650px) {
-                width: 48%;
-            }
-        }
-
-        .input-group-text {
-            background: #faf9f7;
-        }
-
-        .button-div {
-            display: flex;
-            flex-direction: column;
-
-            @media (max-width: 650px) {
-                width: 48%;
-            }
-        }
-
-        button {
-            width: 100%;
-            margin-bottom: 10px;
-            border: 0;
-        }
-
-        .submit {
-            background: #cb6e17;
-
-            &:active {
-                background: #b8b2a7 !important;
-            }
-        }
-
-        .reset {
-            background: #a0021e;
-
-            &:active {
-                background: #b8b2a7 !important;
-            }
-
-            @media (max-width: 1024px) {
-                margin-bottom: 17px;
-            }
-        }
-    }
-`;
-
-const TitleWrap = styled.div`
-    display: flex;
-    justify-content: space-between;
-`;
-
-const tooltip = {
-    cursor: 'pointer',
-};
 
 const mapStateToProps = state => {
     return {

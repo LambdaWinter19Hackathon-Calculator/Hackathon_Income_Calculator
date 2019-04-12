@@ -4,14 +4,17 @@ export const OutputContainer = styled.div`
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    width: 18%;
+    width: 22%;
     padding: 20px;
-    border: 1px solid #b8b2a7;
-    border-radius: 5px;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgb(240, 240, 240);
+    color: rgb(0, 0, 0);
     justify-content: flex-start;
+
     h5 {
         line-height: 1.6;
     }
+
     @media (max-width: 1024px) {
         width: 100%;
         min-height: 150px;
