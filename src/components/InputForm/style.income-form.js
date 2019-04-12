@@ -96,13 +96,18 @@ export const FormContainer = styled.div`
             border: 0;
             border-radius: 3px;
             padding: 10px;
+            transition: 0.2s;
         }
 
         .submit {
             background: ${colors.mainRed};
 
+            &:hover {
+                transform: translateY(-3px);
+            }
+
             &:active {
-                background: #b8b2a7 !important;
+                transform: translateY(0px);
             }
         }
 
@@ -112,8 +117,12 @@ export const FormContainer = styled.div`
             border: 1px solid ${colors.mainRed};
             font-weight: bolder;
 
+            &:hover {
+                transform: translateY(-3px);
+            }
+
             &:active {
-                background: #b8b2a7 !important;
+                transform: translateY(0px);
             }
 
             @media (max-width: 1024px) {

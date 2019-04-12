@@ -6,27 +6,42 @@ const Footer = () => {
         <Wrapper>
             <List>
                 <Items>
-                    <a href="https://lambdaschool.com/courses/cs/web/">
+                    <a
+                        href="https://lambdaschool.com/courses/cs/web/"
+                        target="_blank"
+                    >
                         Courses
                     </a>
                 </Items>
                 <Items>
-                    <a href="https://lambdaschool.com/about/">About</a>
+                    <a href="https://lambdaschool.com/about/" target="_blank">
+                        About
+                    </a>
                 </Items>
                 <Items>
-                    <a href="https://lambdaschool.com/blog/">Blog</a>
+                    <a href="https://lambdaschool.com/blog/" target="_blank">
+                        Blog
+                    </a>
                 </Items>
                 <Items>
-                    <a href="https://lambdaschool.com/apply/">Apply</a>
+                    <a href="https://lambdaschool.com/apply/" target="_blank">
+                        Apply
+                    </a>
                 </Items>
                 <Items>
-                    <a href="https://lambdaschool.com/careers">Careers</a>
+                    <a href="https://lambdaschool.com/careers" target="_blank">
+                        Careers
+                    </a>
                 </Items>
                 <Items>
-                    <a href="https://lambdaschool.com/privacy">Legal</a>
+                    <a href="https://lambdaschool.com/privacy" target="_blank">
+                        Legal
+                    </a>
                 </Items>
                 <Items>
-                    <a href="https://lambdaschool.com/contact">Contact</a>
+                    <a href="https://lambdaschool.com/contact" target="_blank">
+                        Contact
+                    </a>
                 </Items>
             </List>
         </Wrapper>

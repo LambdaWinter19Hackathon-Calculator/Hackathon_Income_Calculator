@@ -8,4 +8,5 @@ export const colors = {
     headerBg: 'white',
     footerBg: 'rgb(29,35,38)',
     font: 'rgb(105,111,115)',
+    greyText: 'rgb(110,111,120)',
 };

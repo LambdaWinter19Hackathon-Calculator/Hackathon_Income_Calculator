@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import NumberFormat from 'react-number-format';
 import TweetButton from './TweetButton';
 import { toggleEarnings, toggleIsa } from '../../store/actions/rootAction';
 import {
@@ -9,10 +8,11 @@ import {
     Nav,
     NavItem,
     selected,
-    Title,
     DataContainer,
     Wrap,
     Data,
+    NumberOutput,
+    Button,
 } from './style.output';
 
 class DataOutput extends Component {
@@ -35,16 +35,16 @@ class DataOutput extends Component {
                     <NavItem onClick={toggleIsa}>ISA</NavItem>
                 </Nav>
 
-                <Title>Earnings</Title>
-
                 <DataContainer>
                     <Wrap>
                         <h5>
                             Pre-Lambda Income <br />
-                            Over {yearsOfWork ? yearsOfWork : 0} Years
+                            Over&nbsp;
+                            <strong>{yearsOfWork ? yearsOfWork : 0}</strong>
+                            &nbsp;Years
                         </h5>
                         <Data>
-                            <NumberFormat
+                            <NumberOutput
                                 value={beforeTotal ? beforeTotal : 0}
                                 thousandSeparator={true}
                                 displayType={'text'}
@@ -57,10 +57,12 @@ class DataOutput extends Component {
                         <h5>
                             Post-Lambda Income
                             <br />
-                            Over {yearsOfWork ? yearsOfWork : 0} Years
+                            Over&nbsp;
+                            <strong>{yearsOfWork ? yearsOfWork : 0}</strong>
+                            &nbsp;Years
                         </h5>
                         <Data>
-                            <NumberFormat
+                            <NumberOutput
                                 value={afterTotal ? afterTotal : 0}
                                 thousandSeparator={true}
                                 displayType={'text'}
@@ -73,10 +75,12 @@ class DataOutput extends Component {
                         <h5>
                             Overall Increase
                             <br />
-                            Over {yearsOfWork ? yearsOfWork : 0} Years
+                            Over&nbsp;
+                            <strong>{yearsOfWork ? yearsOfWork : 0}</strong>
+                            &nbsp;Years
                         </h5>
                         <Data>
-                            <NumberFormat
+                            <NumberOutput
                                 value={afterTotal - beforeTotal}
                                 thousandSeparator={true}
                                 displayType={'text'}
@@ -87,6 +91,12 @@ class DataOutput extends Component {
                         {/* <TweetButton tweetMsg={tweetMsg} /> */}
                     </Wrap>
                 </DataContainer>
+                <Button
+                    href="https://lambdaschool.com/courses/cs/web/"
+                    target="_blank"
+                >
+                    See Our Programs
+                </Button>
             </OutputContainer>
         );
     }

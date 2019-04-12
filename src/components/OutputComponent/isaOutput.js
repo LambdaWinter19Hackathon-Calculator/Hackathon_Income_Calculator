@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 // import { Button } from "reactstrap";
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import NumberFormat from 'react-number-format';
 import { toggleEarnings, toggleIsa } from '../../store/actions/rootAction';
 import {
     OutputContainer,
     Nav,
     NavItem,
     selected,
-    Title,
     DataContainer,
     Wrap,
     Data,
+    NumberOutput,
+    Button,
 } from './style.output';
 // import TweetButton from "./TweetButton";
 
@@ -36,13 +36,11 @@ class ISAOutput extends Component {
                     </NavItem>
                 </Nav>
 
-                <Title>ISA Repayment</Title>
-
                 <DataContainer>
                     <Wrap>
                         <h5>Months of Payment</h5>
                         <Data>
-                            <NumberFormat
+                            <NumberOutput
                                 value={
                                     paymentMonths && afterSalary >= 50000
                                         ? paymentMonths
@@ -56,7 +54,7 @@ class ISAOutput extends Component {
                     <Wrap>
                         <h5>Monthly Payment</h5>
                         <Data>
-                            <NumberFormat
+                            <NumberOutput
                                 value={
                                     monthlyPayment && afterSalary >= 50000
                                         ? monthlyPayment
@@ -76,7 +74,7 @@ class ISAOutput extends Component {
                             Over 2 Years
                         </h5>
                         <Data>
-                            <NumberFormat
+                            <NumberOutput
                                 value={
                                     tuitionTotal && afterSalary >= 50000
                                         ? tuitionTotal
@@ -89,6 +87,12 @@ class ISAOutput extends Component {
                         </Data>
                     </Wrap>
                 </DataContainer>
+                <Button
+                    href="https://lambdaschool.com/courses/cs/web/"
+                    target="_blank"
+                >
+                    See Our Programs
+                </Button>
             </OutputContainer>
         );
     }
