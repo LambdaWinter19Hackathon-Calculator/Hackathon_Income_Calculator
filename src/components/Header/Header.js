@@ -18,7 +18,7 @@ const Header = () => {
 const HeaderContainer = styled.div`
     display: flex;
     justify-content: center;
-    border-bottom: 0.5px solid rgb(235, 235, 235);
+    border-bottom: 0.5px solid rgb(245, 245, 245);
     padding: 20px;
     max-height: 70px;
     background: ${colors.headerBg};
@@ -26,12 +26,11 @@ const HeaderContainer = styled.div`
     .logo-content {
         display: flex;
         justify-content: center;
-        width: 100%;
 
         img {
             height: 30px;
             width: auto;
-            margin-right: 7px;
+            margin-right: 10px;
         }
 
         .compound {
