@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import NumberFormat from "react-number-format";
 import TweetButton from "./TweetButton";
-import { toggleEarnings, toggleIsa } from "../store/actions/rootAction";
+import { toggleEarnings, toggleIsa } from "../../store/actions/rootAction";
 
 class DataOutput extends Component {
   render() {
