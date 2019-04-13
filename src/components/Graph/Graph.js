@@ -20,6 +20,17 @@ class Graph extends Component {
     };
 
     render() {
+        let years = [];
+        if (this.props.yearsOfWork) {
+            for (let i = 0; i <= this.props.yearsOfWork + 1; i += 2) {
+                years.push(i);
+            }
+        } else {
+            for (let i = 0; i <= 40; i += 2) {
+                years.push(i);
+            }
+        }
+
         const legendItems = [
             {
                 title: 'Pre-Lambda',
@@ -90,7 +101,11 @@ class Graph extends Component {
                     />
 
                     <Borders style={{ all: { fill: '#FAF9F7' } }} />
-                    <XAxis title="Year" style={{ fontSize: 14 }} />
+                    <XAxis
+                        title="YRS"
+                        style={{ fontSize: 14 }}
+                        tickValues={years}
+                    />
                     <YAxis
                         title="Total Earnings ($)"
                         style={{ fontSize: 14 }}

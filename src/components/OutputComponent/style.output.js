@@ -78,7 +78,6 @@ export const Wrap = styled.div`
 
     h5 {
         font-size: 1.6rem;
-        margin-bottom: 2rem;
 
         @media (max-width: 600px) {
             font-size: 1.25rem;
@@ -153,7 +152,7 @@ export const NavItem = styled.button`
 `;
 
 export const NumberOutput = styled(NumberFormat)`
-    font-size: 4rem;
+    font-size: 4.5rem;
     color: rgb(60, 60, 60);
     font-weight: 100;
 `;
@@ -167,6 +166,7 @@ export const Button = styled.a`
     text-decoration: none !important;
     text-align: center;
     margin: 0 auto;
+    margin-top: 2rem;
     font-size: 1.6rem;
     cursor: pointer;
     transition: 0.2s;
