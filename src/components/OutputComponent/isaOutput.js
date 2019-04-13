@@ -38,7 +38,7 @@ class ISAOutput extends Component {
 
                 <DataContainer>
                     <Wrap>
-                        <h5>Months of Payment</h5>
+                        <h5>Months of Repayment</h5>
                         <Data>
                             <NumberOutput
                                 value={
@@ -69,7 +69,7 @@ class ISAOutput extends Component {
 
                     <Wrap>
                         <h5>
-                            Total Tuition
+                            Overall Tuition
                             <br />
                             Over 2 Years
                         </h5>
