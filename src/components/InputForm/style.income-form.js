@@ -74,7 +74,7 @@ export const FormContainer = styled.div`
         }
 
         .input-group-text {
-            background: ${colors.bodyBg};
+            background: ${colors.addonBg};
             font-size: 12px;
             font-weight: bolder;
             border: 1px solid ${colors.inputBorder};
