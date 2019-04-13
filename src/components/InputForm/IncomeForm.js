@@ -107,6 +107,7 @@ class IncomeForm extends Component {
 
     submitHandler = e => {
         e.preventDefault();
+        this.props.reset();
         this.props.getInputData(this.state);
     };
 

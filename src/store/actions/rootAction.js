@@ -16,8 +16,6 @@ export const TOGGLE_ISA = 'TOGGLE_ISA';
 /* ------   Get input data from form and store in Redux   ------*/
 
 export const getInputData = inputData => {
-    // cb();
-
     return {
         type: GET_INPUT_DATA,
         payload: inputData,
