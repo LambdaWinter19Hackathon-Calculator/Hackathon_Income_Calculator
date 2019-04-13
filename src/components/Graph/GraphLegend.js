@@ -35,6 +35,7 @@ const LegendContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding-top: 1rem;
+    margin-bottom: -2rem;
 `;
 
 export default GraphLegend;

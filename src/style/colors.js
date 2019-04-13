@@ -10,4 +10,5 @@ export const colors = {
     footerBg: 'rgb(29,35,38)',
     font: 'rgb(105,111,115)',
     greyText: 'rgb(110,111,120)',
+    gridColor: 'rgb(205,207,219,0.35)',
 };

@@ -8,11 +8,22 @@ export const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     font-family: 'Montserrat', 'Helvetica', sans-serif;
+
+    .icon {
+        color: white;
+        margin-right: 3rem;
+        font-size: 1.8rem;
+    }
+
+    .margin-left {
+        margin-left: 1rem;
+    }
 `;
 
 export const List = styled.ul`
     display: flex;
     justify-content: center;
+    align-items: center;
     list-style-type: none;
 
     @media (max-width: 650px) {
