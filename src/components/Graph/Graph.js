@@ -31,19 +31,6 @@ class Graph extends Component {
             }
         }
 
-        const legendItems = [
-            {
-                title: 'Pre-Lambda',
-                color: 'rgb(255,6,65)',
-                strokeWidth: 6,
-            },
-            {
-                title: 'Post-Lambda',
-                color: 'rgb(41,160,221)',
-                strokeWidth: 6,
-            },
-        ];
-
         const { lastDrawLocation } = this.state;
 
         return (
@@ -63,6 +50,7 @@ class Graph extends Component {
                             lastDrawLocation.top,
                         ]
                     }
+                    style={{ background: 'white' }}
                 >
                     <HorizontalGridLines
                         style={{ stroke: 'hsl(42, 15%, 90%)' }}
@@ -106,12 +94,32 @@ class Graph extends Component {
                     <Borders style={{ all: { fill: colors.bodyBg } }} />
                     <XAxis
                         title="YRS"
-                        style={{ fontSize: 14 }}
+                        style={{
+                            title: {
+                                fontSize: 14,
+                                fill: 'lightgrey',
+                            },
+                            text: {
+                                stroke: 'black',
+                                fontWeight: 100,
+                                fontSize: 12,
+                            },
+                        }}
                         tickValues={years}
                     />
                     <YAxis
-                        title="Total Earnings ($)"
-                        style={{ fontSize: 14 }}
+                        title="Total Earnings"
+                        style={{
+                            title: {
+                                fontSize: 14,
+                                fill: 'lightgrey',
+                            },
+                            text: {
+                                stroke: 'black',
+                                fontWeight: 100,
+                                fontSize: 12,
+                            },
+                        }}
                     />
 
                     <Highlight
@@ -138,15 +146,6 @@ class Graph extends Component {
                         }}
                     />
                 </FlexibleWidthXYPlot>
-                <DiscreteColorLegend
-                    items={legendItems}
-                    orientation="horizontal"
-                    style={{
-                        fontSize: 14,
-                        overflowY: 'hidden',
-                        paddingLeft: 20,
-                    }}
-                />
             </GraphContainer>
         );
     }
@@ -168,6 +167,7 @@ const GraphContainer = styled.div`
     align-items: center;
     min-height: 60rem;
     width: 55%;
+    margin-left: -2rem;
     padding-right: 1.5rem;
 
     @media (max-width: 1024px) {

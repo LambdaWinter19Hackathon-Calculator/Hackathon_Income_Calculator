@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import IncomeForm from './components/InputForm/IncomeForm';
 import Graph from './components/Graph/Graph';
+import GraphLegend from './components/Graph/GraphLegend';
 import DataOutput from './components/OutputComponent/DataOutput';
 import ISAOutput from './components/OutputComponent/isaOutput';
 import { AppContainer, Container, BodyContainer } from './style/style.app';
@@ -25,6 +26,7 @@ class App extends Component {
                         <IncomeForm />
                         <Graph />
                         {output}
+                        <GraphLegend />
                     </BodyContainer>
                 </Container>
                 <Footer />

@@ -16,6 +16,7 @@ export const BodyContainer = styled.div`
     background: ${colors.bodyBg};
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 4rem;
     font-family: 'Montserrat', 'Helvetica', sans-serif;
     font-size: 0.9rem;
