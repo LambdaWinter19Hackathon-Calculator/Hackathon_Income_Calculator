@@ -30,4 +30,4 @@ Compound.Careers is an income calculator for Lambda School students that calcula
 - Redux - Predictable state container for JavaScript apps
 - react-vis - React visualization library we used for our graph
 - reactstrap - Front end UI library for React
-- styled-components - Styling library for CSS in JS
+- styled-components - Styling library for CSS in JS 
