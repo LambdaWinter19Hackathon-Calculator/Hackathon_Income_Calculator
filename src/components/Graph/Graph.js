@@ -34,12 +34,12 @@ class Graph extends Component {
         const legendItems = [
             {
                 title: 'Pre-Lambda',
-                color: 'hsl(36, 77%, 75%)',
+                color: 'rgb(255,6,65)',
                 strokeWidth: 6,
             },
             {
                 title: 'Post-Lambda',
-                color: '#A0021E',
+                color: 'rgb(41,160,221)',
                 strokeWidth: 6,
             },
         ];
@@ -69,6 +69,7 @@ class Graph extends Component {
                     />
                     <VerticalGridLines
                         style={{ stroke: 'hsl(42, 15%, 90%)' }}
+                        tickValues={years}
                     />
 
                     <LineSeries
@@ -81,9 +82,10 @@ class Graph extends Component {
                         }
                         style={{
                             strokeLineJoin: 'round',
-                            strokeWidth: 4,
-                            stroke: 'hsl(36, 77%, 75%)',
+                            strokeWidth: this.props.yearsOfWork ? 2 : 7,
+                            stroke: 'rgb(255,6,65)',
                         }}
+                        opacity={this.props.yearsOfWork ? 1 : 0.2}
                     />
                     <LineSeries
                         className="postLambda"
@@ -91,16 +93,17 @@ class Graph extends Component {
                         data={
                             this.props.cumulativeAfter.length > 0
                                 ? this.props.cumulativeAfter
-                                : [{ x: 0, y: 10000 }, { x: 40, y: 10000 }]
+                                : [{ x: 0, y: 5000 }, { x: 0, y: 10000 }]
                         }
                         style={{
                             strokeLineJoin: 'round',
-                            strokeWidth: 4,
-                            stroke: '#A0021E',
+                            strokeWidth: this.props.yearsOfWork ? 2 : 7,
+                            stroke: 'rgb(41,160,221)',
                         }}
+                        opacity={this.props.yearsOfWork ? 1 : 0.2}
                     />
 
-                    <Borders style={{ all: { fill: '#FAF9F7' } }} />
+                    <Borders style={{ all: { fill: colors.bodyBg } }} />
                     <XAxis
                         title="YRS"
                         style={{ fontSize: 14 }}
@@ -165,7 +168,7 @@ const GraphContainer = styled.div`
     align-items: center;
     min-height: 60rem;
     width: 55%;
-    padding: 0 2rem 0 1.5rem;
+    padding-right: 1.5rem;
 
     @media (max-width: 1024px) {
         width: 100%;
