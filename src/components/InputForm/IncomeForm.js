@@ -186,7 +186,7 @@ class IncomeForm extends Component {
                                 <Label for="afterSalary">
                                     Target Salary Post-Lambda (Over $50k)
                                 </Label>
-                                <p href="#" id="TooltipBottom" style={tooltip}>
+                                {/* <p href="#" id="TooltipBottom" style={tooltip}>
                                     <FaInfoCircle />{' '}
                                 </p>
                                 <Tooltip
@@ -199,7 +199,7 @@ class IncomeForm extends Component {
                                     $50k per year, you'll pay back 17% of your
                                     income for the first two years, capped at a
                                     maximum of $30K.
-                                </Tooltip>
+                                </Tooltip> */}
                             </TitleWrap>
                             <InputGroup>
                                 <InputGroupAddon addonType="prepend">
@@ -222,7 +222,7 @@ class IncomeForm extends Component {
                                 <Label for="annualRaise">
                                     Expected Annual Raise
                                 </Label>
-                                <p href="#" id="TooltipExample" style={tooltip}>
+                                {/* <p href="#" id="TooltipExample" style={tooltip}>
                                     <FaInfoCircle />{' '}
                                 </p>
                                 <Tooltip
@@ -232,7 +232,7 @@ class IncomeForm extends Component {
                                     toggle={this.toggleRaiseToolTip}
                                 >
                                     Average annual raise is between 2 - 3%.
-                                </Tooltip>
+                                </Tooltip> */}
                             </TitleWrap>
                             <InputGroup>
                                 <Input

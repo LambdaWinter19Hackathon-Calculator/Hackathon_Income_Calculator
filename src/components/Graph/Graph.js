@@ -20,18 +20,16 @@ class Graph extends Component {
     };
 
     render() {
-        const legendItems = [
-            {
-                title: 'Pre-Lambda',
-                color: 'hsl(36, 77%, 75%)',
-                strokeWidth: 6,
-            },
-            {
-                title: 'Post-Lambda',
-                color: '#A0021E',
-                strokeWidth: 6,
-            },
-        ];
+        let years = [];
+        if (this.props.yearsOfWork) {
+            for (let i = 0; i <= this.props.yearsOfWork + 1; i += 2) {
+                years.push(i);
+            }
+        } else {
+            for (let i = 0; i <= 40; i += 2) {
+                years.push(i);
+            }
+        }
 
         const { lastDrawLocation } = this.state;
 
@@ -52,12 +50,14 @@ class Graph extends Component {
                             lastDrawLocation.top,
                         ]
                     }
+                    style={{ background: 'white' }}
                 >
                     <HorizontalGridLines
                         style={{ stroke: 'hsl(42, 15%, 90%)' }}
                     />
                     <VerticalGridLines
                         style={{ stroke: 'hsl(42, 15%, 90%)' }}
+                        tickValues={years}
                     />
 
                     <LineSeries
@@ -70,9 +70,10 @@ class Graph extends Component {
                         }
                         style={{
                             strokeLineJoin: 'round',
-                            strokeWidth: 4,
-                            stroke: 'hsl(36, 77%, 75%)',
+                            strokeWidth: this.props.yearsOfWork ? 2 : 7,
+                            stroke: 'rgb(255,6,65)',
                         }}
+                        opacity={this.props.yearsOfWork ? 1 : 0.2}
                     />
                     <LineSeries
                         className="postLambda"
@@ -80,20 +81,45 @@ class Graph extends Component {
                         data={
                             this.props.cumulativeAfter.length > 0
                                 ? this.props.cumulativeAfter
-                                : [{ x: 0, y: 10000 }, { x: 40, y: 10000 }]
+                                : [{ x: 0, y: 5000 }, { x: 0, y: 10000 }]
                         }
                         style={{
                             strokeLineJoin: 'round',
-                            strokeWidth: 4,
-                            stroke: '#A0021E',
+                            strokeWidth: this.props.yearsOfWork ? 2 : 7,
+                            stroke: 'rgb(41,160,221)',
                         }}
+                        opacity={this.props.yearsOfWork ? 1 : 0.2}
                     />
 
-                    <Borders style={{ all: { fill: '#FAF9F7' } }} />
-                    <XAxis title="Year" style={{ fontSize: 14 }} />
+                    <Borders style={{ all: { fill: colors.bodyBg } }} />
+                    <XAxis
+                        title="YRS"
+                        style={{
+                            title: {
+                                fontSize: 14,
+                                fill: 'lightgrey',
+                            },
+                            text: {
+                                stroke: 'black',
+                                fontWeight: 100,
+                                fontSize: 12,
+                            },
+                        }}
+                        tickValues={years}
+                    />
                     <YAxis
-                        title="Total Earnings ($)"
-                        style={{ fontSize: 14 }}
+                        title="Total Earnings"
+                        style={{
+                            title: {
+                                fontSize: 14,
+                                fill: 'lightgrey',
+                            },
+                            text: {
+                                stroke: 'black',
+                                fontWeight: 100,
+                                fontSize: 12,
+                            },
+                        }}
                     />
 
                     <Highlight
@@ -120,15 +146,6 @@ class Graph extends Component {
                         }}
                     />
                 </FlexibleWidthXYPlot>
-                <DiscreteColorLegend
-                    items={legendItems}
-                    orientation="horizontal"
-                    style={{
-                        fontSize: 14,
-                        overflowY: 'hidden',
-                        paddingLeft: 20,
-                    }}
-                />
             </GraphContainer>
         );
     }
@@ -150,7 +167,8 @@ const GraphContainer = styled.div`
     align-items: center;
     min-height: 60rem;
     width: 55%;
-    padding: 0 2rem 0 1.5rem;
+    margin-left: -2rem;
+    padding-right: 1.5rem;
 
     @media (max-width: 1024px) {
         width: 100%;
