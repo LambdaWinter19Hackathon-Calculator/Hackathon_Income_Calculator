@@ -13,6 +13,11 @@ export const Wrapper = styled.div`
         color: white;
         margin-right: 3rem;
         font-size: 1.8rem;
+        transition: 0.2s;
+
+        &:hover {
+            transform: translateY(-3px);
+        }
     }
 
     .margin-left {
@@ -32,7 +37,7 @@ export const List = styled.ul`
 `;
 export const Items = styled.li`
     padding: 0 1rem;
-    transition: 0.3s;
+    transition: 0.2s;
     font-size: 1.4rem;
 
     &:not(:last-child) {
