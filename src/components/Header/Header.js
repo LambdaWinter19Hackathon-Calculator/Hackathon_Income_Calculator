@@ -19,8 +19,8 @@ const HeaderContainer = styled.div`
     display: flex;
     justify-content: center;
     border-bottom: 0.5px solid rgb(245, 245, 245);
-    padding: 20px;
-    max-height: 70px;
+    padding: 2rem;
+    max-height: 7rem;
     background: ${colors.headerBg};
 
     .logo-content {
@@ -28,17 +28,17 @@ const HeaderContainer = styled.div`
         justify-content: center;
 
         img {
-            height: 30px;
+            height: 3rem;
             width: auto;
-            margin-right: 10px;
+            margin-right: 1rem;
         }
 
         .compound {
             text-transform: uppercase;
             color: ${colors.secondRed};
-            font-size: 12px;
+            font-size: 1.2rem;
             font-weight: 500;
-            padding-top: 5px;
+            padding-top: 0.5rem;
             letter-spacing: -0.5px;
         }
     }

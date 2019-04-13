@@ -148,17 +148,17 @@ const GraphContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 600px;
+    min-height: 60rem;
     width: 55%;
-    padding: 0 20px 0 15px;
+    padding: 0 2rem 0 1.5rem;
 
     @media (max-width: 1024px) {
         width: 100%;
-        padding: 40px 40px 40px 20px;
+        padding: 4rem 4rem 4rem 2rem;
     }
 
-    @media (max-width: 650px) {
-        padding: 40px 0;
+    @media (max-width: 65rem) {
+        padding: 4rem 0;
     }
 `;
 

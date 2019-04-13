@@ -7,7 +7,7 @@ export const OutputContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 22%;
-    padding: 30px;
+    padding: 3rem;
     padding-top: 0;
     border-radius: 2px;
     box-shadow: 0 0 2px rgb(240, 240, 240);
@@ -20,7 +20,7 @@ export const OutputContainer = styled.div`
 
     strong {
         color: rgb(50, 51, 60);
-        font-size: 19px;
+        font-size: 1.9rem;
     }
 
     @media (max-width: 1024px) {
@@ -33,7 +33,7 @@ export const OutputContainer = styled.div`
         width: 98%;
         flex-direction: column;
         margin: 0 auto;
-        padding: 20px;
+        padding: 2rem;
         padding-bottom: 0;
     }
 `;
@@ -55,7 +55,7 @@ export const DataContainer = styled.div`
         flex-direction: column;
         justify-content: space-around;
         margin: 0 auto;
-        padding: 10px;
+        padding: 1rem;
     }
 `;
 
@@ -73,12 +73,12 @@ export const Wrap = styled.div`
 
     @media (max-width: 600px) {
         width: 100%;
-        padding-bottom: 25px;
+        padding-bottom: 2.5rem;
     }
 
     h5 {
-        font-size: 1rem;
-        margin-bottom: 20px;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
 
         @media (max-width: 600px) {
             font-size: 1.25rem;
@@ -104,8 +104,8 @@ export const Nav = styled.div`
     display: flex;
     justify-content: space-around;
     vertical-align: center;
-    margin-bottom: 30px;
-    padding-top: 15px;
+    margin-bottom: 3rem;
+    padding-top: 1.5rem;
 
     @media (min-width: 1024px) {
         @media (max-width: 1055px) {
@@ -114,25 +114,25 @@ export const Nav = styled.div`
     }
 
     @media (max-width: 1024px) {
-        margin-bottom: 20px;
+        margin-bottom: 2rem;
     }
     @media (max-width: 600px) {
-        margin-bottom: 30px;
+        margin-bottom: 3rem;
     }
 `;
 
 export const NavItem = styled.button`
     color: gray;
     font-weight: bolder;
-    font-size: 14px;
-    padding: 5px 0px;
+    font-size: 1.4rem;
+    padding: 0.5rem 0px;
     text-align: center;
     border-radius: 0;
     border: 0;
     cursor: pointer;
 
     &:hover {
-        font-size: 15px;
+        font-size: 1.5rem;
         color: ${colors.mainRed};
         text-shadow: 0px 0px 1px grey;
     }
@@ -148,32 +148,26 @@ export const NavItem = styled.button`
     }
 
     @media (max-width: 1024px) {
-        width: 140px;
+        width: 14rem;
     }
 `;
 
-export const selected = {
-    borderBottom: `2px solid ${colors.mainRed}`,
-    color: `${colors.mainRed}`,
-    fontSize: '16px',
-};
-
 export const NumberOutput = styled(NumberFormat)`
-    font-size: 40px;
+    font-size: 4rem;
     color: rgb(60, 60, 60);
     font-weight: 100;
 `;
 
 export const Button = styled.a`
     width: 100%;
-    padding: 10px;
+    padding: 1rem;
     border-radius: 3px;
     background: ${colors.mainRed};
     color: white;
     text-decoration: none !important;
     text-align: center;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 1.6rem;
     cursor: pointer;
     transition: 0.2s;
 
@@ -191,3 +185,9 @@ export const Button = styled.a`
         transform: translateY(0px);
     }
 `;
+
+export const selected = {
+    borderBottom: `2px solid ${colors.mainRed}`,
+    color: `${colors.mainRed}`,
+    fontSize: '1.6rem',
+};
