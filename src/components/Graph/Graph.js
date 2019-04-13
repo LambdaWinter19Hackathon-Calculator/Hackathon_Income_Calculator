@@ -52,11 +52,9 @@ class Graph extends Component {
                     }
                     style={{ background: 'white' }}
                 >
-                    <HorizontalGridLines
-                        style={{ stroke: 'hsl(42, 15%, 90%)' }}
-                    />
+                    <HorizontalGridLines style={{ stroke: colors.gridColor }} />
                     <VerticalGridLines
-                        style={{ stroke: 'hsl(42, 15%, 90%)' }}
+                        style={{ stroke: colors.gridColor }}
                         tickValues={years}
                     />
 
