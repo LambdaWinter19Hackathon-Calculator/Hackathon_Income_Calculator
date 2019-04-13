@@ -8,7 +8,7 @@ export const AppContainer = styled.div`
 
 export const Container = styled.div`
     width: 100%;
-    max-width: 1400px;
+    max-width: 140rem;
     margin: 0 auto;
 `;
 
@@ -16,7 +16,7 @@ export const BodyContainer = styled.div`
     background: ${colors.bodyBg};
     display: flex;
     justify-content: space-between;
-    padding: 40px;
+    padding: 4rem;
     font-family: 'Montserrat', 'Helvetica', sans-serif;
     font-size: 0.9rem;
     margin: 0 auto;
@@ -26,6 +26,6 @@ export const BodyContainer = styled.div`
     }
 
     @media (max-width: 650px) {
-        padding: 20px 10px;
+        padding: 2rem 1rem;
     }
 `;

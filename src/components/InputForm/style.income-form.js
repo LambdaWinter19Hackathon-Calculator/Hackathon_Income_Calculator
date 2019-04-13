@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import { colors } from '../../style/colors';
-import { InputGroupAddon } from 'reactstrap';
 
 export const FormContainer = styled.div`
     background: #ffffff;
     display: flex;
     width: 22%;
-    padding: 20px;
+    padding: 2rem;
     box-shadow: 0 0 2px rgb(240, 240, 240);
     color: rgb(0, 0, 0);
     border-radius: 2px;
@@ -23,8 +22,8 @@ export const FormContainer = styled.div`
         margin: 0 auto;
 
         label {
-            font-size: 13px;
-            margin-bottom: 2px;
+            font-size: 1.4rem;
+            margin-bottom: 3px;
         }
 
         @media (max-width: 1024px) {
@@ -54,7 +53,7 @@ export const FormContainer = styled.div`
                 flex-direction: row;
                 flex-wrap: wrap;
                 align-items: flex-end;
-                padding-bottom: 10px;
+                padding-bottom: 1rem;
                 width: 100%;
             }
         }
@@ -66,19 +65,22 @@ export const FormContainer = styled.div`
         }
 
         .input-group {
+            height: 3.5rem;
+
             input {
                 border: 1px solid ${colors.inputBorder};
                 color: rgb(0, 0, 0);
-                font-size: 16px;
+                font-size: 1.6rem;
+                height: 100%;
             }
         }
 
         .input-group-text {
             background: ${colors.addonBg};
-            font-size: 12px;
+            font-size: 1.2rem;
             font-weight: bolder;
             border: 1px solid ${colors.inputBorder};
-            padding: 0 16px;
+            padding: 0 1.6rem;
         }
 
         .button-div {
@@ -92,11 +94,12 @@ export const FormContainer = styled.div`
 
         button {
             width: 100%;
-            margin-top: 15px;
+            margin-top: 1.5rem;
             border: 0;
             border-radius: 3px;
-            padding: 10px;
+            padding: 1rem;
             transition: 0.2s;
+            font-size: 1.6rem;
         }
 
         .submit {
@@ -126,7 +129,7 @@ export const FormContainer = styled.div`
             }
 
             @media (max-width: 1024px) {
-                margin-bottom: 17px;
+                margin-bottom: 1.7rem;
             }
         }
     }

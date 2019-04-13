@@ -3,7 +3,7 @@ import { colors } from '../../style/colors';
 
 export const Wrapper = styled.div`
     background: ${colors.footerBg};
-    height: 150px;
+    height: 15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,12 +20,12 @@ export const List = styled.ul`
     }
 `;
 export const Items = styled.li`
-    padding: 0 10px;
+    padding: 0 1rem;
     transition: 0.3s;
-    font-size: 14px;
+    font-size: 1.4rem;
 
     &:not(:last-child) {
-        margin-right: 15px;
+        margin-right: 1.5rem;
     }
 
     &:hover {
