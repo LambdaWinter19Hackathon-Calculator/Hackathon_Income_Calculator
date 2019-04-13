@@ -43,6 +43,19 @@ const Footer = () => {
                         Contact
                     </a>
                 </Items>
+
+                <a href="https://twitter.com/lambdaschool" target="_blank">
+                    <i class="fab fa-twitter icon margin-left" />
+                </a>
+                <a
+                    href="https://www.facebook.com/LambdaSchoolOnline/"
+                    target="_blank"
+                >
+                    <i class="fab fa-facebook icon" />
+                </a>
+                <a href="https://github.com/LambdaSchool" target="_blank">
+                    <i class="fab fa-github icon" />
+                </a>
             </List>
         </Wrapper>
     );
