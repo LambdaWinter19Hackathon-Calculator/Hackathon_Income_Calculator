@@ -43,7 +43,7 @@ class App extends Component {
 
         let graphVisibility = this.state.windowWidth <= 1024 ? null : <Graph />
         let graphLegendVisibility = this.state.windowWidth <= 1024 ? null : <GraphLegend />
-
+   
         return (
             <AppContainer>
                 <Container>
