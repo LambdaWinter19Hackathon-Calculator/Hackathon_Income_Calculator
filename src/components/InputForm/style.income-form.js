@@ -11,18 +11,20 @@ export const FormContainer = styled.div`
     border-radius: 2px;
     align-items: center;
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         width: 100%;
-    }
+    } */
 
-    @media (max-width: 650px) {
+    @media (min-width: 768px) and (max-width: 1024px) {
         flex-direction: column;
+        width: 95%;
+        margin-top: 3rem;
     }
 
     .form-input-heading {
         display: none;
 
-        @media (max-width: 650px) {
+        @media (min-width: 768px) and (max-width: 1024px) {
             display: initial;
             padding: 10px;
 
@@ -41,12 +43,12 @@ export const FormContainer = styled.div`
             margin-bottom: 3px;
         }
 
-        @media (max-width: 1024px) {
+        /* @media (max-width: 1024px) {
             flex-direction: row;
             justify-content: space-around;
-        }
+        } */
 
-        @media (max-width: 650px) {
+        @media (min-width: 768px) and (max-width: 1024px) {
             flex-direction: column;
         }
 
@@ -56,15 +58,15 @@ export const FormContainer = styled.div`
             flex-direction: column;
             justify-content: space-around;
 
-            @media (max-width: 1024px) {
+            /* @media (max-width: 1024px) {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 width: 30%;
                 height: 100%;
-            }
+            } */
 
-            @media (max-width: 650px) {
+            @media (min-width: 768px) and (max-width: 1024px){
                 /* flex-direction: row; */
                 /* flex-wrap: wrap; */
                 align-items: flex-end;
@@ -74,7 +76,7 @@ export const FormContainer = styled.div`
         }
 
         .form-group {
-            @media (max-width: 650px) {
+            @media (min-width: 768px) and (max-width: 1024px) {
                 width: 100%;
             }
         }
@@ -102,7 +104,7 @@ export const FormContainer = styled.div`
             display: flex;
             flex-direction: column;
 
-            @media (max-width: 650px) {
+            @media (min-width: 768px) and (max-width: 1024px) {
                 width: 100%;
             }
         }
@@ -143,11 +145,11 @@ export const FormContainer = styled.div`
                 transform: translateY(0px);
             }
 
-            @media (max-width: 1024px) {
+            /* @media (max-width: 1024px) {
                 margin-bottom: 1.7rem;
-            }
+            } */
 
-            @media (max-width: 650px) {
+            @media (min-width: 768px) and (max-width: 1024px) {
                 display: none;
             }
         }

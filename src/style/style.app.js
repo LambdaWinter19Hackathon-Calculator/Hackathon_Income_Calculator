@@ -22,11 +22,13 @@ export const BodyContainer = styled.div`
     font-size: 0.9rem;
     margin: 0 auto;
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         flex-direction: column;
-    }
+    } */
 
-    @media (max-width: 650px) {
-        padding: 2rem 1rem;
+    @media (min-width: 768px) and (max-width: 1024px){
+        /* padding: 2rem 1rem; */
+        align-items: center;
+        justify-content: center;
     }
 `;

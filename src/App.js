@@ -41,8 +41,8 @@ class App extends Component {
             output = <ISAOutput />;
         }
 
-        let graphVisibility = this.state.windowWidth <= 650 ? null : <Graph />
-        let graphLegendVisibility = this.state.windowWidth <= 650 ? null : <GraphLegend />
+        let graphVisibility = this.state.windowWidth <= 1024 ? null : <Graph />
+        let graphLegendVisibility = this.state.windowWidth <= 1024 ? null : <GraphLegend />
 
         return (
             <AppContainer>

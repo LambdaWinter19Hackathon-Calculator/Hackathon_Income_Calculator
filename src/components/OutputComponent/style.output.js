@@ -23,14 +23,14 @@ export const OutputContainer = styled.div`
         font-size: 1.9rem;
     }
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         width: 100%;
         min-height: 150px;
         justify-content: space-around;
         align-items: stretch;
-    }
-    @media (max-width: 650px) {
-        width: 98%;
+    } */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        width: 95%;
         height: 700px;
         flex-direction: column;
         align-items: center;
@@ -46,13 +46,13 @@ export const DataContainer = styled.div`
     justify-content: space-around;
     height: 80%;
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         flex-direction: row;
         width: 100%;
         justify-content: space-around;
         align-items: stretch;
-    }
-    @media (max-width: 650px) {
+    } */
+    @media (min-width: 768px) and (max-width: 1024px) {
         width: 90%;
         flex-direction: column;
         justify-content: space-around;
@@ -67,13 +67,13 @@ export const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-
+/* 
     @media (max-width: 1024px) {
         width: 25%;
         justify-content: space-between;
-    }
+    } */
 
-    @media (max-width: 650px) {
+    @media (min-width: 768px) and (max-width: 1024px) {
         width: 100%;
         padding-bottom: 3rem;
     }
@@ -112,10 +112,10 @@ export const Nav = styled.div`
             flex-wrap: wrap;
     }
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         margin-bottom: 2rem;
-    }
-    @media (max-width: 650px) {
+    } */
+    @media (min-width: 768px) and (max-width: 1024px) {
         margin-bottom: 3rem;
         width: 50%;
     }
@@ -141,10 +141,8 @@ export const NavItem = styled.button`
         width: 45%;
     }
 
-    @media (min-width: 1025px) {
-        @media (max-width: 1154px) {
+    @media (min-width: 1025px) and (max-width: 1154px) {
             width: 70%;
-        }
     }
 
     @media (max-width: 1024px) {
@@ -186,7 +184,7 @@ export const Button = styled.a`
         transform: translateY(0px);
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 1024px) {
         display: none;
     }
 `;
