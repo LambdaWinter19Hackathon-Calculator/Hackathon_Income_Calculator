@@ -15,7 +15,7 @@ export const FormContainer = styled.div`
         width: 100%;
     } */
 
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (max-width: 1024px) {
         flex-direction: column;
         width: 95%;
         margin-top: 3rem;
@@ -24,7 +24,7 @@ export const FormContainer = styled.div`
     .form-input-heading {
         display: none;
 
-        @media (min-width: 768px) and (max-width: 1024px) {
+        @media (max-width: 1024px) {
             display: initial;
             padding: 10px;
 
@@ -48,7 +48,7 @@ export const FormContainer = styled.div`
             justify-content: space-around;
         } */
 
-        @media (min-width: 768px) and (max-width: 1024px) {
+        @media (max-width: 1024px) {
             flex-direction: column;
         }
 
@@ -66,23 +66,23 @@ export const FormContainer = styled.div`
                 height: 100%;
             } */
 
-            @media (min-width: 768px) and (max-width: 1024px){
+            @media (max-width: 1024px){
                 /* flex-direction: row; */
                 /* flex-wrap: wrap; */
                 align-items: flex-end;
-                padding-bottom: 1rem;
+                /* padding-bottom: 1rem; */
                 width: 100%;
             }
         }
 
         .form-group {
-            @media (min-width: 768px) and (max-width: 1024px) {
+            @media (max-width: 1024px) {
                 width: 100%;
             }
         }
 
         .input-group {
-            height: 3.5rem;
+            height: 4rem;
 
             input {
                 border: 1px solid ${colors.inputBorder};
@@ -104,7 +104,7 @@ export const FormContainer = styled.div`
             display: flex;
             flex-direction: column;
 
-            @media (min-width: 768px) and (max-width: 1024px) {
+            @media (max-width: 1024px) {
                 width: 100%;
             }
         }
@@ -149,7 +149,7 @@ export const FormContainer = styled.div`
                 margin-bottom: 1.7rem;
             } */
 
-            @media (min-width: 768px) and (max-width: 1024px) {
+            @media (max-width: 1024px) {
                 display: none;
             }
         }

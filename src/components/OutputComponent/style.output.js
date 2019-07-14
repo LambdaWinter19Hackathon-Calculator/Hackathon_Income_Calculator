@@ -29,7 +29,7 @@ export const OutputContainer = styled.div`
         justify-content: space-around;
         align-items: stretch;
     } */
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (max-width: 1024px) {
         width: 95%;
         height: 700px;
         flex-direction: column;
@@ -52,7 +52,7 @@ export const DataContainer = styled.div`
         justify-content: space-around;
         align-items: stretch;
     } */
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (max-width: 1024px) {
         width: 90%;
         flex-direction: column;
         justify-content: space-around;
@@ -73,7 +73,7 @@ export const Wrap = styled.div`
         justify-content: space-between;
     } */
 
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (max-width: 1024px) {
         width: 100%;
         padding-bottom: 3rem;
     }
@@ -115,7 +115,7 @@ export const Nav = styled.div`
     /* @media (max-width: 1024px) {
         margin-bottom: 2rem;
     } */
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (max-width: 1024px) {
         margin-bottom: 3rem;
         width: 50%;
     }
