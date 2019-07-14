@@ -21,13 +21,18 @@ export const FormContainer = styled.div`
         margin-top: 3rem;
     }
 
+    @media (max-width: 411px) {
+        width: 100%;
+        margin-top: 0rem;
+    }
+
     .form-input-heading {
         display: none;
 
         @media (max-width: 1024px) {
             display: initial;
             padding: 10px;
-
+            font-weight: 300;
         }
     }
 
@@ -49,9 +54,11 @@ export const FormContainer = styled.div`
             justify-content: space-around;
         } */
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1024px) and (min-width: 412px) {
             flex-direction: column;
+            width: 90%;
         }
+
 
         .form-input-div {
             height: 33%;

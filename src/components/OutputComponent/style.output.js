@@ -81,9 +81,9 @@ export const Wrap = styled.div`
     h5 {
         font-size: 1.6rem;
 
-        @media (max-width: 600px) {
+        /* @media (max-width: 600px) {
             font-size: 1.25rem;
-        }
+        } */
     }
 
     p {
@@ -124,12 +124,13 @@ export const Nav = styled.div`
 export const NavItem = styled.button`
     color: gray;
     font-weight: bolder;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.5rem 0px;
     text-align: center;
     border-radius: 0;
     border: 0;
     cursor: pointer;
+    background: white;
 
     &:hover {
         font-size: 1.5rem;
