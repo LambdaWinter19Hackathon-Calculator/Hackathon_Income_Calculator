@@ -49,7 +49,7 @@ class App extends Component {
                 <Container>
                     <Header />
                     <BodyContainer>
-                        <IncomeForm />
+                        <IncomeForm windowWidth={this.state.windowWidth} />
                         {graphVisibility}
                         {output}
                         {graphLegendVisibility}
