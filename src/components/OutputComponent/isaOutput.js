@@ -90,7 +90,7 @@ class ISAOutput extends Component {
                     href="https://lambdaschool.com/courses/cs/web/"
                     target="_blank"
                 >
-                    See Our Programs
+                    See our programs
                 </Button>
             </OutputContainer>
         );

@@ -6,7 +6,7 @@ export const OutputContainer = styled.div`
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    width: 22%;
+    width: 24%;
     padding: 3rem;
     padding-top: 0;
     border-radius: 2px;
@@ -19,7 +19,7 @@ export const OutputContainer = styled.div`
     }
 
     strong {
-        color: rgb(50, 51, 60);
+        /* color: rgb(50, 51, 60); */
         font-size: 1.9rem;
     }
 
@@ -108,9 +108,9 @@ export const Nav = styled.div`
     margin-bottom: 3rem;
     padding-top: 1.5rem;
 
-    @media (min-width: 1024px) and (max-width: 1055px) {
+    /* @media (min-width: 1024px) and (max-width: 1055px) {
             flex-wrap: wrap;
-    }
+    } */
 
     /* @media (max-width: 1024px) {
         margin-bottom: 2rem;
@@ -154,6 +154,10 @@ export const NumberOutput = styled(NumberFormat)`
     font-size: 4.5rem;
     color: rgb(60, 60, 60);
     font-weight: 100;
+
+    @media (max-width: 1155px) and (min-width: 1025px) {
+        font-size: 4rem;
+    }
 `;
 
 export const Button = styled.a`

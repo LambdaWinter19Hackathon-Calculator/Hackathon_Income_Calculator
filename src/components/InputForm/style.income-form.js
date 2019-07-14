@@ -4,7 +4,7 @@ import { colors } from '../../style/colors';
 export const FormContainer = styled.div`
     background: #ffffff;
     display: flex;
-    width: 22%;
+    width: 24%;
     padding: 2rem;
     box-shadow: 0 0 2px rgb(240, 240, 240);
     color: rgb(0, 0, 0);
@@ -37,10 +37,11 @@ export const FormContainer = styled.div`
         justify-content: space-evenly;
         width: 100%;
         margin: 0 auto;
+        height: 100%;
 
         label {
-            font-size: 1.4rem;
-            margin-bottom: 3px;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
         }
 
         /* @media (max-width: 1024px) {
@@ -98,6 +99,7 @@ export const FormContainer = styled.div`
             font-weight: bolder;
             border: 1px solid ${colors.inputBorder};
             padding: 0 1.6rem;
+            color: rgb(166,166,183);
         }
 
         .button-div {
