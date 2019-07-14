@@ -9,9 +9,24 @@ export const FormContainer = styled.div`
     box-shadow: 0 0 2px rgb(240, 240, 240);
     color: rgb(0, 0, 0);
     border-radius: 2px;
+    align-items: center;
 
     @media (max-width: 1024px) {
         width: 100%;
+    }
+
+    @media (max-width: 650px) {
+        flex-direction: column;
+    }
+
+    .form-input-heading {
+        display: none;
+
+        @media (max-width: 650px) {
+            display: initial;
+            padding: 10px;
+
+        }
     }
 
     form {
@@ -50,8 +65,8 @@ export const FormContainer = styled.div`
             }
 
             @media (max-width: 650px) {
-                flex-direction: row;
-                flex-wrap: wrap;
+                /* flex-direction: row; */
+                /* flex-wrap: wrap; */
                 align-items: flex-end;
                 padding-bottom: 1rem;
                 width: 100%;
@@ -60,7 +75,7 @@ export const FormContainer = styled.div`
 
         .form-group {
             @media (max-width: 650px) {
-                width: 48%;
+                width: 100%;
             }
         }
 
@@ -88,7 +103,7 @@ export const FormContainer = styled.div`
             flex-direction: column;
 
             @media (max-width: 650px) {
-                width: 48%;
+                width: 100%;
             }
         }
 
@@ -130,6 +145,10 @@ export const FormContainer = styled.div`
 
             @media (max-width: 1024px) {
                 margin-bottom: 1.7rem;
+            }
+
+            @media (max-width: 650px) {
+                display: none;
             }
         }
     }
