@@ -33,7 +33,6 @@ class App extends Component {
         })
     }
     render() {
-        console.log(this.state.windowWidth)
         const { earningsOutput } = this.props;
         let output;
         if (earningsOutput) {
@@ -43,7 +42,8 @@ class App extends Component {
         }
 
         let graphVisibility = this.state.windowWidth <= 650 ? null : <Graph />
-        
+        let graphLegendVisibility = this.state.windowWidth <= 650 ? null : <GraphLegend />
+
         return (
             <AppContainer>
                 <Container>
@@ -52,7 +52,7 @@ class App extends Component {
                         <IncomeForm />
                         {graphVisibility}
                         {output}
-                        <GraphLegend />
+                        {graphLegendVisibility}
                     </BodyContainer>
                 </Container>
                 <Footer />
