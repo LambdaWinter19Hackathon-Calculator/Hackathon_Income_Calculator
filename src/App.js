@@ -10,7 +10,30 @@ import ISAOutput from './components/OutputComponent/isaOutput';
 import { AppContainer, Container, BodyContainer } from './style/style.app';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            windowWidth: 0,
+        }
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    }
+
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.setState({
+            windowWidth: window.innerWidth
+        })
+    }
     render() {
+        console.log(this.state.windowWidth)
         const { earningsOutput } = this.props;
         let output;
         if (earningsOutput) {
@@ -18,13 +41,16 @@ class App extends Component {
         } else {
             output = <ISAOutput />;
         }
+
+        let graphVisibility = this.state.windowWidth <= 650 ? null : <Graph />
+        
         return (
             <AppContainer>
                 <Container>
                     <Header />
                     <BodyContainer>
                         <IncomeForm />
-                        <Graph />
+                        {graphVisibility}
                         {output}
                         <GraphLegend />
                     </BodyContainer>

@@ -32,7 +32,8 @@ export const List = styled.ul`
     list-style-type: none;
 
     @media (max-width: 650px) {
-        flex-direction: column;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
     }
 `;
 export const Items = styled.li`
