@@ -6,7 +6,7 @@ export const OutputContainer = styled.div`
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    width: 22%;
+    width: 24%;
     padding: 3rem;
     padding-top: 0;
     border-radius: 2px;
@@ -19,19 +19,21 @@ export const OutputContainer = styled.div`
     }
 
     strong {
-        color: rgb(50, 51, 60);
+        /* color: rgb(50, 51, 60); */
         font-size: 1.9rem;
     }
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         width: 100%;
         min-height: 150px;
         justify-content: space-around;
         align-items: stretch;
-    }
-    @media (max-width: 600px) {
-        width: 98%;
+    } */
+    @media (max-width: 1024px) {
+        width: 95%;
+        height: 700px;
         flex-direction: column;
+        align-items: center;
         margin: 0 auto;
         padding: 2rem;
         padding-bottom: 0;
@@ -44,13 +46,13 @@ export const DataContainer = styled.div`
     justify-content: space-around;
     height: 80%;
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         flex-direction: row;
         width: 100%;
         justify-content: space-around;
         align-items: stretch;
-    }
-    @media (max-width: 600px) {
+    } */
+    @media (max-width: 1024px) {
         width: 90%;
         flex-direction: column;
         justify-content: space-around;
@@ -65,23 +67,23 @@ export const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-
+/* 
     @media (max-width: 1024px) {
         width: 25%;
         justify-content: space-between;
-    }
+    } */
 
-    @media (max-width: 600px) {
+    @media (max-width: 1024px) {
         width: 100%;
-        padding-bottom: 2.5rem;
+        padding-bottom: 3rem;
     }
 
     h5 {
         font-size: 1.6rem;
 
-        @media (max-width: 600px) {
+        /* @media (max-width: 600px) {
             font-size: 1.25rem;
-        }
+        } */
     }
 
     p {
@@ -106,29 +108,29 @@ export const Nav = styled.div`
     margin-bottom: 3rem;
     padding-top: 1.5rem;
 
-    @media (min-width: 1024px) {
-        @media (max-width: 1055px) {
+    /* @media (min-width: 1024px) and (max-width: 1055px) {
             flex-wrap: wrap;
-        }
-    }
+    } */
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         margin-bottom: 2rem;
-    }
-    @media (max-width: 600px) {
+    } */
+    @media (max-width: 1024px) {
         margin-bottom: 3rem;
+        width: 50%;
     }
 `;
 
 export const NavItem = styled.button`
     color: gray;
     font-weight: bolder;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.5rem 0px;
     text-align: center;
     border-radius: 0;
     border: 0;
     cursor: pointer;
+    background: white;
 
     &:hover {
         font-size: 1.5rem;
@@ -140,10 +142,8 @@ export const NavItem = styled.button`
         width: 45%;
     }
 
-    @media (min-width: 1025px) {
-        @media (max-width: 1154px) {
+    @media (min-width: 1025px) and (max-width: 1154px) {
             width: 70%;
-        }
     }
 
     @media (max-width: 1024px) {
@@ -155,6 +155,10 @@ export const NumberOutput = styled(NumberFormat)`
     font-size: 4.5rem;
     color: rgb(60, 60, 60);
     font-weight: 100;
+
+    @media (max-width: 1155px) and (min-width: 1025px) {
+        font-size: 4rem;
+    }
 `;
 
 export const Button = styled.a`
@@ -183,6 +187,10 @@ export const Button = styled.a`
     &:active {
         color: white;
         transform: translateY(0px);
+    }
+
+    @media (max-width: 1024px) {
+        display: none;
     }
 `;
 

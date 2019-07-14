@@ -37,7 +37,7 @@ class Graph extends Component {
             <GraphContainer>
                 <FlexibleWidthXYPlot
                     height={600}
-                    margin={{ left: 95 }}
+                    margin={{ left: 75 }}
                     xDomain={
                         lastDrawLocation && [
                             lastDrawLocation.left,
@@ -164,17 +164,13 @@ const GraphContainer = styled.div`
     flex-direction: column;
     align-items: center;
     min-height: 60rem;
-    width: 55%;
+    width: 50%;
     margin-left: -2rem;
     padding-right: 1.5rem;
 
     @media (max-width: 1024px) {
         width: 100%;
         padding: 4rem 4rem 4rem 2rem;
-    }
-
-    @media (max-width: 65rem) {
-        padding: 4rem 0;
     }
 `;
 

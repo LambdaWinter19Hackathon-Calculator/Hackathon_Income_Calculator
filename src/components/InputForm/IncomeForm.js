@@ -127,6 +127,7 @@ class IncomeForm extends Component {
     render() {
         return (
             <FormContainer onSubmit={this.submitHandler}>
+                <h1 className="form-input-heading">Earning potential</h1>
                 <Form innerRef={this.formRef}>
                     <div className="form-input-div">
                         <FormGroup>

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: 'Montserrat', 'Helvetica', sans-serif;
+    font-family: 'Lato', sans-serif;
 
     .icon {
         color: white;
@@ -27,13 +27,10 @@ export const Wrapper = styled.div`
 
 export const List = styled.ul`
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     list-style-type: none;
-
-    @media (max-width: 650px) {
-        flex-direction: column;
-    }
 `;
 export const Items = styled.li`
     padding: 0 1rem;

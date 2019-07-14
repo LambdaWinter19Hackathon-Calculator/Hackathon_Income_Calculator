@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 // import { Button } from "reactstrap";
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { toggleEarnings, toggleIsa } from '../../store/actions/rootAction';
 import {
@@ -91,7 +90,7 @@ class ISAOutput extends Component {
                     href="https://lambdaschool.com/courses/cs/web/"
                     target="_blank"
                 >
-                    See Our Programs
+                    See our programs
                 </Button>
             </OutputContainer>
         );

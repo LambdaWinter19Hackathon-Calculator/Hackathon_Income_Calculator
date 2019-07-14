@@ -18,15 +18,17 @@ export const BodyContainer = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 4rem;
-    font-family: 'Montserrat', 'Helvetica', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 0.9rem;
     margin: 0 auto;
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         flex-direction: column;
-    }
+    } */
 
-    @media (max-width: 650px) {
-        padding: 2rem 1rem;
+    @media (max-width: 1024px){
+        /* padding: 2rem 1rem; */
+        align-items: center;
+        justify-content: center;
     }
 `;
